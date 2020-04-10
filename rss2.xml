@@ -9,7 +9,7 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个前端界的小学生</description>
-    <pubDate>Fri, 10 Apr 2020 01:51:35 GMT</pubDate>
+    <pubDate>Fri, 10 Apr 2020 02:38:11 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
@@ -32,6 +32,72 @@
       
       
       <comments>https://wazer1987.github.io/zh-CN/e19785da.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>NUXT-SSR 服务端渲染</title>
+      <link>https://wazer1987.github.io/zh-CN/241b6c32.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/241b6c32.html</guid>
+      <pubDate>Sat, 22 Feb 2020 11:11:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;nuxt&amp;#x5B89;&amp;#x88C5;&quot;&gt;nuxt&amp;#x5B89;&amp;#x88C5;&lt;/h2&gt;
+&lt;div class=&quot;sourceCode&quot; id=&quot;cb1&quot;&gt;&lt;pre class=&quot;sourceCode js&quot;&gt;&lt;code class=&quot;sourceCode
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/241b6c32.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Egg进阶</title>
+      <link>https://wazer1987.github.io/zh-CN/4837d942.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/4837d942.html</guid>
+      <pubDate>Tue, 04 Feb 2020 02:11:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1 id=&quot;egg.js-&amp;#x9879;&amp;#x76EE;&amp;#x521D;&amp;#x59CB;&amp;#x5316;&quot;&gt;1.egg.js &amp;#x9879;&amp;#x76EE;&amp;#x521D;&amp;#x59CB;&amp;#x5316;&lt;/h1&gt;
+&lt;div class=&quot;sourceCode&quot;
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/4837d942.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>Koa</title>
+      <link>https://wazer1987.github.io/zh-CN/6313db75.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/6313db75.html</guid>
+      <pubDate>Sat, 04 Jan 2020 14:11:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;koa&amp;#x6B63;&amp;#x5E38;&amp;#x6D41;&amp;#x7A0B;&quot;&gt;koa&amp;#x6B63;&amp;#x5E38;&amp;#x6D41;&amp;#x7A0B;&lt;/h2&gt;
+&lt;div class=&quot;sourceCode&quot; id=&quot;cb1&quot;&gt;&lt;pre
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/6313db75.html#disqus_thread</comments>
     </item>
     
     <item>
@@ -205,6 +271,28 @@
       
       
       <comments>https://wazer1987.github.io/zh-CN/3567ebbb.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>公众号配置 服务端and网页端</title>
+      <link>https://wazer1987.github.io/zh-CN/df58b86c.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/df58b86c.html</guid>
+      <pubDate>Wed, 22 May 2019 11:11:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1 id=&quot;&amp;#x516C;&amp;#x4F17;&amp;#x53F7;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&quot;&gt;&amp;#x516C;&amp;#x4F17;&amp;#x53F7;&amp;#x670D;&amp;#x52A1;&amp;#x7AEF;&lt;/h1&gt;
+&lt;h2
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/df58b86c.html#disqus_thread</comments>
     </item>
     
   </channel>
