@@ -9,11 +9,11 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个前端界的小学生</description>
-    <pubDate>Tue, 21 Apr 2020 11:46:03 GMT</pubDate>
+    <pubDate>Tue, 21 Apr 2020 12:23:11 GMT</pubDate>
     <generator>http://hexo.io/</generator>
     
     <item>
-      <title>异步组件和mock的基本使用</title>
+      <title>异步组件</title>
       <link>https://wazer1987.github.io/zh-CN/3abe74fc.html</link>
       <guid>https://wazer1987.github.io/zh-CN/3abe74fc.html</guid>
       <pubDate>Tue, 21 Apr 2020 08:16:38 GMT</pubDate>

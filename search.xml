@@ -4,7 +4,7 @@
   
     
     <entry>
-      <title>异步组件和mock的基本使用</title>
+      <title>异步组件</title>
       <link href="/zh-CN/3abe74fc.html"/>
       <url>/zh-CN/3abe74fc.html</url>
       
@@ -21,8 +21,6 @@
         <tags>
             
             <tag> Vue </tag>
-            
-            <tag> Mock </tag>
             
         </tags>
       
