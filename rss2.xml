@@ -9,8 +9,30 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个前端界的小学生</description>
-    <pubDate>Tue, 26 May 2020 11:30:26 GMT</pubDate>
+    <pubDate>Wed, 27 May 2020 14:54:00 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>手写一个mini版本Vue-Router</title>
+      <link>https://wazer1987.github.io/zh-CN/383rdd78.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/383rdd78.html</guid>
+      <pubDate>Wed, 27 May 2020 05:40:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1 id=&quot;mini&amp;#x7248;&amp;#x672C;vue-router&quot;&gt;mini&amp;#x7248;&amp;#x672C;vue-router&lt;/h1&gt;
+&lt;h2
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/383rdd78.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>权限 Mock 异步组件</title>
@@ -57,27 +79,6 @@
     </item>
     
     <item>
-      <title>级联动组件的封装</title>
-      <link>https://wazer1987.github.io/zh-CN/383rff78.html</link>
-      <guid>https://wazer1987.github.io/zh-CN/383rff78.html</guid>
-      <pubDate>Sat, 23 May 2020 05:40:21 GMT</pubDate>
-      <description>
-      
-        
-        
-          
-          
-            &lt;h1
-          
-        
-      
-      </description>
-      
-      
-      <comments>https://wazer1987.github.io/zh-CN/383rff78.html#disqus_thread</comments>
-    </item>
-    
-    <item>
       <title>Vue组件通信</title>
       <link>https://wazer1987.github.io/zh-CN/383dff78.html</link>
       <guid>https://wazer1987.github.io/zh-CN/383dff78.html</guid>
@@ -96,6 +97,27 @@
       
       
       <comments>https://wazer1987.github.io/zh-CN/383dff78.html#disqus_thread</comments>
+    </item>
+    
+    <item>
+      <title>级联动组件的封装</title>
+      <link>https://wazer1987.github.io/zh-CN/383rff78.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/383rff78.html</guid>
+      <pubDate>Tue, 19 May 2020 05:40:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/383rff78.html#disqus_thread</comments>
     </item>
     
     <item>
