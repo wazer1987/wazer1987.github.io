@@ -1,0 +1,1924 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="封装一个自己的表单组件, js css html vue webpack 王正 前端">
+    <meta name="description" content="封装一个自己的表单组件">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>封装一个自己的表单组件 | 北城韩雨</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/my.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">北城韩雨</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Categories</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/lab" class="waves-effect waves-light">
+      
+      <i class="fas fa-eye" style="zoom: 0.6;"></i>
+      
+      <span>视界</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/medias" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/schedule">
+          
+          <i class="fas fa-th-large" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Schedule</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">北城韩雨</div>
+        <div class="logo-desc">
+            
+            一个前端界的小学生
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Tags</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Categories</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/lab" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-eye"></i>
+			
+			视界
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/schedule " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-th-large" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Schedule</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/wazer1987" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/wazer1987" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/10.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">封装一个自己的表单组件</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                高级教程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-18
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-18
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    4.3k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    26 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h2 id="&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;">&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;</h2>
+<h2 id="&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x7ED3;&#x6784;">&#x8868;&#x5355;&#x7EC4;&#x4EF6;&#x7ED3;&#x6784;</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="fl">1.</span>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;elementUI&#x7684;&#x7EC4;&#x4EF6;&#x7ED3;&#x6784;</span></code></pre></div>
+<pre class="vue"><code>&lt;el-form :model=&quot;ruleForm&quot; :rules=&quot;rules&quot; ref=&quot;ruleForm&quot;&gt;
+   &lt;el-form-item label=&quot;&#x59D3;&#x540D;&quot; prop=&quot;name&quot;&gt;
+    &lt;el-input v-model=&quot;ruleForm.name&quot;&gt;&lt;/el-input&gt;
+   &lt;/el-form-item&gt;
+   &lt;el-form-item label=&quot;&#x5BC6;&#x7801;&quot; prop=&quot;password&quot;&gt;
+    &lt;el-input v-model=&quot;ruleForm.password&quot;&gt;&lt;/el-input&gt;
+   &lt;/el-form-item&gt; 
+   &lt;el-form-item&gt;
+    &lt;el-button type=&quot;primary&quot; @click=&quot;submitForm(&apos;ruleForm&apos;)&quot;&gt;&#x7ACB;&#x5373;&#x521B;&#x5EFA;&lt;/el-button&gt;
+  &lt;/el-form-item&gt;
+&lt;/el-form&gt;    
+
+&lt;script&gt;
+  export default {
+    data() {
+      return {
+        ruleForm: {
+          name: &apos;&apos;,
+          password: &apos;&apos;,
+        },
+        rules: {
+          name: [
+            { required: true, message: &apos;&#x8BF7;&#x8F93;&#x5165;&#x6D3B;&#x52A8;&#x540D;&#x79F0;&apos;, trigger: &apos;blur&apos; },
+          ],
+          password: [
+            { required: true, message: &apos;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&apos;, trigger: &apos;blur&apos; }
+          ]
+        }
+      };
+    },
+    methods: {
+      submitForm(formName) {
+        this.$refs[formName].validate((valid) =&gt; {
+          if (valid) {
+            alert(&apos;submit!&apos;);
+          } else {
+            console.log(&apos;error submit!!&apos;);
+            return false;
+          }
+        });
+      },
+      resetForm(formName) {
+        this.$refs[formName].resetFields();
+      }
+    }
+  }
+&lt;/script&gt;</code></pre>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="fl">1.</span>&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#x4E0A;&#x9762;&#x7684;&#x5916;&#x9762;&#x662F;&#x4E00;&#x4E2A;  &#x6700;&#x5916;&#x5C42; &#x662F; el<span class="op">-</span>form &#x7EC4;&#x4EF6; </span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="fl">2.</span>el<span class="op">-</span>form<span class="op">-</span>item&#x7EC4;&#x4EF6; &#x662F;&#x901A;&#x8FC7;  el<span class="op">-</span>form &#x63D2;&#x69FD;&#x63D2;&#x5165;&#x8FDB;&#x53BB;&#x7684;</span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="fl">3.</span>el<span class="op">-</span>input &#x7EC4;&#x4EF6; &#x662F;&#x901A;&#x8FC7; el<span class="op">-</span>form<span class="op">-</span>item &#x7EC4;&#x4EF6;&#x7684;&#x63D2;&#x69FD;&#x63D2;&#x5165;&#x8FDB;&#x53BB;&#x7684;</span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="fl">4.</span>&#x6240;&#x4EE5;&#x7ED3;&#x6784;&#x5E94;&#x8BE5;&#x662F; form&#x7EC4;&#x4EF6;&#x91CC;&#x6709;solt &#x63D2;&#x5165;&#x4E86; el<span class="op">-</span>form<span class="op">-</span>item &#x7EC4;&#x4EF6; el<span class="op">-</span>form<span class="op">-</span>item&#x7EC4;&#x4EF6;&#x91CC;&#x6709;slot&#x63D2;&#x5165;&#x4E86;el<span class="op">-</span>input&#x7EC4;&#x4EF6; &#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x6709;&#x4E09;&#x4E2A;&#x7EC4;&#x4EF6; &#x5176;&#x4E2D;&#x4E24;&#x4E2A;&#x7EC4;&#x4EF6;&#x662F;&#x8981;&#x7528;&#x5230;&#x63D2;&#x69FD;</span></code></pre></div>
+<h2 id="&#x7EC4;&#x4EF6;&#x7ED3;&#x6784;">&#x7EC4;&#x4EF6;&#x7ED3;&#x6784;</h2>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">//form.vue &#x6700;&#x5916;&#x5C42;&#x7EC4;&#x4EF6;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a>  <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>      <span class="co">//&#x8FD9;&#x91CC;&#x7684;&#x63D2;&#x69FD;&#x5C31;&#x662F;&#x7ED9;&#x6211;&#x4EEC;&#x7684; &lt;wz-form-item&gt; &#x51C6;&#x5907;&#x7684;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>      <span class="op">&lt;</span>slot<span class="op">&gt;&lt;/</span>slot<span class="op">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>  <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">//formItem.vue</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x7684;&#x63D2;&#x69FD;&#x5C31;&#x662F;&#x7ED9;&#x6211;&#x4EEC;&#x7684; &lt;wz-input&gt; &#x51C6;&#x5907;&#x7684;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>      <span class="op">&lt;</span>slot<span class="op">&gt;&lt;/</span>slot<span class="op">&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>  <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="co">//input.vue</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>  <span class="op">&lt;</span>input type<span class="op">=</span><span class="st">&quot;text&quot;</span><span class="op">&gt;</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">//&#x4F7F;&#x7528;&#x7684;&#x7EC4;&#x4EF6;&#x6211;&#x8868;&#x5355;&#x7684;&#x7EC4;&#x4EF6; index.vue</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb5-3"><a href="#cb5-3"></a>    <span class="op">&lt;</span>el<span class="op">-</span>card <span class="kw">class</span><span class="op">=</span><span class="st">&quot;card&quot;</span><span class="op">&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a>        <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a>           <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6"></a>               <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7"></a>                   <span class="op">&lt;</span>wz<span class="op">-</span>input<span class="op">&gt;&lt;/</span>wz<span class="op">-</span>input<span class="op">&gt;</span></span>
+<span id="cb5-8"><a href="#cb5-8"></a>               <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb5-9"><a href="#cb5-9"></a>               <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>                   <span class="op">&lt;</span>wz<span class="op">-</span>input<span class="op">&gt;&lt;/</span>wz<span class="op">-</span>input<span class="op">&gt;</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>               <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>           <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">&gt;</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>        <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>    <span class="op">&lt;/</span>el<span class="op">-</span>card<span class="op">&gt;</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a></span>
+<span id="cb5-17"><a href="#cb5-17"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb5-18"><a href="#cb5-18"></a><span class="co">//&#x4F9D;&#x6B21;&#x5F15;&#x5165;&#x4E86;&#x6211;&#x4EEC;&#x7684;&#x7EC4;&#x4EF6; &#x5E76;&#x4E14;&#x91CD;&#x547D;&#x540D;        </span></span>
+<span id="cb5-19"><a href="#cb5-19"></a><span class="im">import</span> wzForm <span class="im">from</span> <span class="st">&apos;./form&apos;</span></span>
+<span id="cb5-20"><a href="#cb5-20"></a><span class="im">import</span> wzFormItem <span class="im">from</span> <span class="st">&apos;./formItem&apos;</span></span>
+<span id="cb5-21"><a href="#cb5-21"></a><span class="im">import</span> wzInput <span class="im">from</span> <span class="st">&apos;./input&apos;</span></span>
+<span id="cb5-22"><a href="#cb5-22"></a><span class="im">export</span> <span class="im">default</span> {</span>
+<span id="cb5-23"><a href="#cb5-23"></a>  <span class="dt">components</span><span class="op">:</span> {</span>
+<span id="cb5-24"><a href="#cb5-24"></a>    wzForm<span class="op">,</span></span>
+<span id="cb5-25"><a href="#cb5-25"></a>    wzFormItem<span class="op">,</span></span>
+<span id="cb5-26"><a href="#cb5-26"></a>    wzInput</span>
+<span id="cb5-27"><a href="#cb5-27"></a>  }</span>
+<span id="cb5-28"><a href="#cb5-28"></a>}</span>
+<span id="cb5-29"><a href="#cb5-29"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb5-30"><a href="#cb5-30"></a></span>
+<span id="cb5-31"><a href="#cb5-31"></a><span class="op">&lt;</span>style lang<span class="op">=</span><span class="st">&quot;scss&quot;</span> scoped<span class="op">&gt;</span></span>
+<span id="cb5-32"><a href="#cb5-32"></a>    <span class="op">.</span><span class="at">card</span>{</span>
+<span id="cb5-33"><a href="#cb5-33"></a>        <span class="dt">margin</span><span class="op">:</span> 10px<span class="op">;</span></span>
+<span id="cb5-34"><a href="#cb5-34"></a>    }</span>
+<span id="cb5-35"><a href="#cb5-35"></a><span class="op">&lt;/</span>style<span class="op">&gt;</span></span>
+<span id="cb5-36"><a href="#cb5-36"></a><span class="co">//&#x4E0B;&#x9762;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;&#x8868;&#x5355;&#x7684;&#x7EC4;&#x4EF6;&#x57FA;&#x672C;&#x7684;&#x6837;&#x5F0F;&#x4E86;</span></span></code></pre></div>
+<p><img src="/zh-CN/383rll78/&#x7B14;&#x8BB0;\&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;\1.png"></p>
+<h2 id="&#x8868;&#x5355;&#x7684;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x5E72;&#x4E86;&#x4EC0;&#x4E48;&#x4E8B;">&#x8868;&#x5355;&#x7684;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x90FD;&#x5E72;&#x4E86;&#x4EC0;&#x4E48;&#x4E8B;</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">//form&#x7EC4;&#x4EF6;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="fl">1.</span>&#x7BA1;&#x7406;&#x6570;&#x636E;&#x6A21;&#x578B; model</span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="fl">2.</span>&#x6267;&#x884C;&#x6821;&#x9A8C;&#x89C4;&#x5219; rules</span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="fl">3.</span>&#x5168;&#x5C40;&#x7684;&#x6821;&#x9A8C;&#x65B9;&#x6CD5; balidate</span></code></pre></div>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">// form-item &#x7EC4;&#x4EF6;</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fl">1.</span>&#x663E;&#x793A;label&#x6807;&#x7B7E;</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="fl">2.</span>&#x6267;&#x884C;&#x6821;&#x9A8C;&#x7684; prop &#x548C;&#x663E;&#x793A;&#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C;</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="co">//input &#x7EC4;&#x4EF6;</span></span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="fl">1.</span>&#x7ED1;&#x5B9A;&#x53CC;&#x5411;&#x6570;&#x636E;</span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="fl">2.</span>&#x8F93;&#x5165;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E;&#x901A;&#x77E5;form<span class="op">-</span>item &#x6267;&#x884C;&#x6821;&#x9A8C;</span></code></pre></div>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="co">//&#x9700;&#x8981;&#x601D;&#x8003;&#x7684;&#x51E0;&#x4E2A;&#x95EE;&#x9898;</span></span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fl">1.</span>input &#x662F;&#x81EA;&#x5B9A;&#x4E49;&#x7EC4;&#x4EF6; &#x5982;&#x4F55;&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x53CC;&#x5411;&#x7684;&#x7ED1;&#x5B9A;</span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fl">2.</span>form<span class="op">-</span>item &#x7EC4;&#x4EF6; &#x600E;&#x4E48;&#x77E5;&#x9053; &#x4F55;&#x65F6;&#x6267;&#x884C;&#x6821;&#x9A8C; &#x6839;&#x636E;&#x54EA;&#x4E2A;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x53BB;&#x6821;&#x9A8C;</span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="fl">3.</span>form &#x7EC4;&#x4EF6; &#x600E;&#x4E48;&#x8FDB;&#x884C;&#x5168;&#x5C40;&#x6821;&#x9A8C; &#x4ED6;&#x5982;&#x679C;&#x628A;&#x6570;&#x636E;&#x6A21;&#x578B;&#x548C;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x4F20;&#x9012;&#x7ED9;&#x7EC4;&#x4EF6;&#x5185;&#x90E8;</span></code></pre></div>
+<h2 id="input&#x7EC4;&#x4EF6;">input&#x7EC4;&#x4EF6;</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="fl">1.</span>&#x53CC;&#x5411;&#x7ED1;&#x5B9A; <span class="op">:</span>value<span class="op">=</span><span class="st">&quot;form.name&quot;</span> @input<span class="op">=</span><span class="st">&quot;form.name = e.target.value&quot;</span> </span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fl">2.</span>&#x544A;&#x8BC9;form<span class="op">-</span>item &#x6821;&#x9A8C;</span></code></pre></div>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="co">//&#x7528;&#x7EC4;&#x4EF6;&#x7684;index.vue &#x6587;&#x4EF6;</span></span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="op">&lt;</span>el<span class="op">-</span>card <span class="kw">class</span><span class="op">=</span><span class="st">&quot;card&quot;</span><span class="op">&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a>        <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a>           <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a>               <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a>                  <span class="co">//&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7528;&#x4E86;v-model &#x53CC;&#x5411;&#x7ED1;&#x5B9A; &#x5176;&#x5B9E;&#x5C31;&#x662F;&#x8BED;&#x6CD5;&#x7CD6; &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;input&#x7EC4;&#x4EF6;&#x91CC; &#x8981;&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x7ED1;&#x5B9A; &#x6211;&#x4EEC;&#x5728;input&#x7EC4;&#x4EF6;&#x91CC; &#x6539;&#x53D8;&#x7684;&#x503C; &#x8981;&#x8FD4;&#x56DE;&#x7ED9;&#x7236;&#x7EC4;&#x4EF6; &#x7236;&#x7EC4;&#x4EF6;&#x5F97;&#x5230;&#x4E86;&#x8FD9;&#x4E2A;&#x503C; &#x5C31;&#x8981;&#x4FEE;&#x6539;&#x81EA;&#x5DF1;&#x7684;&#x503C;    </span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>                   <span class="op">&lt;</span>wz<span class="op">-</span>input v<span class="op">-</span>model<span class="op">=</span><span class="st">&quot;form.name&quot;</span><span class="op">&gt;&lt;/</span>wz<span class="op">-</span>input<span class="op">&gt;</span></span>
+<span id="cb11-9"><a href="#cb11-9"></a>               <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>               <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>                   <span class="op">&lt;</span>wz<span class="op">-</span>input<span class="op">&gt;&lt;/</span>wz<span class="op">-</span>input<span class="op">&gt;</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a>               <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a>           <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">&gt;</span></span>
+<span id="cb11-14"><a href="#cb11-14"></a>        <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>    <span class="op">&lt;/</span>el<span class="op">-</span>card<span class="op">&gt;</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span>
+<span id="cb11-17"><a href="#cb11-17"></a></span>
+<span id="cb11-18"><a href="#cb11-18"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb11-19"><a href="#cb11-19"></a><span class="im">import</span> wzForm <span class="im">from</span> <span class="st">&apos;./form&apos;</span></span>
+<span id="cb11-20"><a href="#cb11-20"></a><span class="im">import</span> wzFormItem <span class="im">from</span> <span class="st">&apos;./formItem&apos;</span></span>
+<span id="cb11-21"><a href="#cb11-21"></a><span class="im">import</span> wzInput <span class="im">from</span> <span class="st">&apos;./input&apos;</span></span>
+<span id="cb11-22"><a href="#cb11-22"></a><span class="im">export</span> <span class="im">default</span> {</span>
+<span id="cb11-23"><a href="#cb11-23"></a>  <span class="dt">components</span><span class="op">:</span> {</span>
+<span id="cb11-24"><a href="#cb11-24"></a>    wzForm<span class="op">,</span></span>
+<span id="cb11-25"><a href="#cb11-25"></a>    wzFormItem<span class="op">,</span></span>
+<span id="cb11-26"><a href="#cb11-26"></a>    wzInput</span>
+<span id="cb11-27"><a href="#cb11-27"></a>  }<span class="op">,</span></span>
+<span id="cb11-28"><a href="#cb11-28"></a>  data () {</span>
+<span id="cb11-29"><a href="#cb11-29"></a>    <span class="cf">return</span> {</span>
+<span id="cb11-30"><a href="#cb11-30"></a>      <span class="dt">form</span><span class="op">:</span> {</span>
+<span id="cb11-31"><a href="#cb11-31"></a>        <span class="dt">name</span><span class="op">:</span> <span class="st">&apos;&apos;</span></span>
+<span id="cb11-32"><a href="#cb11-32"></a>      }</span>
+<span id="cb11-33"><a href="#cb11-33"></a>    }</span>
+<span id="cb11-34"><a href="#cb11-34"></a>  }</span>
+<span id="cb11-35"><a href="#cb11-35"></a>}</span>
+<span id="cb11-36"><a href="#cb11-36"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="co">//input&#x7EC4;&#x4EF6; &#x6587;&#x4EF6;</span></span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb12-3"><a href="#cb12-3"></a>  <span class="op">&lt;</span>input <span class="op">:</span>value<span class="op">=</span><span class="st">&quot;value&quot;</span> @input<span class="op">=</span><span class="st">&quot;onInput&quot;</span> type<span class="op">=</span><span class="st">&quot;text&quot;</span><span class="op">&gt;</span></span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span>
+<span id="cb12-5"><a href="#cb12-5"></a></span>
+<span id="cb12-6"><a href="#cb12-6"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb12-7"><a href="#cb12-7"></a><span class="im">export</span> <span class="im">default</span> {</span>
+<span id="cb12-8"><a href="#cb12-8"></a><span class="co">//&#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x63A5;&#x6536;&#x4E86;&#x521A;&#x521A;index.vue&#x7ED9;&#x6211;&#x4EEC;&#x4F20;&#x8FC7;&#x6765;&#x7684;&#x503C; </span></span>
+<span id="cb12-9"><a href="#cb12-9"></a>  <span class="dt">props</span><span class="op">:</span> {</span>
+<span id="cb12-10"><a href="#cb12-10"></a>    <span class="dt">value</span><span class="op">:</span> {</span>
+<span id="cb12-11"><a href="#cb12-11"></a>      <span class="dt">type</span><span class="op">:</span> <span class="bu">String</span><span class="op">,</span></span>
+<span id="cb12-12"><a href="#cb12-12"></a>      <span class="cf">default</span><span class="op">:</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb12-13"><a href="#cb12-13"></a>        <span class="cf">return</span> <span class="st">&apos;&apos;</span></span>
+<span id="cb12-14"><a href="#cb12-14"></a>      }</span>
+<span id="cb12-15"><a href="#cb12-15"></a>    }</span>
+<span id="cb12-16"><a href="#cb12-16"></a>  }<span class="op">,</span></span>
+<span id="cb12-17"><a href="#cb12-17"></a>  <span class="dt">methods</span><span class="op">:</span> {</span>
+<span id="cb12-18"><a href="#cb12-18"></a>    <span class="co">//&#x5F53;&#x6211;&#x4FEE;&#x6539;&#x7684;&#x65F6;&#x5019; &#x4F1A;&#x89E6;&#x53D1;input&#x4E8B;&#x4EF6; &#x7136;&#x540E;&#x628A;&#x503C;&#x4F20;&#x5230;&#x7236;&#x7EC4;&#x4EF6; &#x7236;&#x7EC4;&#x4EF6;&#x7136;&#x540E;&#x7ED9;&#x81EA;&#x5DF1;&#x7684;&#x503C;&#x8D4B;&#x503C;  </span></span>
+<span id="cb12-19"><a href="#cb12-19"></a>    onInput (e) {</span>
+<span id="cb12-20"><a href="#cb12-20"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">$emit</span>(<span class="st">&apos;input&apos;</span><span class="op">,</span> e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)</span>
+<span id="cb12-21"><a href="#cb12-21"></a>    }</span>
+<span id="cb12-22"><a href="#cb12-22"></a>  }</span>
+<span id="cb12-23"><a href="#cb12-23"></a>}</span>
+<span id="cb12-24"><a href="#cb12-24"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a>&#x5982;&#x4E0B;&#x56FE;&#x6240;&#x793A; &#x6211;&#x4EEC;&#x5728;&#x6211;&#x4EEC;&#x7684;input&#x7EC4;&#x4EF6;&#x91CC;&#x8F93;&#x5165;&#x503C;&#x4E86; &#x7136;&#x540E;index<span class="op">.</span><span class="at">vue</span> &#x6211;&#x4EEC;&#x7684;&#x8868;&#x5355;&#x7684;&#x503C; &#x4E5F;&#x8DDF;&#x7740;&#x6539;&#x53D8;&#x4E86;</span></code></pre></div>
+<p><img src="/zh-CN/383rll78/&#x7B14;&#x8BB0;\&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;\2.gif"></p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a><span class="fl">1.</span>&#x6709;&#x7684;&#x65F6;&#x5019; &#x6211;&#x4EEC;&#x8868;&#x5355; &#x4F1A;&#x6709;&#x4E00;&#x4E9B;&#x81EA;&#x5E26;&#x7684;&#x5C5E;&#x6027; &#x6BD4;&#x5982;input&#x7684; type  placeholder </span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fl">2.</span>&#x8FD9;&#x4E2A;&#x65F6;&#x5019;&#x6211;&#x4EEC;&#x5E0C;&#x671B;&#x5916;&#x90E8;&#x76F4;&#x63A5;&#x5C31;&#x5199;&#x5165;&#x4E0D;&#x7528;&#x6211;&#x4EEC;&#x5728;&#x53BB;&#x4F20;&#x503C;</span>
+<span id="cb14-3"><a href="#cb14-3"></a><span class="fl">3.</span>&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x65F6;&#x5019; &#x5C31;&#x5229;&#x7528;&#x4E86;v<span class="op">-</span>bind<span class="op">=</span><span class="st">&quot;$attrs&quot;</span></span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">//index.vue &#x6587;&#x4EF6;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="op">&lt;</span>el<span class="op">-</span>card <span class="kw">class</span><span class="op">=</span><span class="st">&quot;card&quot;</span><span class="op">&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4"></a>        <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb15-5"><a href="#cb15-5"></a>           <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">&gt;</span></span>
+<span id="cb15-6"><a href="#cb15-6"></a>               <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>                   <span class="co">//&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7684;input&#x672C;&#x8EAB;&#x5C31;placeholder&#x5C5E;&#x6027; &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;input&#x7EC4;&#x4EF6;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x9700;&#x8981;&#x7528; v-bind=&quot;attrs&quot;  </span></span>
+<span id="cb15-8"><a href="#cb15-8"></a>                   <span class="op">&lt;</span>wz<span class="op">-</span>input v<span class="op">-</span>model<span class="op">=</span><span class="st">&quot;form.name&quot;</span> autocomplete<span class="op">=</span><span class="st">&quot;off&quot;</span> placeholder<span class="op">=</span><span class="st">&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x79F0;&quot;</span><span class="op">&gt;&lt;/</span>wz<span class="op">-</span>input<span class="op">&gt;</span></span>
+<span id="cb15-9"><a href="#cb15-9"></a>               <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb15-10"><a href="#cb15-10"></a>               <span class="op">&lt;</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>                   <span class="op">&lt;</span>wz<span class="op">-</span>input  v<span class="op">-</span>model<span class="op">=</span><span class="st">&quot;form.password&quot;</span> autocomplete<span class="op">=</span><span class="st">&quot;off&quot;</span> placeholder<span class="op">=</span><span class="st">&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&quot;</span> type<span class="op">=</span><span class="st">&quot;password&quot;</span><span class="op">&gt;&lt;/</span>wz<span class="op">-</span>input<span class="op">&gt;</span></span>
+<span id="cb15-12"><a href="#cb15-12"></a>               <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">-</span>item<span class="op">&gt;</span></span>
+<span id="cb15-13"><a href="#cb15-13"></a>           <span class="op">&lt;/</span>wz<span class="op">-</span>form<span class="op">&gt;</span></span>
+<span id="cb15-14"><a href="#cb15-14"></a>        <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb15-15"><a href="#cb15-15"></a>    <span class="op">&lt;/</span>el<span class="op">-</span>card<span class="op">&gt;</span></span>
+<span id="cb15-16"><a href="#cb15-16"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span>
+<span id="cb15-17"><a href="#cb15-17"></a></span>
+<span id="cb15-18"><a href="#cb15-18"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb15-19"><a href="#cb15-19"></a><span class="im">import</span> wzForm <span class="im">from</span> <span class="st">&apos;./form&apos;</span></span>
+<span id="cb15-20"><a href="#cb15-20"></a><span class="im">import</span> wzFormItem <span class="im">from</span> <span class="st">&apos;./formItem&apos;</span></span>
+<span id="cb15-21"><a href="#cb15-21"></a><span class="im">import</span> wzInput <span class="im">from</span> <span class="st">&apos;./input&apos;</span></span>
+<span id="cb15-22"><a href="#cb15-22"></a><span class="im">export</span> <span class="im">default</span> {</span>
+<span id="cb15-23"><a href="#cb15-23"></a>  <span class="dt">components</span><span class="op">:</span> {</span>
+<span id="cb15-24"><a href="#cb15-24"></a>    wzForm<span class="op">,</span></span>
+<span id="cb15-25"><a href="#cb15-25"></a>    wzFormItem<span class="op">,</span></span>
+<span id="cb15-26"><a href="#cb15-26"></a>    wzInput</span>
+<span id="cb15-27"><a href="#cb15-27"></a>  }<span class="op">,</span></span>
+<span id="cb15-28"><a href="#cb15-28"></a>  data () {</span>
+<span id="cb15-29"><a href="#cb15-29"></a>    <span class="cf">return</span> {</span>
+<span id="cb15-30"><a href="#cb15-30"></a>      <span class="dt">form</span><span class="op">:</span> {</span>
+<span id="cb15-31"><a href="#cb15-31"></a>        <span class="dt">name</span><span class="op">:</span> <span class="st">&apos;&apos;</span><span class="op">,</span></span>
+<span id="cb15-32"><a href="#cb15-32"></a>        <span class="dt">password</span><span class="op">:</span> <span class="st">&apos;&apos;</span></span>
+<span id="cb15-33"><a href="#cb15-33"></a>      }</span>
+<span id="cb15-34"><a href="#cb15-34"></a>    }</span>
+<span id="cb15-35"><a href="#cb15-35"></a>  }</span>
+<span id="cb15-36"><a href="#cb15-36"></a>}</span>
+<span id="cb15-37"><a href="#cb15-37"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span>
+<span id="cb15-38"><a href="#cb15-38"></a><span class="co">//input&#x7EC4;&#x4EF6; &#x6587;&#x4EF6;</span></span>
+<span id="cb15-39"><a href="#cb15-39"></a><span class="op">&lt;</span>template<span class="op">&gt;</span></span>
+<span id="cb15-40"><a href="#cb15-40"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
+<span id="cb15-41"><a href="#cb15-41"></a>        <span class="op">&lt;</span>input <span class="op">:</span>value<span class="op">=</span><span class="st">&quot;value&quot;</span> v<span class="op">-</span>bind<span class="op">=</span><span class="st">&quot;$attrs&quot;</span> @input<span class="op">=</span><span class="st">&quot;onInput&quot;</span><span class="op">&gt;</span></span>
+<span id="cb15-42"><a href="#cb15-42"></a>    <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
+<span id="cb15-43"><a href="#cb15-43"></a></span>
+<span id="cb15-44"><a href="#cb15-44"></a><span class="op">&lt;/</span>template<span class="op">&gt;</span></span>
+<span id="cb15-45"><a href="#cb15-45"></a></span>
+<span id="cb15-46"><a href="#cb15-46"></a><span class="op">&lt;</span>script<span class="op">&gt;</span></span>
+<span id="cb15-47"><a href="#cb15-47"></a><span class="im">export</span> <span class="im">default</span> {</span>
+<span id="cb15-48"><a href="#cb15-48"></a>  <span class="dt">inheritAttrs</span><span class="op">:</span> <span class="kw">false</span><span class="op">,</span></span>
+<span id="cb15-49"><a href="#cb15-49"></a>  <span class="dt">props</span><span class="op">:</span> {</span>
+<span id="cb15-50"><a href="#cb15-50"></a>    <span class="dt">value</span><span class="op">:</span> {</span>
+<span id="cb15-51"><a href="#cb15-51"></a>      <span class="dt">type</span><span class="op">:</span> <span class="bu">String</span><span class="op">,</span></span>
+<span id="cb15-52"><a href="#cb15-52"></a>      <span class="cf">default</span><span class="op">:</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb15-53"><a href="#cb15-53"></a>        <span class="cf">return</span> <span class="st">&apos;&apos;</span></span>
+<span id="cb15-54"><a href="#cb15-54"></a>      }</span>
+<span id="cb15-55"><a href="#cb15-55"></a>    }</span>
+<span id="cb15-56"><a href="#cb15-56"></a>  }<span class="op">,</span></span>
+<span id="cb15-57"><a href="#cb15-57"></a>  <span class="dt">methods</span><span class="op">:</span> {</span>
+<span id="cb15-58"><a href="#cb15-58"></a>    onInput (e) {</span>
+<span id="cb15-59"><a href="#cb15-59"></a>      <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(e)</span>
+<span id="cb15-60"><a href="#cb15-60"></a>      <span class="kw">this</span><span class="op">.</span><span class="fu">$emit</span>(<span class="st">&apos;input&apos;</span><span class="op">,</span> e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span>)</span>
+<span id="cb15-61"><a href="#cb15-61"></a>    }</span>
+<span id="cb15-62"><a href="#cb15-62"></a>  }</span>
+<span id="cb15-63"><a href="#cb15-63"></a>}</span>
+<span id="cb15-64"><a href="#cb15-64"></a><span class="op">&lt;/</span>script<span class="op">&gt;</span></span></code></pre></div>
+<h2 id="form-item&#x7EC4;&#x4EF6;">form-item&#x7EC4;&#x4EF6;</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a><span class="fl">1.</span>&#x7ED9;input &#x9884;&#x7559;&#x63D2;&#x69FD; <span class="op">-</span>slot</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fl">2.</span>&#x53EF;&#x4EE5;&#x5C55;&#x793A;label &#x548C;&#x6821;&#x9A8C;&#x540E;&#x7684;&#x7ED3;&#x679C;</span>
+<span id="cb16-3"><a href="#cb16-3"></a><span class="fl">3.</span>&#x80FD;&#x591F; &#x8FDB;&#x884C; &#x6821;&#x9A8C;</span></code></pre></div>
+<pre class="vue"><code>&lt;!--form-item &#x7EC4;&#x4EF6; &#x6587;&#x4EF6; --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+      &lt;!-- &#x8FD9;&#x91CC;&#x4F60;&#x53EF;&#x80FD;&#x7ED9;&#x7ED9;&#x6211;&#x4F20;&#x8FDB;&#x6765;&#x4E86;label &#x4E5F;&#x53EF;&#x80FD;&#x4F20; &#x6240;&#x4EE5;&#x6211;&#x8981;&#x5224;&#x65AD;&#x4E00;&#x4E0B; --&gt;
+      &lt;label v-if=&quot;label&quot;&gt;&lt;/label&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+      &lt;!-- &#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#x7684;&#x5C55;&#x793A; --&gt;
+      &lt;p v-if=&quot;errorMessage&quot;&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  props: {
+    // &#x5916;&#x90E8;&#x7ED9;&#x6211;&#x4F20;&#x8FDB;&#x6765;&#x7684;label
+    label: {
+      type: String,
+      default: &apos;&apos;
+    },
+    // &#x6211;&#x8981;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5; &#x4E5F;&#x5C31;&#x662F;&#x8BF4; &#x6211;&#x8981;&#x6821;&#x9A8C;&#x4F60;&#x7684;&#x54EA;&#x6761;&#x89C4;&#x5219;
+    prop: {
+      type: String
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<h2 id="&#x6821;&#x9A8C;">&#x6821;&#x9A8C;</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="fl">1.</span>&#x6821;&#x9A8C;&#x7684;&#x89E6;&#x53D1;&#x65F6;&#x673A; &#x662F;&#x6211;&#x4EEC;&#x7684;input&#x7EC4;&#x4EF6; &#x51FA;&#x5165;&#x5B8C;&#x6BD5;&#x4E4B;&#x540E; &#x6216;&#x8005; &#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x65F6;&#x5019;&#x53BB;&#x6821;&#x9A8C;&#x7684;</span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="fl">2.</span>&#x8FD9;&#x91CC;&#x6821;&#x9A8C;&#x7684;&#x5B8C;&#x6210; &#x662F;&#x5728;form<span class="op">-</span>item&#x91CC;&#x7EC4;&#x4EF6;&#x91CC;&#x5B8C;&#x6210;&#x7684; </span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="fl">3.</span>&#x6821;&#x9A8C;&#x7684;&#x89C4;&#x5219;&#x548C;&#x6570;&#x636E;&#x6A21;&#x578B;&#x662F;&#x6211;&#x4EEC;&#x5728;index<span class="op">.</span><span class="at">vue&#x6587;&#x4EF6;&#x91CC;</span> &#x4F20;&#x9012;&#x7ED9;&#x6211;&#x4EEC;&#x7684;form&#x7EC4;&#x4EF6;&#x7684; &#x6240;&#x4EE5;&#x5728;&#x8FD9;&#x91CC; &#x6211;&#x4EEC;&#x4E3A;&#x4E86;form<span class="op">-</span>item&#x7EC4;&#x4EF6;&#x80FD;&#x62FF;&#x5230;&#x6821;&#x9A8C;&#x6A21;&#x578B;&#x548C;&#x89C4;&#x5219; &#x6240;&#x4EE5;form&#x7EC4;&#x4EF6;&#x5728;&#x63A5;&#x6536;&#x5230;index<span class="op">.</span><span class="at">vue&#x6587;&#x4EF6;&#x4F20;&#x9012;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x6821;&#x9A8C;&#x6A21;&#x578B;&#x548C;&#x89C4;&#x5219;</span> &#x9700;&#x8981;&#x628A;&#x4ED6;&#x66B4;&#x9732;&#x51FA;&#x53BB; &#x8FD9;&#x6837;form<span class="op">-</span>item&#x7EC4;&#x4EF6;&#x5C31;&#x53EF;&#x4EE5;&#x62FF;&#x5230;&#x6211;&#x4EEC;&#x7684;&#x6821;&#x9A8C;&#x6A21;&#x578B; &#x548C;&#x89C4;&#x5219;</span>
+<span id="cb18-4"><a href="#cb18-4"></a><span class="fl">4.</span>&#x6821;&#x9A8C; &#x6211;&#x4EEC;&#x501F;&#x52A9;&#x4E86;&#x7B2C;&#x4E09;&#x65B9;&#x5E93;&#x53BB;&#x5B8C;&#x6210; <span class="kw">async</span><span class="op">-</span>validator&#x8FD9;&#x4E2A;&#x5E93;</span></code></pre></div>
+<pre class="vue"><code>&lt;!-- &#x9996;&#x5148;&#x5728;index.vue&#x6587;&#x4EF6;&#x91CC; &#x6211;&#x4EEC;&#x7ED9;&#x6211;&#x4EEC;&#x7684;form&#x7EC4;&#x4EF6; &#x4F20;&#x5165;&#x4E86; &#x6821;&#x9A8C;&#x6A21;&#x578B; &#x548C;&#x6821;&#x9A8C;&#x89C4;&#x5219; --&gt;
+&lt;template&gt;
+    &lt;el-card class=&quot;card&quot;&gt;
+        &lt;div&gt;
+           &lt;!--&#x8FD9;&#x91CC;&#x4EEC;&#x628A;&#x6211;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;form &#x548C; &#x6821;&#x9A8C;&#x89C4;&#x5219; rules &#x90FD;&#x4F20;&#x7ED9;&#x4E86;&#x6211;&#x4EEC;&#x7684;form&#x7EC4;&#x4EF6;--&gt;
+           &lt;wz-form :model=&quot;form&quot; :rules=&quot;rules&quot;&gt;
+               &lt;wz-form-item label=&quot;&#x7528;&#x6237;&#x540D;&#x79F0;&quot;&gt;
+                   &lt;wz-input v-model=&quot;form.name&quot; autocomplete=&quot;off&quot; placeholder=&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x79F0;&quot;&gt;&lt;/wz-input&gt;
+               &lt;/wz-form-item&gt;
+               &lt;wz-form-item label=&quot;&#x7528;&#x6237;&#x5BC6;&#x7801;&quot;&gt;
+                   &lt;wz-input  v-model=&quot;form.password&quot; autocomplete=&quot;off&quot; placeholder=&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&quot; type=&quot;password&quot;&gt;&lt;/wz-input&gt;
+               &lt;/wz-form-item&gt;
+           &lt;/wz-form&gt;
+        &lt;/div&gt;
+    &lt;/el-card&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import wzForm from &apos;./form&apos;
+import wzFormItem from &apos;./formItem&apos;
+import wzInput from &apos;./input&apos;
+export default {
+  components: {
+    wzForm,
+    wzFormItem,
+    wzInput
+  },
+  data () {
+    return {
+      //&#x6821;&#x9A8C;&#x6A21;&#x578B;   &#x4F20;&#x7ED9;form&#x7EC4;&#x4EF6;
+      form: {
+        name: &apos;&apos;,
+        password: &apos;&apos;
+      },
+      //&#x6653;&#x71D5;&#x89C4;&#x5219; &#x4F20;&#x7ED9;form&#x7EC4;&#x4EF6;  
+      rules: {
+        name: [{ required: true, message: &apos;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&apos; }],
+        password: [{ required: true, message: &apos;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x5BC6;&#x7801;&apos; }]
+      }
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+<pre class="vue"><code>&lt;!-- form&#x7EC4;&#x4EF6;&#x91CC; &#x63A5;&#x6536;index.vue&#x4F20;&#x8FDB;&#x6765;&#x7684; &#x6821;&#x9A8C;&#x6A21;&#x578B; &#x548C;&#x6821;&#x9A8C;&#x89C4;&#x5219; &#x7136;&#x540E;&#x628A;&#x81EA;&#x5DF1;&#x66B4;&#x9732;&#x51FA;&#x53BB; &#x65B9;&#x4FBF;form-item&#x7EC4;&#x4EF6;&#x4E5F;&#x80FD;&#x62FF;&#x5230; --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  // &#x63A5;&#x6536;&#x4E86;index.vue&#x7EC4;&#x4EF6;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x6821;&#x9A8C;&#x6A21;&#x578B; &#x548C; &#x6821;&#x9A8C;&#x89C4;&#x5219;
+  props: {
+    model: {
+      type: Object
+    },
+    rules: {
+      type: Object
+    }
+  },
+  // &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;form-item&#x7EC4;&#x4EF6;&#x4E5F;&#x80FD;&#x62FF;&#x5230;&#x6821;&#x9A8C;&#x89C4;&#x5219; &#x548C; &#x6821;&#x9A8C;&#x6A21;&#x578B; &#x6211;&#x4EEC;&#x5C31;&#x8981;&#x628A;&#x4ED6;&#x66B4;&#x9732;&#x51FA;&#x53BB;
+  provide () {
+    return {
+      form: this
+    }
+  }
+}
+&lt;/script&gt;
+
+&lt;style&gt;
+
+&lt;/style&gt;
+</code></pre>
+<pre class="vue"><code>&lt;!-- &#x5728;form-item &#x7EC4;&#x4EF6;&#x91CC; &#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x62FF;&#x5230;&#x4E86;&#x6821;&#x9A8C;&#x89C4;&#x5219; &#x548C;&#x6821;&#x9A8C;&#x89C4;&#x5219;--&gt;
+&lt;template&gt;
+  &lt;div&gt;
+      &lt;label v-if=&quot;label&quot;&gt;&lt;/label&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+      &lt;!-- &#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#x7684;&#x5C55;&#x793A; --&gt;
+      &lt;p v-if=&quot;errorMessage&quot;&gt;&lt;/p&gt;
+      
+      
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  // &#x7531;&#x4E8E;form&#x7EC4;&#x4EF6;&#x66B4;&#x9732;&#x4E86;&#x81EA;&#x5DF1; &#x6240;&#x4EE5; &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x80FD;&#x62FF;&#x5230;&#x4ED6;&#x7EC4;&#x4EF6;&#x5185;&#x6240;&#x6709;&#x6570;&#x636E;
+  inject: [&apos;form&apos;],
+  props: {
+    // &#x5916;&#x90E8;&#x7ED9;&#x6211;&#x4F20;&#x8FDB;&#x6765;&#x7684;label
+    label: {
+      type: String,
+      default: &apos;&apos;
+    },
+    // &#x6211;&#x8981;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5; &#x4E5F;&#x5C31;&#x662F;&#x8BF4; &#x6211;&#x8981;&#x6821;&#x9A8C;&#x4F60;&#x7684;&#x54EA;&#x6761;&#x89C4;&#x5219;
+    prop: {
+      type: String
+    }
+  },
+  data () {
+    return {
+      errorMessage: &apos;&apos;
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+<figure>
+<img src="/zh-CN/383rll78/&#x7B14;&#x8BB0;\&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;\2.png" alt><figcaption>form-item&#x7EC4;&#x4EF6;&#x91CC;&#x62FF;&#x5230;&#x4E86;form&#x91CC;&#x66B4;&#x9732;&#x51FA;&#x6765;&#x7684;</figcaption>
+</figure>
+<h2 id="&#x89E6;&#x53D1;&#x6821;&#x9A8C;">&#x89E6;&#x53D1;&#x6821;&#x9A8C;</h2>
+<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a><span class="fl">1.</span>&#x4EE5;&#x4E0A;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x53EF;&#x4EE5;&#x5728; form<span class="op">-</span>item &#x7EC4;&#x4EF6;&#x91CC; &#x62FF;&#x5230;&#x4E86;&#x6821;&#x9A8C;&#x6A21;&#x578B; &#x548C;&#x6821;&#x9A8C;&#x89C4;&#x5219;</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="fl">2.</span>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x5728;input&#x7EC4;&#x4EF6;&#x5C31;&#x8981;&#x89E6;&#x53D1;&#x6821;&#x9A8C;</span>
+<span id="cb22-3"><a href="#cb22-3"></a><span class="fl">3.</span>form<span class="op">-</span>item&#x7EC4;&#x4EF6;&#x91CC; &#x73B0;&#x5728;&#x80FD;&#x62FF;&#x5230;&#x6821;&#x9A8C;&#x89C4;&#x5219; &#x548C; &#x6821;&#x9A8C;&#x6A21;&#x578B; &#x5B8C;&#x6210;&#x6821;&#x9A8C;</span></code></pre></div>
+<pre class="vue"><code>&lt;!--input &#x7EC4;&#x4EF6; &#x53BB;&#x89E6;&#x53D1;&#x6821;&#x9A8C; &#x7136;&#x540E;&#x8BA9;&#x6211;&#x7684;&#x7238;&#x7238; &#x4E5F;&#x5C31;&#x662F;form-item&#x7EC4;&#x4EF6; &#x53BB;&#x5B8C;&#x6210;&#x6821;&#x9A8C;--&gt;
+&lt;template&gt;
+    &lt;div&gt;
+        &lt;input :value=&quot;value&quot; v-bind=&quot;$attrs&quot; @input=&quot;onInput&quot; @blur=&quot;validate&quot;&gt;
+    &lt;/div&gt;
+
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  inheritAttrs: false,
+  props: {
+    value: {
+      type: String,
+      default: () =&gt; {
+        return &apos;&apos;
+      }
+    }
+  },
+  methods: {
+    onInput (e) {
+      console.log(e)
+      this.$emit(&apos;input&apos;, e.target.value)
+    },
+    // &#x8FD9;&#x91CC; &#x5F53;&#x6211;&#x4EEC;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x65F6;&#x5019; &#x53BB;&#x89E6;&#x53D1;&#x6821;&#x9A8C;&#x7684;&#x51FD;&#x6570;
+    validate () {
+      // &#x8FD9;&#x91CC; &#x56E0;&#x4E3A;&#x662F;form-item&#x7EC4;&#x4EF6; &#x53BB;&#x5B8C;&#x6210;&#x6821;&#x9A8C; &#x6240;&#x4EE5;input&#x7EC4;&#x4EF6; &#x53EA;&#x8981;&#x5931;&#x53BB;&#x7126;&#x70B9;&#x7684;&#x65F6;&#x5019; &#x5C31;&#x8BA9;&#x6211;&#x7684;&#x7238;&#x7238; &#x4E5F;&#x5C31;&#x662F;form-item &#x53BB;&#x5B8C;&#x6210;&#x6821;&#x9A8C;
+      this.$parent.$emit(&apos;validate&apos;)
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+<pre class="vue"><code>&lt;!-- input&#x7EC4;&#x4EF6;&#x89E6;&#x53D1;&#x4E86;&#x6821;&#x9A8C; &#x7136;&#x540E;&#x6211;&#x4EEC;&#x7684;form-item &#x7EC4;&#x4EF6; &#x5B8C;&#x6210;&#x6821;&#x9A8C; &#x5728;mounted&#x91CC;&#x89E6;&#x53D1; --&gt;
+&lt;template&gt;
+  &lt;div&gt;
+      &lt;label v-if=&quot;label&quot;&gt;&lt;/label&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+      &lt;!-- &#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#x7684;&#x5C55;&#x793A; --&gt;
+      &lt;p v-if=&quot;errorMessage&quot;&gt;&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+// &#x5F15;&#x5165;&#x4E86;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x6821;&#x9A8C;&#x5E93;
+import Schema from &apos;async-validator&apos;
+export default {
+  // &#x7531;&#x4E8E;form&#x7EC4;&#x4EF6;&#x66B4;&#x9732;&#x4E86;&#x81EA;&#x5DF1; &#x6240;&#x4EE5; &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x80FD;&#x62FF;&#x5230;&#x4ED6;&#x7EC4;&#x4EF6;&#x5185;&#x6240;&#x6709;&#x6570;&#x636E;
+  inject: [&apos;form&apos;],
+  props: {
+    // &#x5916;&#x90E8;&#x7ED9;&#x6211;&#x4F20;&#x8FDB;&#x6765;&#x7684;label
+    label: {
+      type: String,
+      default: &apos;&apos;
+    },
+    // &#x6211;&#x8981;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5; &#x4E5F;&#x5C31;&#x662F;&#x8BF4; &#x6211;&#x8981;&#x6821;&#x9A8C;&#x4F60;&#x7684;&#x54EA;&#x6761;&#x89C4;&#x5219;
+    prop: {
+      type: String
+    }
+  },
+  mounted () {
+    // &#x8FD9;&#x91CC;input&#x7EC4;&#x4EF6;&#x53BB;&#x89E6;&#x53D1;&#x6821;&#x9A8C;  &#x7136;&#x540E;  form-item &#x76D1;&#x542C;&#x4E86;&#x8FD9;&#x4E2A;&#x89E6;&#x53D1;&#x7684;&#x4E8B;&#x4EF6; &#x53BB;&#x5B8C;&#x6210;&#x6821;&#x9A8C;
+    this.$on(&apos;validate&apos;, this.validate)
+  },
+  methods: {
+    validate () {
+      // &#x8FD9;&#x91CC;&#x7684;form.model &#x5C31;&#x662F;  &#x4ECE;index.vue&#x4F20;&#x8FDB;&#x6765;form &#x7136;&#x540E;&#x6211;&#x4EEC;&#x6709;&#x7ED9;&#x6BCF;&#x4E2A;form-item&#x7EC4;&#x4EF6;&#x4F20;&#x4E86;&#x4E00;&#x4E2A;prop &#x9700;&#x8981;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5; &#x8FD9;&#x6837;&#x6211;&#x5C31;&#x80FD;&#x62FF;&#x5230;&#x5F53;&#x524D;&#x7684;&#x503C; &#x56E0;&#x4E3A;&#x4F60;&#x7684;form&#x6570;&#x636E;&#x662F;&#x53CC;&#x5411;&#x7ED1;&#x5B9A;
+      const value = this.form.model[this.prop]
+      // &#x8FD9;&#x91CC;&#x5C31;&#x62FF;&#x5230;&#x4E86; &#x4F60;&#x5F53;&#x524D;&#x5B57;&#x6BB5;&#x7684;&#x6821;&#x9A8C;&#x89C4;&#x5219;
+      const rules = this.form.rules[this.prop]
+      // &#x5F00;&#x59CB;&#x6653;&#x71D5; &#x8FD9;&#x91CC;&#x4F7F;&#x7528;&#x4E86;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5E93; async-validator &#x53BB;&#x505A;&#x7684;&#x6821;&#x9A8C; &#x6240;&#x4EE5;&#x9700;&#x8981;&#x5B89;&#x88C5;&#x4E00;&#x4E0B;
+      // &#x7136;&#x540E;&#x5B9A;&#x4E49;&#x6821;&#x9A8C;&#x5BF9;&#x8C61;&#x548C;&#x89C4;&#x5219;
+      const desc = { [this.prop]: rules }
+      // &#x5F00;&#x59CB;&#x6821;&#x9A8C; &#x628A;&#x6211;&#x4EEC;&#x7684;&#x89C4;&#x5219;&#x4F20;&#x8FDB;&#x53BB;
+      const schema = new Schema(desc)
+      // &#x8FD9;&#x91CC;&#x662F; &#x4F60;&#x8981;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5;&#x7684;&#x503C; &#x8981;&#x7ECF;&#x8FC7;&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x4E9B;&#x7684;&#x6821;&#x9A8C;&#x89C4;&#x5219;&#x53BB;&#x9A8C;&#x8BC1; 
+      // &#x8FD9;&#x91CC; schema&#x5BF9;&#x8C61;&#x8FD4;&#x56DE;&#x7684;&#x4E00;&#x4E2A;Promise&#x7684;&#x5BF9;&#x8C61;&#x6570;&#x7EC4;(promise &#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;)
+      return schema.validate({ [this.prop]: value }, err =&gt; {
+        //&#x8FD9;&#x91CC;&#x5224;&#x65AD;&#x4E00;&#x4E0B;&#x5982;&#x679C;&#x6821;&#x9A8C;&#x4E0D;&#x901A;&#x8FC7;&#x5C31;&#x4F1A;&#x8981;&#x9519;&#x8BEF;&#x4FE1;&#x606F; &#x7136;&#x540E;&#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x663E;&#x793A;&#x51FA;&#x6765;  
+        if (err) {
+          this.errorMessage = err[0].message
+        } else {
+          this.errorMessage = &apos;&apos;
+        }
+      })
+    }
+  },
+  data () {
+    return {
+      errorMessage: &apos;&apos;
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+<figure>
+<img src="/zh-CN/383rll78/&#x7B14;&#x8BB0;\&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;\3.gif" alt><figcaption>&#x6821;&#x9A8C;&#x6548;&#x679C;</figcaption>
+</figure>
+<h2 id="&#x5168;&#x5C40;&#x6821;&#x9A8C;">&#x5168;&#x5C40;&#x6821;&#x9A8C;</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="fl">1.</span>&#x521A;&#x521A;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5199;&#x597D;&#x4E86;&#x5355;&#x9879;&#x7684;&#x6821;&#x9A8C; &#x8FD9;&#x4E2A;&#x65F6;&#x5019; &#x6821;&#x9A8C;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;Promise&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4; </span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fl">2.</span>&#x8FD9;&#x4E2A;&#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C; &#x6211;&#x4EEC;&#x7684;form&#x7EC4;&#x4EF6;&#x662F;&#x5173;&#x5FC3;&#x7684; &#x56E0;&#x4E3A;&#x6211;&#x4EEC;&#x5728;&#x6700;&#x5916;&#x5C42;&#x7684;index<span class="op">.</span><span class="at">vue&#x6587;&#x4EF6;</span> &#x70B9;&#x51FB;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019; &#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x4E2A;&#x5168;&#x5C40;&#x7684;&#x6821;&#x9A8C; &#x6839;&#x636E;&#x4F60;&#x7ED9;&#x6211;&#x8FD4;&#x56DE;&#x7684;true&#x8FD8;&#x662F;false &#x53BB;&#x5224;&#x65AD;&#x4F60;&#x6240;&#x6709;&#x7684;&#x6821;&#x9A8C;&#x662F;&#x5426;&#x901A;&#x8FC7;</span></code></pre></div>
+<pre class="vue"><code>&lt;!--&#x9996;&#x5148;&#x6211;&#x4EEC;&#x7684;form &#x80AF;&#x5B9A;&#x662F; &#x4F7F;&#x7528;&#x6211;&#x4EEC;&#x7684;form-item&#x7684;&#x7EC4;&#x4EF6;&#x91CC;&#x7684;&#x6821;&#x9A8C;&#x65B9;&#x6CD5;&#x53BB;&#x6821;&#x9A8C;--&gt;
+&lt;template&gt;
+  &lt;div&gt;
+      &lt;slot&gt;&lt;/slot&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  // &#x63A5;&#x6536;&#x4E86;index.vue&#x7EC4;&#x4EF6;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x6821;&#x9A8C;&#x6A21;&#x578B; &#x548C; &#x6821;&#x9A8C;&#x89C4;&#x5219;
+  props: {
+    model: {
+      type: Object
+    },
+    rules: {
+      type: Object
+    }
+  },
+  // &#x4E3A;&#x4E86;&#x65B9;&#x4FBF;form-item&#x7EC4;&#x4EF6;&#x4E5F;&#x80FD;&#x62FF;&#x5230;&#x6821;&#x9A8C;&#x89C4;&#x5219; &#x548C; &#x6821;&#x9A8C;&#x6A21;&#x578B; &#x6211;&#x4EEC;&#x5C31;&#x8981;&#x628A;&#x4ED6;&#x66B4;&#x9732;&#x51FA;&#x53BB;
+  provide () {
+    return {
+      form: this
+    }
+  },
+  methods: {
+    // &#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5728;index.vue&#x6587;&#x4EF6;&#x91CC;&#x70B9;&#x51FB;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019; &#x9700;&#x8981;&#x628A;&#x6211;&#x4EEC;&#x6BCF;&#x4E2A;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x7684;&#x5B57;&#x6BB5;&#x90FD;&#x6821;&#x9A8C;&#x4E00;&#x6B21;
+    validate (fn) {
+      // &#x62FF;&#x5230;&#x4E86;&#x6211;&#x4EEC;&#x7684;&#x6240;&#x6709;&#x7684;&#x5B50;&#x7EC4;&#x4EF6; &#x4E5F;&#x5C31;&#x662F;form-item&#x7EC4;&#x4EF6; &#x662F;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x9700;&#x8981;&#x6821;&#x9A8C;&#x6709;prop&#x5B57;&#x6BB5;&#x7684;
+      //(&#x53EF;&#x80FD;&#x6211;&#x4EEC;&#x7684;&#x6709;&lt;form-item&gt;&#x6309;&#x94AE;&lt;/form-item&gt;&#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x6784;)
+      // &#x7136;&#x540E;&#x5206;&#x522B;&#x53BB;&#x6267;&#x884C;&#x4ED6;&#x4EEC;&#x7684;&#x6821;&#x9A8C;&#x51FD;&#x6570; &#x8FD9;&#x91CC;&#x8981;&#x8BB0;&#x5F97; &#x6211;&#x4EEC;&#x7684;form-item&#x7684;validate&#x65B9;&#x6CD5; &#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x7531;promise&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;
+      const tasks = this.$children
+        .filter(item =&gt; item.prop)
+        .map(item =&gt; item.validate())
+
+      // &#x6240;&#x6709;&#x7684;form-item &#x7EC4;&#x4EF6; &#x6821;&#x9A8C;&#x901A;&#x8FC7;&#x624D;&#x7B97;&#x6821;&#x9A8C;&#x6210;&#x529F; &#x7136;&#x540E;&#x901A;&#x8FC7;callback &#x628A;&#x6211;&#x4EEC;&#x7684;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x7ED9;&#x6211;&#x4EEC;&#x7684;index.vue
+      Promise.all(tasks)
+        //&#x5168;&#x90E8;&#x6210;&#x529F;&#x4E86; &#x6211;&#x4EEC;&#x5C31;&#x5411;&#x4E0A;&#x629B;&#x4E2A;true
+        .then(() =&gt; { fn(true) })
+        //&#x5931;&#x8D25;&#x4E86; &#x6211;&#x4EEC;&#x5C31;&#x5411;&#x4E0A;&#x629B;&#x4E2A;false
+        .catch(() =&gt; { fn(false) })
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+<pre class="vue"><code>&lt;!--index.vue&#x6587;&#x4EF6;--&gt;
+&lt;template&gt;
+    &lt;el-card class=&quot;card&quot;&gt;
+        &lt;div&gt;
+           &lt;!--&#x8FD9;&#x91CC;&#x4EEC;&#x628A;&#x6211;&#x7684;&#x6570;&#x636E;&#x6A21;&#x578B;form &#x548C; &#x6821;&#x9A8C;&#x89C4;&#x5219; rules &#x90FD;&#x4F20;&#x7ED9;&#x4E86;&#x6211;&#x4EEC;&#x7684;form&#x7EC4;&#x4EF6;--&gt;
+           &lt;wz-form :model=&quot;form&quot; :rules=&quot;rules&quot; ref=&quot;form&quot;&gt;
+               &lt;wz-form-item label=&quot;&#x7528;&#x6237;&#x540D;&#x79F0;&quot; prop=&quot;name&quot;&gt;
+                   &lt;wz-input v-model=&quot;form.name&quot; autocomplete=&quot;off&quot; placeholder=&quot;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&#x79F0;&quot;&gt;&lt;/wz-input&gt;
+               &lt;/wz-form-item&gt;
+               &lt;wz-form-item label=&quot;&#x7528;&#x6237;&#x5BC6;&#x7801;&quot; prop=&quot;password&quot;&gt;
+                   &lt;wz-input  v-model=&quot;form.password&quot; autocomplete=&quot;off&quot; placeholder=&quot;&#x8BF7;&#x8F93;&#x5165;&#x5BC6;&#x7801;&quot; type=&quot;password&quot;&gt;&lt;/wz-input&gt;
+               &lt;/wz-form-item&gt;
+               &lt;wz-form-item &gt;
+                   &lt;el-button @click=&quot;submit(&apos;form&apos;)&quot;&gt;&#x63D0;&#x4EA4;&lt;/el-button&gt;
+               &lt;/wz-form-item&gt;
+           &lt;/wz-form&gt;
+        &lt;/div&gt;
+    &lt;/el-card&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import wzForm from &apos;./form&apos;
+import wzFormItem from &apos;./formItem&apos;
+import wzInput from &apos;./input&apos;
+export default {
+  components: {
+    wzForm,
+    wzFormItem,
+    wzInput
+  },
+  data () {
+    return {
+      form: {
+        name: &apos;&apos;,
+        password: &apos;&apos;
+      },
+      rules: {
+        name: [{ required: true, message: &apos;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x540D;&apos; }],
+        password: [{ required: true, message: &apos;&#x8BF7;&#x8F93;&#x5165;&#x7528;&#x6237;&#x5BC6;&#x7801;&apos; }]
+      }
+    }
+  },
+  methods: {
+    // &#x5728;&#x8FD9;&#x91CC;&#x8FDB;&#x884C;&#x6821;&#x9A8C; &#x8C03;&#x53D6;form&#x7684;validate&#x65B9;&#x6CD5; &#x4F20;&#x8FDB;&#x53BB;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570; &#x628A;&#x7ED3;&#x679C;&#x56DE;&#x8C03;&#x51FA;&#x6765;
+    submit (formName) {
+      this.$refs[formName].validate(valid =&gt; {
+        if (valid) {
+          alert(&apos;&#x6821;&#x9A8C;&#x901A;&#x8FC7;&apos;)
+        } else {
+          alert(&apos;&#x6821;&#x9A8C;&#x5931;&#x8D25;&apos;)
+        }
+      })
+    }
+  }
+}
+&lt;/script&gt;</code></pre>
+<figure>
+<img src="/zh-CN/383rll78/&#x7B14;&#x8BB0;\&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;&#x8868;&#x5355;&#x7EC4;&#x4EF6;\4.gif" alt><figcaption>&#x5168;&#x5C40;&#x6821;&#x9A8C;</figcaption>
+</figure>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1"></a><span class="fl">1.</span>&#x9996;&#x5148;&#x7ED3;&#x6784; &#x5C31;&#x662F;form&#x7EC4;&#x4EF6;&#x91CC;&#x7531;&#x63D2;&#x69FD; &#x7ED9; form<span class="op">-</span>item&#x7EC4;&#x4EF6; form<span class="op">-</span>item&#x7EC4;&#x4EF6;&#x91CC;&#x7531;&#x63D2;&#x69FD;&#x7ED9; input&#x7EC4;&#x4EF6;</span>
+<span id="cb28-2"><a href="#cb28-2"></a><span class="fl">2.</span>input&#x5B9E;&#x73B0;&#x53CC;&#x5411;&#x6570;&#x636E;&#x7ED1;&#x5B9A; &#x628A;&#x5728;input&#x7EC4;&#x4EF6;&#x8F93;&#x5165;&#x5B8C;&#x7684;&#x503C; &#x7ED9;&#x6211;&#x4EEC;&#x7684;index<span class="op">.</span><span class="at">vue&#x6587;&#x4EF6;</span> &#x8D4B;&#x503C; v<span class="op">-</span>model</span>
+<span id="cb28-3"><a href="#cb28-3"></a><span class="fl">3.</span>&#x8981;&#x5728;input&#x7EC4;&#x4EF6;&#x91CC;&#x53BB;&#x89E6;&#x53D1;&#x6821;&#x9A8C; &#x5728;form<span class="op">-</span>item&#x7EC4;&#x4EF6;&#x91CC; &#x53BB;&#x5B8C;&#x6210;&#x6267;&#x884C;&#x6821;&#x9A8C;</span>
+<span id="cb28-4"><a href="#cb28-4"></a><span class="fl">4.</span>&#x6821;&#x9A8C;&#x6570;&#x636E;&#x6A21;&#x578B; &#x548C; &#x6821;&#x9A8C;&#x89C4;&#x5219; &#x662F;&#x4ECE;index<span class="op">.</span><span class="at">vue&#x4F20;&#x7ED9;&#x6211;&#x4EEC;&#x7684;form</span> &#x7EC4;&#x4EF6; form&#x7EC4;&#x4EF6;&#x63A5;&#x6536;&#x4E4B;&#x540E; &#x628A;&#x4ED6;&#x4EEC;&#x7528;provide&#x66B4;&#x6F0F;&#x4E86;&#x51FA;&#x6765;</span>
+<span id="cb28-5"><a href="#cb28-5"></a><span class="fl">5.</span>&#x7136;&#x540E;form<span class="op">-</span>item&#x7EC4;&#x4EF6; &#x7528;injiect &#x5C31;&#x80FD;&#x62FF;&#x5230;&#x6821;&#x9A8C;&#x6570;&#x636E;&#x6A21;&#x578B; &#x548C;&#x6821;&#x9A8C;&#x89C4;&#x5219; &#x7136;&#x540E;&#x5F00;&#x59CB;&#x8FDB;&#x884C;&#x6821;&#x9A8C;</span>
+<span id="cb28-6"><a href="#cb28-6"></a><span class="fl">6.</span>&#x6821;&#x9A8C;&#x4F7F;&#x7528;&#x4E86;&#x7B2C;&#x4E09;&#x65B9;&#x7684;&#x5E93; <span class="kw">async</span><span class="op">-</span>validator &#x8FD4;&#x56DE;&#x7684;&#x662F;&#x7531;&#x4E00;&#x4E2A;promise&#x5BF9;&#x8C61;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4; &#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x6211;&#x4EEC;form&#x7EC4;&#x4EF6;&#x80FD;&#x62FF;&#x5230;&#x4F60;&#x6821;&#x9A8C;&#x540E;&#x7684;&#x6570;&#x7EC4; &#x8981;retrun &#x51FA;&#x53BB;</span>
+<span id="cb28-7"><a href="#cb28-7"></a><span class="fl">7.</span>&#x7136;&#x540E;&#x5728;form &#x7EC4;&#x4EF6;&#x91CC; &#x4F7F;&#x7528;$children &#x53BB;&#x5206;&#x522B;&#x8C03;&#x6211;&#x4EEC;&#x7684;form<span class="op">-</span>item&#x91CC;&#x7684;&#x6821;&#x9A8C;&#x51FD;&#x6570; &#x8FD9;&#x91CC;&#x9700;&#x8981;&#x8FC7;&#x6EE4;&#x4E00;&#x4E0B;&#x53C8;prop&#x5B57;&#x6BB5;&#x7684;form<span class="op">-</span>item</span>
+<span id="cb28-8"><a href="#cb28-8"></a><span class="fl">8.</span>&#x7136;&#x540E;&#x5728;index<span class="op">.</span><span class="at">vue&#x6587;&#x4EF6;&#x91CC;</span> &#x70B9;&#x51FB;&#x63D0;&#x4EA4;&#x7684;&#x65F6;&#x5019; &#x8C03;&#x53D6;&#x6211;&#x4EEC;form&#x7684;&#x6821;&#x9A8C;&#x7ED3;&#x679C; &#x901A;&#x8FC7;callback&#x7684;&#x5F62;&#x5F0F; &#x628A;&#x6821;&#x9A8C;&#x7ED3;&#x679C;&#x8FD4;&#x56DE;&#x5230;index<span class="op">.</span><span class="at">vue&#x6587;&#x4EF6;&#x91CC;&#x53BB;</span></span>
+<span id="cb28-9"><a href="#cb28-9"></a><span class="fl">9.</span>&#x4EE3;&#x7801; https<span class="op">:</span><span class="co">//github.com/wazer1987/form_components</span></span></code></pre></div>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://wazer1987.github.io" rel="external nofollow noreferrer">王正</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://wazer1987.github.io/zh-CN/383rll78.html">https://wazer1987.github.io/zh-CN/383rll78.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://wazer1987.github.io" target="_blank">王正</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/zh-CN/383rll78.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="封装一个自己的表单组件">
+                        
+                        <span class="card-title">封装一个自己的表单组件</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            封装一个自己的表单组件
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    高级教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/zh-CN/7cfcd0f4.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/4.jpg" class="responsive-img" alt="Vue源码解析">
+                        
+                        <span class="card-title">Vue源码解析</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            Vue源码解析
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-16
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    高级教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 北城韩雨<br />'
+            + '文章作者: 王正<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://wazer1987.github.io" target="_blank">王正</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/xinetzone/xinetzone.github.io" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">77.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "09";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wazer1987" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1052101962@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1052101962" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1052101962" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/rss2.xml" class="tooltipped" target="_blank" data-tooltip="RSS2 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>

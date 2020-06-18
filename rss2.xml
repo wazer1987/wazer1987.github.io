@@ -9,8 +9,29 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个前端界的小学生</description>
-    <pubDate>Thu, 18 Jun 2020 05:40:21 GMT</pubDate>
+    <pubDate>Thu, 18 Jun 2020 12:42:04 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>封装一个自己的表单组件</title>
+      <link>https://wazer1987.github.io/zh-CN/383rll78.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/383rll78.html</guid>
+      <pubDate>Thu, 18 Jun 2020 05:40:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/383rll78.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>Vue源码解析</title>
@@ -423,27 +444,6 @@
       
       
       <comments>https://wazer1987.github.io/zh-CN/60ec903d.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>如何修改 hexo-theme-matery 模板</title>
-      <link>https://wazer1987.github.io/zh-CN/3567ebbb.html</link>
-      <guid>https://wazer1987.github.io/zh-CN/3567ebbb.html</guid>
-      <pubDate>Mon, 02 Sep 2019 13:06:59 GMT</pubDate>
-      <description>
-      
-        
-        
-          
-          
-            &lt;h2 id=&quot;&amp;#x4FEE;&amp;#x6539;-docs-&amp;#x76EE;&amp;#x5F55;&amp;#x4E0B;&amp;#x7684;-_config.yml&quot;&gt;&amp;#x4FEE;&amp;#x6539; &lt;code&gt;/docs/&lt;/code&gt;
-          
-        
-      
-      </description>
-      
-      
-      <comments>https://wazer1987.github.io/zh-CN/3567ebbb.html#disqus_thread</comments>
     </item>
     
   </channel>
