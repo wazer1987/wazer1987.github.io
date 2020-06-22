@@ -4,8 +4,8 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="keywords" content="HTML 技巧, js css html vue webpack 王正 前端">
-    <meta name="description" content="常规的一些HTML技巧。">
+    <meta name="keywords" content="手写一个mini版的Vuex, js css html vue webpack 王正 前端">
+    <meta name="description" content="手写一个mini版的Vuex">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
     <meta name="renderer" content="webkit|ie-stand|ie-comp">
@@ -13,7 +13,7 @@
     <meta name="format-detection" content="telephone=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-    <title>HTML 技巧 | 北城韩雨</title>
+    <title>手写一个mini版的Vuex | 北城韩雨</title>
     <link rel="icon" type="image/png" href="/favicon.png">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/awesome/css/all.css">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.css">
@@ -398,12 +398,12 @@
 
 
 
-<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/12.jpg')">
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/21.jpg')">
     <div class="container" style="right: 0px;left: 0px;">
         <div class="row">
             <div class="col s12 m12 l12">
                 <div class="brand">
-                    <h1 class="description center-align post-title">HTML 技巧</h1>
+                    <h1 class="description center-align post-title">手写一个mini版的Vuex</h1>
                 </div>
             </div>
         </div>
@@ -520,12 +520,12 @@
                     
                     <div class="article-tag">
                         
-                            <a href="/tags/HTML/">
-                                <span class="chip bg-color">HTML</span>
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
                             </a>
                         
-                            <a href="/tags/CSS/">
-                                <span class="chip bg-color">CSS</span>
+                            <a href="/tags/Vuex/">
+                                <span class="chip bg-color">Vuex</span>
                             </a>
                         
                     </div>
@@ -536,8 +536,8 @@
                     <div class="post-cate">
                         <i class="fas fa-bookmark fa-fw icon-category"></i>
                         
-                            <a href="/categories/%E6%8A%80%E5%B7%A7/" class="post-category">
-                                技巧
+                            <a href="/categories/%E4%B8%AD%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                中级教程
                             </a>
                         
                     </div>
@@ -549,28 +549,28 @@
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
-                    2019-10-18
+                    2020-06-22
                 </div>
                 
 
                 
                 <div class="post-date info-break-policy">
                     <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
-                    2020-04-10
+                    2020-06-22
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
-                    519
+                    1.6k
                 </div>
                 
 
                 
                 <div class="info-break-policy">
                     <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
-                    3 分
+                    9 分
                 </div>
                 
 
@@ -586,114 +586,172 @@
         <hr class="clearfix">
         <div class="card-content article-card-content">
             <div id="articleContent">
-                <h2 id="&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x5143;&#x7D20;&#x7684;&#x81EA;&#x8EAB;&#x7684;&#x5BBD;&#x9AD8;">&#x7B2C;&#x4E00;&#x79CD;&#x65B9;&#x6CD5;(&#x5FC5;&#x987B;&#x77E5;&#x9053;&#x5143;&#x7D20;&#x7684;&#x81EA;&#x8EAB;&#x7684;&#x5BBD;&#x9AD8;)</h2>
-<h3 id="&#x4F18;&#x70B9;-&#x517C;&#x5BB9;&#x6027;&#x597D;-&#x7F3A;&#x70B9;&#x5FC5;&#x987B;&#x6458;&#x5230;&#x5143;&#x7D20;&#x7684;&#x5BBD;&#x9AD8;">&#x4F18;&#x70B9; &#x517C;&#x5BB9;&#x6027;&#x597D; &#x7F3A;&#x70B9;&#x5FC5;&#x987B;&#x6458;&#x5230;&#x5143;&#x7D20;&#x7684;&#x5BBD;&#x9AD8;</h3>
-<div class="sourceCode" id="cb1"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb1-1"><a href="#cb1-1"></a>div<span class="fu">.box</span>{</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>weight:<span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">height</span>:<span class="dv">400</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb1-6"><a href="#cb1-6"></a></span>
-<span id="cb1-7"><a href="#cb1-7"></a>&lt;!--&#x628A;&#x5143;&#x7D20;&#x53D8;&#x6210;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;--<span class="op">&gt;</span></span>
-<span id="cb1-8"><a href="#cb1-8"></a></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="kw">position</span>:<span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a>&lt;!--&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;&#x5B9A;&#x4F4D;&#x4F4D;&#x7F6E;&#xFF0C;&#x8DDD;&#x79BB;&#x4E0A;&#x3001;&#x5DE6;&#x90FD;&#x4E3A;50%--<span class="op">&gt;</span></span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">left</span>:<span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="kw">top</span>:<span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb1-16"><a href="#cb1-16"></a></span>
-<span id="cb1-17"><a href="#cb1-17"></a>&lt;!--&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;&#x5DE6;&#x5916;&#x8FB9;&#x8DDD;&#x3001;&#x4E0A;&#x5916;&#x8FB9;&#x8DDD;&#x4E3A;&#x5BBD;&#x9AD8;&#x7684;&#x8D1F;1/2--<span class="op">&gt;</span></span>
-<span id="cb1-18"><a href="#cb1-18"></a></span>
-<span id="cb1-19"><a href="#cb1-19"></a><span class="kw">margin-left</span>:<span class="dv">-100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb1-20"><a href="#cb1-20"></a></span>
-<span id="cb1-21"><a href="#cb1-21"></a><span class="kw">margin-top</span>:<span class="dv">-200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb1-22"><a href="#cb1-22"></a></span>
-<span id="cb1-23"><a href="#cb1-23"></a>}</span></code></pre></div>
-<h2 id="&#x7B2C;&#x4E8C;&#x79CD;-css3&#x6765;&#x5B9E;&#x73B0;">&#x7B2C;&#x4E8C;&#x79CD; css3&#x6765;&#x5B9E;&#x73B0;</h2>
-<h2 id="&#x7F3A;&#x70B9;&#x517C;&#x5BB9;&#x6027;&#x4E0D;&#x597D;-ie9&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x624D;&#x652F;&#x6301;">&#x7F3A;&#x70B9;&#x517C;&#x5BB9;&#x6027;&#x4E0D;&#x597D; IE9+&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x624D;&#x652F;&#x6301;</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb2-1"><a href="#cb2-1"></a>div<span class="fu">.box</span>{</span>
-<span id="cb2-2"><a href="#cb2-2"></a></span>
-<span id="cb2-3"><a href="#cb2-3"></a>weight:<span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb2-4"><a href="#cb2-4"></a></span>
-<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">height</span>:<span class="dv">400</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb2-6"><a href="#cb2-6"></a></span>
-<span id="cb2-7"><a href="#cb2-7"></a>&lt;!--&#x628A;&#x5143;&#x7D20;&#x53D8;&#x6210;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;--<span class="op">&gt;</span></span>
-<span id="cb2-8"><a href="#cb2-8"></a></span>
-<span id="cb2-9"><a href="#cb2-9"></a><span class="kw">position</span>:<span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb2-10"><a href="#cb2-10"></a></span>
-<span id="cb2-11"><a href="#cb2-11"></a>&lt;!--&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;&#x5B9A;&#x4F4D;&#x4F4D;&#x7F6E;&#xFF0C;&#x8DDD;&#x79BB;&#x4E0A;&#x3001;&#x5DE6;&#x90FD;&#x4E3A;50%--<span class="op">&gt;</span></span>
-<span id="cb2-12"><a href="#cb2-12"></a></span>
-<span id="cb2-13"><a href="#cb2-13"></a><span class="kw">left</span>:<span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-14"><a href="#cb2-14"></a></span>
-<span id="cb2-15"><a href="#cb2-15"></a><span class="kw">top</span>:<span class="dv">50</span><span class="dt">%</span><span class="op">;</span></span>
-<span id="cb2-16"><a href="#cb2-16"></a></span>
-<span id="cb2-17"><a href="#cb2-17"></a>&lt;!--&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;&#x76F8;&#x5BF9;&#x4E8E;&#x81EA;&#x8EAB;&#x7684;&#x504F;&#x79FB;&#x5EA6;&#x4E3A;&#x8D1F;50%(&#x4E5F;&#x5C31;&#x662F;&#x5143;&#x7D20;&#x81EA;&#x8EAB;&#x5C3A;&#x5BF8;&#x7684;&#x4E00;&#x534A;)--<span class="op">&gt;</span></span>
-<span id="cb2-18"><a href="#cb2-18"></a></span>
-<span id="cb2-19"><a href="#cb2-19"></a><span class="kw">transform</span>:<span class="fu">translate(</span><span class="dv">-50</span><span class="dt">%</span><span class="op">,</span><span class="dv">-50</span><span class="dt">%</span><span class="fu">)</span><span class="op">;</span></span>
-<span id="cb2-20"><a href="#cb2-20"></a></span>
-<span id="cb2-21"><a href="#cb2-21"></a>}</span></code></pre></div>
-<h2 id="&#x7B2C;&#x4E09;&#x79CD;-&#x5B9A;&#x4F4D;-&#x6240;&#x6709;&#x7684;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x4F4D;&#x79FB;&#x5168;&#x8BBE;&#x7F6E;&#x6210;&#x96F6;-margin-&#x81EA;&#x52A8;">&#x7B2C;&#x4E09;&#x79CD; &#x5B9A;&#x4F4D; &#x6240;&#x6709;&#x7684;&#x4E0A;&#x4E0B;&#x5DE6;&#x53F3;&#x4F4D;&#x79FB;&#x5168;&#x8BBE;&#x7F6E;&#x6210;&#x96F6; margin &#x81EA;&#x52A8;</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb3-1"><a href="#cb3-1"></a>div<span class="fu">.box</span>{</span>
-<span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">width</span>:<span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb3-4"><a href="#cb3-4"></a></span>
-<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">height</span>:<span class="dv">400</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb3-6"><a href="#cb3-6"></a></span>
-<span id="cb3-7"><a href="#cb3-7"></a>&lt;!--&#x628A;&#x5143;&#x7D20;&#x53D8;&#x6210;&#x5B9A;&#x4F4D;&#x5143;&#x7D20;--<span class="op">&gt;</span></span>
-<span id="cb3-8"><a href="#cb3-8"></a></span>
-<span id="cb3-9"><a href="#cb3-9"></a><span class="kw">position</span>:<span class="dv">absolute</span><span class="op">;</span></span>
-<span id="cb3-10"><a href="#cb3-10"></a></span>
-<span id="cb3-11"><a href="#cb3-11"></a>&lt;!--&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;&#x5B9A;&#x4F4D;&#x4F4D;&#x7F6E;&#xFF0C;&#x8DDD;&#x79BB;&#x4E0A;&#x3001;&#x4E0B;&#x3001;&#x5DE6;&#x3001;&#x53F3;&#x90FD;&#x4E3A;0--<span class="op">&gt;</span></span>
-<span id="cb3-12"><a href="#cb3-12"></a></span>
-<span id="cb3-13"><a href="#cb3-13"></a><span class="kw">left</span>:<span class="dv">0</span><span class="op">;</span></span>
-<span id="cb3-14"><a href="#cb3-14"></a></span>
-<span id="cb3-15"><a href="#cb3-15"></a><span class="kw">right</span>:<span class="dv">0</span><span class="op">;</span></span>
-<span id="cb3-16"><a href="#cb3-16"></a></span>
-<span id="cb3-17"><a href="#cb3-17"></a><span class="kw">top</span>:<span class="dv">0</span><span class="op">;</span></span>
-<span id="cb3-18"><a href="#cb3-18"></a></span>
-<span id="cb3-19"><a href="#cb3-19"></a><span class="kw">bottom</span>:<span class="dv">0</span><span class="op">;</span></span>
-<span id="cb3-20"><a href="#cb3-20"></a></span>
-<span id="cb3-21"><a href="#cb3-21"></a>&lt;!--&#x8BBE;&#x7F6E;&#x5143;&#x7D20;&#x7684;margin&#x6837;&#x5F0F;&#x503C;&#x4E3A; auto--<span class="op">&gt;</span></span>
-<span id="cb3-22"><a href="#cb3-22"></a></span>
-<span id="cb3-23"><a href="#cb3-23"></a><span class="kw">margin</span>:<span class="bu">auto</span><span class="op">;</span></span>
-<span id="cb3-24"><a href="#cb3-24"></a></span>
-<span id="cb3-25"><a href="#cb3-25"></a>}</span></code></pre></div>
-<h2 id="flex&#x65B9;&#x6CD5;">flex&#x65B9;&#x6CD5;</h2>
-<div class="sourceCode" id="cb4"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb4-1"><a href="#cb4-1"></a>&#x53EF;&#x4EE5;&#x8BBE;&#x7F6E; &#x7236;&#x76D2;&#x5B50;&#x7684; flex &#x4E3B;&#x8F74;&#x548C;&#x4FA7;&#x4E3B;&#x8F74;&#x7684; &#x6392;&#x5217;&#x65B9;&#x5F0F; &#x90FD;&#x4E3A;center</span>
-<span id="cb4-2"><a href="#cb4-2"></a>&lt;div<span class="op">&gt;</span>&lt;/div<span class="op">&gt;</span></span>
-<span id="cb4-3"><a href="#cb4-3"></a>&#x8BBE;&#x7F6E;&#x7236;&#x5143;&#x7D20;&#x7684;&#x4E3B;&#x8F74;&#x548C;&#x4FA7;&#x5468;&#x7684;&#x6392;&#x5217;&#x65B9;&#x5F0F;&#x90FD;&#x4E3A;center</span>
-<span id="cb4-4"><a href="#cb4-4"></a>body{</span>
-<span id="cb4-5"><a href="#cb4-5"></a>    <span class="kw">height</span>: <span class="dv">500</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-6"><a href="#cb4-6"></a>    <span class="kw">display</span>: flex<span class="op">;</span></span>
-<span id="cb4-7"><a href="#cb4-7"></a>    <span class="kw">justify-content</span>: <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb4-8"><a href="#cb4-8"></a>    <span class="kw">align-items</span>: <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb4-9"><a href="#cb4-9"></a>}</span>
-<span id="cb4-10"><a href="#cb4-10"></a>div{</span>
-<span id="cb4-11"><a href="#cb4-11"></a>    <span class="kw">width</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-12"><a href="#cb4-12"></a>    <span class="kw">height</span>: <span class="dv">200</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb4-13"><a href="#cb4-13"></a>    <span class="kw">background-color</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb4-14"><a href="#cb4-14"></a>}</span></code></pre></div>
-<h2 id="&#x62D3;&#x5C55;">&#x62D3;&#x5C55;</h2>
-<div class="sourceCode" id="cb5"><pre class="sourceCode css"><code class="sourceCode css"><span id="cb5-1"><a href="#cb5-1"></a>&#x5982;&#x679C; &#x4F60;&#x7684;&#x5143;&#x7D20;&#x662F;&#x884C;&#x5185;&#x5757;&#x5143;&#x7D20; &#x4E5F;&#x5C31;&#x662F;display&#x662F;inline-block &#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x76F4;&#x63A5;&#x7ED9;&#x7236;&#x5143;&#x7D20;&#x8BBE;&#x7F6E; &#x8BBE;&#x7F6E;text-align<span class="in">: center</span>; &#x76F4;&#x63A5;&#x5C31;&#x5C45;&#x4E2D;</span>
-<span id="cb5-2"><a href="#cb5-2"></a>&lt;div class=&quot;box&quot;<span class="op">&gt;</span></span>
-<span id="cb5-3"><a href="#cb5-3"></a>    &lt;div class=&quot;box1&quot;<span class="op">&gt;</span>&lt;/div<span class="op">&gt;</span></span>
-<span id="cb5-4"><a href="#cb5-4"></a>    &lt;div class=&quot;box1&quot;<span class="op">&gt;</span>&lt;/div<span class="op">&gt;</span></span>
-<span id="cb5-5"><a href="#cb5-5"></a>    &lt;div class=&quot;box1&quot;<span class="op">&gt;</span>&lt;/div<span class="op">&gt;</span></span>
-<span id="cb5-6"><a href="#cb5-6"></a>&lt;/div<span class="op">&gt;</span></span>
-<span id="cb5-7"><a href="#cb5-7"></a></span>
-<span id="cb5-8"><a href="#cb5-8"></a>box{</span>
-<span id="cb5-9"><a href="#cb5-9"></a><span class="kw">width</span>: <span class="dv">600</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a><span class="kw">background-color</span>: <span class="cn">green</span><span class="op">;</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="kw">text-align</span>: <span class="dv">center</span><span class="op">;</span></span>
-<span id="cb5-12"><a href="#cb5-12"></a>}</span>
-<span id="cb5-13"><a href="#cb5-13"></a><span class="fu">.box1</span>{</span>
-<span id="cb5-14"><a href="#cb5-14"></a><span class="kw">width</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb5-15"><a href="#cb5-15"></a><span class="kw">height</span>: <span class="dv">100</span><span class="dt">px</span><span class="op">;</span></span>
-<span id="cb5-16"><a href="#cb5-16"></a><span class="kw">background-color</span>: <span class="cn">red</span><span class="op">;</span></span>
-<span id="cb5-17"><a href="#cb5-17"></a><span class="kw">display</span>: <span class="dv">inline-block</span><span class="op">;</span></span>
-<span id="cb5-18"><a href="#cb5-18"></a>}</span></code></pre></div>
+                <h1 id="&#x624B;&#x5199;&#x4E00;&#x4E2A;mini&#x7248;vuex">&#x624B;&#x5199;&#x4E00;&#x4E2A;mini&#x7248;Vuex</h1>
+<h2 id="&#x6982;&#x5FF5;">&#x6982;&#x5FF5;</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="fl">1.</span>Vuex &#x4E5F;&#x662F;&#x4E00;&#x4E2A;&#x63D2;&#x4EF6; </span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fl">2.</span>&#x5B9E;&#x73B0;&#x4E86;&#x56DB;&#x4E2A;&#x4E1C;&#x897F; state <span class="op">/</span> mutaitions <span class="op">/</span> actions <span class="op">/</span>getters</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fl">3.</span>&#x8FD8;&#x662F;&#x5229;&#x7528;&#x4E86;Vue&#x7684;&#x6570;&#x636E;&#x54CD;&#x5E94;&#x5F0F; &#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48; Vuex &#x548C; VueRouter &#x5BF9;Vue&#x662F;&#x5F3A;&#x4F9D;&#x8D56; &#x800C; reacte &#x7684; rudex &#x4E0D;&#x662F;</span></code></pre></div>
+<h2 id="&#x6D41;&#x7A0B;">&#x6D41;&#x7A0B;</h2>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="fl">1.</span>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x4F1A; &#x5F15;&#x5165;Vuex &#x7136;&#x540E; <span class="kw">new</span> Vuex<span class="op">.</span><span class="fu">Store</span>({&#x914D;&#x7F6E;&#x9879;})</span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fl">2.</span>&#x7136;&#x540E;&#x4F1A;Vue<span class="op">.</span><span class="fu">use</span>(Vuex) &#x8FD9;&#x91CC;&#x5C31;&#x662F;&#x8C03;&#x7528;&#x4E86;install&#x51FD;&#x6570;</span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fl">3.</span>&#x7136;&#x540E;&#x6211;&#x4EEC;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;this<span class="op">.</span><span class="at">$store</span> &#x62FF;&#x5230; store &#x8BF4;&#x660E; &#x8FD9;&#x91CC;&#x628A;store&#x6302;&#x8F7D;&#x5230;&#x4E86; Vue&#x4E0A;</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">//&#x5F15;&#x5165; Vuex</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">import</span> Vue <span class="im">from</span> <span class="st">&apos;vue&apos;</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="im">import</span> Vuex <span class="im">from</span> <span class="st">&apos;../vuex&apos;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>Vue<span class="op">.</span><span class="fu">use</span>(Vuex)</span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="im">import</span> Vue <span class="im">from</span> <span class="st">&apos;vue&apos;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a><span class="im">import</span> Vuex <span class="im">from</span> <span class="st">&apos;../vuex&apos;</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>Vue<span class="op">.</span><span class="fu">use</span>(Vuex)</span>
+<span id="cb3-8"><a href="#cb3-8"></a><span class="kw">const</span> state <span class="op">=</span> {</span>
+<span id="cb3-9"><a href="#cb3-9"></a>  <span class="dt">cont</span><span class="op">:</span> <span class="dv">1</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>}</span>
+<span id="cb3-11"><a href="#cb3-11"></a><span class="kw">const</span> mutations <span class="op">=</span> {</span>
+<span id="cb3-12"><a href="#cb3-12"></a>  plus (state) {</span>
+<span id="cb3-13"><a href="#cb3-13"></a>    state<span class="op">.</span><span class="at">cont</span><span class="op">++</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>  }</span>
+<span id="cb3-15"><a href="#cb3-15"></a>}</span>
+<span id="cb3-16"><a href="#cb3-16"></a><span class="kw">const</span> actions <span class="op">=</span> {</span>
+<span id="cb3-17"><a href="#cb3-17"></a>  asyncPlus ({ commit<span class="op">,</span> state }) {</span>
+<span id="cb3-18"><a href="#cb3-18"></a>    commit(<span class="st">&apos;plus&apos;</span>)</span>
+<span id="cb3-19"><a href="#cb3-19"></a>  }</span>
+<span id="cb3-20"><a href="#cb3-20"></a>}</span>
+<span id="cb3-21"><a href="#cb3-21"></a><span class="kw">const</span> getters <span class="op">=</span> {</span>
+<span id="cb3-22"><a href="#cb3-22"></a>  sum (state) {</span>
+<span id="cb3-23"><a href="#cb3-23"></a>    <span class="cf">return</span> <span class="vs">`&#x5171;&#x6254;&#x51FA;</span><span class="sc">${</span>state<span class="op">.</span><span class="at">cont</span><span class="sc">}</span><span class="vs">`</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>  }</span>
+<span id="cb3-25"><a href="#cb3-25"></a>}</span>
+<span id="cb3-26"><a href="#cb3-26"></a><span class="kw">const</span> store <span class="op">=</span> <span class="kw">new</span> Vuex<span class="op">.</span><span class="fu">Store</span>({</span>
+<span id="cb3-27"><a href="#cb3-27"></a>  state<span class="op">,</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a>  mutations<span class="op">,</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a>  actions<span class="op">,</span></span>
+<span id="cb3-30"><a href="#cb3-30"></a>  getters</span>
+<span id="cb3-31"><a href="#cb3-31"></a>})</span>
+<span id="cb3-32"><a href="#cb3-32"></a></span>
+<span id="cb3-33"><a href="#cb3-33"></a><span class="im">export</span> <span class="im">default</span> store</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">//&#x6302;&#x8F7D;store</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="im">import</span> Vue <span class="im">from</span> <span class="st">&apos;vue&apos;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="im">import</span> App <span class="im">from</span> <span class="st">&apos;./App.vue&apos;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="im">import</span> router <span class="im">from</span> <span class="st">&apos;./router&apos;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="co">//&#x5F15;&#x5165;&#x4E86;&#x6211;&#x4EEC;&#x521A;&#x624D;&#x5BFC;&#x51FA;&#x7684;store</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="im">import</span> store <span class="im">from</span> <span class="st">&apos;./store&apos;</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>Vue<span class="op">.</span><span class="at">config</span><span class="op">.</span><span class="at">productionTip</span> <span class="op">=</span> <span class="kw">false</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">new</span> Vue({</span>
+<span id="cb4-9"><a href="#cb4-9"></a>  router<span class="op">,</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>  store<span class="op">,</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>  <span class="dt">render</span><span class="op">:</span> h <span class="kw">=&gt;</span> h(App)</span>
+<span id="cb4-12"><a href="#cb4-12"></a>})<span class="op">.</span><span class="fu">$mount</span>(<span class="st">&apos;#app&apos;</span>)</span></code></pre></div>
+<h2 id="&#x4F7F;&#x7528;">&#x4F7F;&#x7528;</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="fl">1.</span>&#x4F7F;&#x7528;state &#x56E0;&#x4E3A;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x628A;&#x6211;&#x4EEC;&#x7684;new Vuex<span class="op">.</span><span class="at">Store&#x7684;&#x914D;&#x7F6E;&#x6700;&#x540E;&#x90FD;&#x6302;&#x8F7D;&#x5230;&#x4E86;</span> Vue&#x4E0A; &#x6240;&#x4EE5;&#x5728;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019; &#x76F4;&#x63A5; <span class="kw">this</span><span class="op">.</span><span class="at">$Store</span><span class="op">.</span><span class="at">state</span><span class="op">.</span><span class="at">cont</span> &#x5373;&#x53EF; </span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fl">2.</span>&#x5728;&#x4F7F;&#x7528;Vuex<span class="op">.</span><span class="at">Store&#x7684;mutations&#x91CC;</span> &#x6211;&#x4EEC;&#x662F;&#x4F7F;&#x7528;commit&#x53BB;&#x89E6;&#x53D1;&#x7684; &#x4E5F;&#x5C31;&#x662F;&#x63D0;&#x4EA4;mutations&#x7684;&#x51FD;&#x6570; &#x7136;&#x540E;&#x4F20;&#x53C2;</span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="fl">3.</span>&#x5728;&#x6709;&#x5F02;&#x6B65;&#x8BF7;&#x6C42;&#x7684;&#x65F6;&#x5019;  &#x6211;&#x4EEC;&#x662F;&#x628A;&#x8BF7;&#x6C42;&#x5199;&#x5728;actions&#x7684;&#x51FD;&#x6570;&#x91CC; &#x7136;&#x540E; &#x5728;&#x9875;&#x9762;&#x6587;&#x4EF6; dispatch &#x53D1;&#x5C04;actions&#x7684;&#x51FD;&#x6570; &#x7136;&#x540E; &#x5982;&#x679C;&#x6709;&#x4FEE;&#x6539;state&#x91CC;&#x7684;&#x6570;&#x503C;&#x72B6;&#x6001;&#x7684;&#x8BDD; &#x4E5F;&#x662F;&#x5728;commit mutations </span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fl">4.</span>getters&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684; &#x628A;Store&#x7684;&#x5B9E;&#x4F8B;&#x6302;&#x8F7D;&#x4E86; Vue&#x7684;&#x539F;&#x578B;&#x4E0A;</span></code></pre></div>
+<pre class="vue"><code>&lt;template&gt;
+  &lt;div&gt;
+      &#x6211;&#x662F;HOME
+      &lt;span&gt;Vuex:&lt;/span&gt;
+      &lt;!--&#x8FD9;&#x91CC;&#x7531;&#x4E8E;&#x72B6;&#x6001;&#x5DF2;&#x7ECF;&#x6302;&#x8F7D;&#x5230;Vue&#x7684;&#x5B9E;&#x4F8B;&#x4E0A;&#x4E86;&#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;this.$store &#x62FF;&#x5230;&#x4F60;&#x4F20;&#x8FDB;&#x53BB;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x91CC;&#x7684;state--&gt;
+      &lt;span&gt;&lt;/span&gt;
+      &lt;!--getter&#x4E5F;&#x662F;&#x4E00;&#x6837;&#x7684;&#x9053;&#x7406;--&gt;
+      &lt;div&gt;&lt;/div&gt;
+      &lt;button @click=&quot;add&quot;&gt;&#x6254;&#x70B8;&#x5F39;&lt;/button&gt;
+      &lt;button @click=&quot;addActions&quot;&gt;&#x9694;&#x4E00;&#x79D2;&#x4ECD;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {
+  methods: {
+    // &#x7136;&#x540E;&#x8FD9;&#x91CC;&#x63D0;&#x4EA4;&#x4E86;mutations
+    add () {
+      this.$store.commit(&apos;plus&apos;)
+    },
+    addActions () {
+      // &#x8FD9;&#x91CC;&#x53D1;&#x5C04;&#x4E86;actions &#x7136;&#x540E;actions&#x91CC;&#x53BB;&#x63D0;&#x4EA4;&#x4E86;mutations
+      setTimeout(() =&gt; {
+        this.$store.dispatch(&apos;asyncPlus&apos;)
+      }, 1000)
+    }
+  }
+}
+&lt;/script&gt;
+</code></pre>
+<h2 id="mini&#x7248;vuex">mini&#x7248;Vuex</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="fl">1.</span>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019; &#x662F;&#x901A;&#x8FC7;Vue<span class="op">.</span><span class="at">use</span> &#x53BB;&#x4F7F;&#x7528;&#x7684; &#x6240;&#x4EE5;&#x4F1A;&#x6709;&#x4E00;&#x4E2A;install&#x51FD;&#x6570; &#x7136;&#x540E;&#x6211;&#x4EEC;&#x5728;new Vuex<span class="op">.</span><span class="at">Store</span> &#x8BF4;&#x660E; &#x4F1A;&#x6709;&#x4E00;&#x4E2A;Store&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570; &#x4E5F;&#x5C31;&#x662F;&#x8BF4; &#x8FD9;&#x4E2A;Store&#x7684;&#x6784;&#x9020; &#x548C;install&#x51FD;&#x6570; &#x662F;&#x5728;&#x4E00;&#x4E2A;&#x6587;&#x4EF6;&#x91CC; &#x5BFC;&#x51FA;&#x7684;&#x65F6;&#x5019;&#x662F;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x53BB;&#x5BFC;&#x51FA;&#x7684;</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fl">2.</span>&#x6211;&#x4EEC;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;Store&#x91CC;&#x7684;&#x914D;&#x7F6E;&#x9879; &#x90FD;&#x662F;&#x901A;&#x8FC7;thit<span class="op">.</span><span class="at">$store&#x53BB;&#x8BBF;&#x95EE;&#x7684;</span> &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x662F;&#x628A;store&#x6302;&#x8F7D;&#x5230;&#x4E86; &#x5F53;&#x524D;Vue&#x7684;&#x539F;&#x578B;&#x4E0A;</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="fl">3.</span>&#x6211;&#x4EEC;&#x7684;state&#x91CC;&#x72B6;&#x6001; &#x662F;&#x901A;&#x8FC7;mutations &#x53BB;&#x4FEE;&#x6539;&#x7684; &#x4E5F;&#x5C31;&#x662F;&#x9700;&#x8981;&#x5728;mutations&#x91CC;&#x5199;&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570; &#x7136;&#x540E;&#x91CC;&#x9762;&#x4FEE;&#x6539;state&#x7684;&#x72B6;&#x6001; &#x800C;&#x89E6;&#x53D1;mutations&#x91CC;&#x7684;&#x51FD;&#x6570; &#x5C31;&#x662F;&#x901A;&#x8FC7;commit&#x53BB;&#x89E6;&#x53D1;&#x7684;</span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="fl">4.</span>actions &#x4E5F;&#x662F;&#x5982;&#x6B64; &#x53EA;&#x4E0D;&#x8FC7;&#x662F;&#x901A;&#x8FC7;dispatch&#x53BB;&#x53D1;&#x5C04;&#x7684;</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">let</span> Vue</span>
+<span id="cb8-2"><a href="#cb8-2"></a><span class="co">// &#x8FD9;&#x5C31;&#x662F;store&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570; &#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x7684; new Vuex.Store({})&#x7684;&#x65F6;&#x5019; &#x4F20;&#x8FDB;&#x53BB;&#x7684;&#x914D;&#x7F6E;&#x9879;&#x76EE; &#x7136;&#x540E;&#x6302;&#x8F7D;&#x5230;&#x4E86; Vue&#x7684;&#x5B9E;&#x4F8B;&#x4E0A;</span></span>
+<span id="cb8-3"><a href="#cb8-3"></a><span class="kw">class</span> Store {</span>
+<span id="cb8-4"><a href="#cb8-4"></a>  constructor (option) {</span>
+<span id="cb8-5"><a href="#cb8-5"></a>    <span class="co">// &#x56E0;&#x4E3A;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684; &#x6240;&#x4EE5; &#x6211;&#x4EEC;&#x9700;&#x8981; new Vue  &#x7136;&#x540E;&#x628A;&#x4F60;&#x7684; new Vuex.Store&#x7684;option&#x91CC;&#x4F20;&#x8FDB;&#x53BB;&#x7684;state&#x62FF;&#x5230;</span></span>
+<span id="cb8-6"><a href="#cb8-6"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">state</span> <span class="op">=</span> <span class="kw">new</span> Vue({</span>
+<span id="cb8-7"><a href="#cb8-7"></a>      <span class="dt">data</span><span class="op">:</span> option<span class="op">.</span><span class="at">state</span></span>
+<span id="cb8-8"><a href="#cb8-8"></a>    })</span>
+<span id="cb8-9"><a href="#cb8-9"></a>    <span class="co">// &#x8FD9;&#x91CC;&#x7684;option.mutations &#x662F;&#x4E2A;&#x5BF9;&#x8C61; &#x91CC;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4E00;&#x4E2A;&#x7684;&#x51FD;&#x6570; &#x5F53;&#x6211;&#x4EEC;&#x89E6;&#x53D1;&#x4ED6;&#x7684;&#x65F6;&#x5019; &#x9700;&#x8981;commit &#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;commit&#x51FD;&#x6570; &#x53BB;&#x8C03;mutations&#x91CC;&#x7684;&#x51FD;&#x6570;</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">mutations</span> <span class="op">=</span> option<span class="op">.</span><span class="at">mutations</span></span>
+<span id="cb8-11"><a href="#cb8-11"></a>    <span class="co">// &#x8FD9;&#x91CC;&#x7684;actions &#x548C;&#x6211;&#x4EEC;&#x7684;mutations&#x4E00;&#x6837;</span></span>
+<span id="cb8-12"><a href="#cb8-12"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">actions</span> <span class="op">=</span> option<span class="op">.</span><span class="at">actions</span></span>
+<span id="cb8-13"><a href="#cb8-13"></a>    <span class="co">// &#x6709;&#x53EF;&#x80FD;&#x4F60;&#x7684;option&#x91CC;&#x4F20; getters &#x4E86; &#x4E5F;&#x6709;&#x53EF;&#x80FD;&#x6CA1;&#x4F20;</span></span>
+<span id="cb8-14"><a href="#cb8-14"></a>    option<span class="op">.</span><span class="at">getters</span> <span class="op">&amp;&amp;</span> <span class="kw">this</span><span class="op">.</span><span class="fu">handleGetters</span>(option<span class="op">.</span><span class="at">getters</span>)</span>
+<span id="cb8-15"><a href="#cb8-15"></a>  }</span>
+<span id="cb8-16"><a href="#cb8-16"></a></span>
+<span id="cb8-17"><a href="#cb8-17"></a>  <span class="co">// &#x5F53;&#x6211;&#x4EEC;&#x5728;commit&#x7684;&#x65F6;&#x5019; &#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570; &#x4F20;&#x8FDB;&#x53BB;&#x7684;&#x5C31;&#x662F; &#x6211;&#x4EEC;mutations&#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x51FD;&#x6570;&#x7684;&#x540D;&#x5B57; &#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570; &#x5C31;&#x662F;&#x4F60;&#x8981;&#x4F20;&#x8FDB;&#x53BB;&#x7684;&#x53C2;&#x6570;</span></span>
+<span id="cb8-18"><a href="#cb8-18"></a>  commit <span class="op">=</span> (type<span class="op">,</span> arg) <span class="kw">=&gt;</span> {</span>
+<span id="cb8-19"><a href="#cb8-19"></a>    <span class="co">// &#x89E6;&#x53D1;&#x4E86;mutations&#x91CC;&#x7684;&#x51FD;&#x6570; &#x7136;&#x540E;&#x628A;&#x6211;&#x4EEC;&#x7684;state&#x7684;&#x6570;&#x636E;&#x4E5F;&#x4F20;&#x8FDB;&#x53BB; &#x8FD8;&#x8981;&#x4F60;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x53C2;&#x6570;</span></span>
+<span id="cb8-20"><a href="#cb8-20"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">mutations</span>[type](<span class="kw">this</span><span class="op">.</span><span class="at">state</span><span class="op">,</span> arg)</span>
+<span id="cb8-21"><a href="#cb8-21"></a>  }</span>
+<span id="cb8-22"><a href="#cb8-22"></a></span>
+<span id="cb8-23"><a href="#cb8-23"></a>  <span class="co">// &#x6211;&#x4EEC;&#x7684;actions&#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x51FD;&#x6570; &#x662F; incrementAsync({commit,dispathc}) &#x8FD9;&#x91CC;&#x4E3A;&#x4EC0;&#x4E48;&#x6CA1;&#x6709;&#x4F7F;&#x7528;&#x7BAD;&#x5934;&#x51FD;&#x6570; &#x662F;&#x56E0;&#x4E3A; &#x4FDD;&#x8BC1;this&#x7684;&#x6307;&#x5411; &#x4E00;&#x81F4;&#x90FD;&#x662F;store &#x624D;&#x80FD; &#x6709;&#x6211;&#x4EEC;&#x4E0B;&#x9762;&#x7684; commit:this.commit</span></span>
+<span id="cb8-24"><a href="#cb8-24"></a>  dispatch (type<span class="op">,</span> arg) {</span>
+<span id="cb8-25"><a href="#cb8-25"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">actions</span>[type]({ <span class="dt">commit</span><span class="op">:</span> <span class="kw">this</span><span class="op">.</span><span class="at">commit</span><span class="op">,</span> <span class="dt">state</span><span class="op">:</span> <span class="kw">this</span><span class="op">.</span><span class="at">state</span> }<span class="op">,</span> arg)</span>
+<span id="cb8-26"><a href="#cb8-26"></a>  }</span>
+<span id="cb8-27"><a href="#cb8-27"></a></span>
+<span id="cb8-28"><a href="#cb8-28"></a>  handleGetters (getters) {</span>
+<span id="cb8-29"><a href="#cb8-29"></a>    <span class="kw">this</span><span class="op">.</span><span class="at">getters</span> <span class="op">=</span> {}</span>
+<span id="cb8-30"><a href="#cb8-30"></a>    <span class="co">// &#x904D;&#x5386;getters&#x7684;&#x6240;&#x6709;key</span></span>
+<span id="cb8-31"><a href="#cb8-31"></a>    <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(getters)<span class="op">.</span><span class="fu">forEach</span>(key <span class="kw">=&gt;</span> {</span>
+<span id="cb8-32"><a href="#cb8-32"></a>      <span class="co">// &#x4E3A;this.getters&#x5B9A;&#x4E49;&#x82E5;&#x5E72;&#x7684;&#x5C5E;&#x6027;,&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x662F;&#x53EA;&#x8BFB;&#x7684;</span></span>
+<span id="cb8-33"><a href="#cb8-33"></a>      <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(<span class="kw">this</span><span class="op">.</span><span class="at">getters</span><span class="op">,</span> key<span class="op">,</span> {</span>
+<span id="cb8-34"><a href="#cb8-34"></a>        <span class="dt">get</span><span class="op">:</span> () <span class="kw">=&gt;</span> {</span>
+<span id="cb8-35"><a href="#cb8-35"></a>          <span class="cf">return</span> getters[key](<span class="kw">this</span><span class="op">.</span><span class="at">state</span>)</span>
+<span id="cb8-36"><a href="#cb8-36"></a>        }</span>
+<span id="cb8-37"><a href="#cb8-37"></a>      })</span>
+<span id="cb8-38"><a href="#cb8-38"></a>    })</span>
+<span id="cb8-39"><a href="#cb8-39"></a>  }</span>
+<span id="cb8-40"><a href="#cb8-40"></a>}</span>
+<span id="cb8-41"><a href="#cb8-41"></a><span class="kw">function</span> <span class="fu">install</span> (_Vue) {</span>
+<span id="cb8-42"><a href="#cb8-42"></a>  Vue <span class="op">=</span> _Vue</span>
+<span id="cb8-43"><a href="#cb8-43"></a>  <span class="co">// &#x8FD9;&#x91CC;&#x8FD8;&#x662F;&#x6DF7;&#x5165;&#x4E86;&#x6211;&#x7684;&#x65B9;&#x6CD5; &#x5728;&#x4F60;&#x6BCF;&#x4E2A;Vue&#x5B9E;&#x4F8B;&#x91CC;&#x9762;</span></span>
+<span id="cb8-44"><a href="#cb8-44"></a>  Vue<span class="op">.</span><span class="fu">mixin</span>({</span>
+<span id="cb8-45"><a href="#cb8-45"></a>    beforeCreate () {</span>
+<span id="cb8-46"><a href="#cb8-46"></a>      <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="at">$options</span><span class="op">.</span><span class="at">store</span>) {</span>
+<span id="cb8-47"><a href="#cb8-47"></a>        <span class="co">// &#x5982;&#x679C; &#x4F60;new Vue({})&#x7684;&#x65F6;&#x5019; &#x7ED9;&#x6211;&#x4F20;&#x8FC7;&#x6765;&#x7684; &#x914D;&#x7F6E;&#x9879;&#x91CC; &#x6709; store &#x6211;&#x5C31;&#x628A;&#x4ED6;&#x6302;&#x8F7D;&#x5230;&#x539F;&#x578B;&#x4E0A;</span></span>
+<span id="cb8-48"><a href="#cb8-48"></a>        Vue<span class="op">.</span><span class="at">prototype</span><span class="op">.</span><span class="at">$store</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">$options</span><span class="op">.</span><span class="at">store</span></span>
+<span id="cb8-49"><a href="#cb8-49"></a>      }</span>
+<span id="cb8-50"><a href="#cb8-50"></a>    }</span>
+<span id="cb8-51"><a href="#cb8-51"></a>  })</span>
+<span id="cb8-52"><a href="#cb8-52"></a>}</span>
+<span id="cb8-53"><a href="#cb8-53"></a><span class="co">//&#x8FD9;&#x91CC; &#x7528;&#x9ED8;&#x8BA4;&#x5BFC;&#x51FA;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61; </span></span>
+<span id="cb8-54"><a href="#cb8-54"></a><span class="im">export</span> <span class="im">default</span> { Store<span class="op">,</span> install }</span></code></pre></div>
+<figure>
+<img src="/zh-CN/c7e9773c/1.png" alt><figcaption>&#x901A;&#x8FC7;this.$store&#x62FF;&#x5230;&#x914D;&#x7F6E;&#x9879;</figcaption>
+</figure>
+<h2 id="commit&#x5B9E;&#x73B0;">commit&#x5B9E;&#x73B0;</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="fl">1.</span>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x5728;new Vuex<span class="op">.</span><span class="at">Store&#x7684;&#x65F6;&#x5019;</span> &#x4F1A;&#x4F20;&#x8FDB;&#x53BB;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x5BF9;&#x8C61; &#x91CC;&#x9762;&#x4F1A;&#x6709;mutations</span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fl">2.</span>&#x6211;&#x4EEC;mutations&#x91CC;&#x4F1A;&#x6709;&#x51FD;&#x6570; &#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x662F;&#x4FEE;&#x6539;state&#x7684;&#x72B6;&#x6001; &#x4F46;&#x662F;&#x89E6;&#x53D1;&#x8FD9;&#x4E9B;&#x51FD;&#x6570;&#x7684;&#x65F6;&#x5019; &#x662F;&#x901A;&#x8FC7;commit </span>
+<span id="cb9-3"><a href="#cb9-3"></a><span class="fl">3.</span>&#x6240;&#x4EE5;&#x6211;&#x4EEC;&#x5728;Store&#x7684;&#x6784;&#x9020;&#x4E0A; &#x4F1A;&#x6709;&#x4E00;&#x4E2A;commit&#x51FD;&#x6570; </span>
+<span id="cb9-4"><a href="#cb9-4"></a><span class="fl">4.</span>&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528;commit&#x7684;&#x65F6;&#x5019; &#x4F1A;&#x4F20;&#x8FDB;&#x53BB;&#x4E00;&#x4E2A; &#x4F60;&#x8981;&#x89E6;&#x53D1;mutations&#x91CC;&#x7684;&#x51FD;&#x6570;&#x7684;&#x540D;&#x79F0;&#x7684;&#x5B57;&#x6BB5; &#x548C; &#x4F60;&#x8981;&#x4FEE;&#x6539;&#x7684;&#x72B6;&#x6001;&#x503C;</span>
+<span id="cb9-5"><a href="#cb9-5"></a><span class="fl">5.</span>&#x6240;&#x4EE5; commit&#x51FD;&#x6570; &#x9996;&#x5148;&#x8981;&#x62FF;&#x5230;&#x6211;&#x4EEC;Store&#x91CC;&#x7684;mutations&#x5BF9;&#x8C61; &#x7136;&#x540E; &#x901A;&#x8FC7;&#x4F60;&#x4F60;commit&#x4F20;&#x8FDB;&#x6765;&#x7684; &#x51FD;&#x6570;&#x5B57;&#x6BB5;&#x53BB;&#x89E6;&#x53D1;mutations</span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="fl">6.</span>&#x7136;&#x540E;&#x5728;&#x53BB;&#x4F20;&#x53C2; &#x5982;&#x4E0B;&#x56FE;</span></code></pre></div>
+<figure>
+<img src="/zh-CN/c7e9773c/2.png" alt><figcaption>commit&#x7684;&#x5B9E;&#x73B0;</figcaption>
+</figure>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="fl">1.</span>&#x8DDF;&#x6211;&#x4EEC;&#x4E0A;&#x6B21;&#x5199;&#x7684; router &#x662F;&#x4E00;&#x6837;&#x7684; &#x90FD;&#x662F;&#x63D2;&#x4EF6; &#x4F7F;&#x7528; use &#x8C03;install&#x51FD;&#x6570;</span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="fl">2.</span>&#x628A;&#x6211;&#x4EEC;new Store&#x7684;&#x65F6;&#x5019; &#x914D;&#x7F6E;&#x9879; &#x6302;&#x8F7D;&#x5230;&#x4E86; Vue&#x7684;&#x5B9E;&#x4F8B;&#x4E0A;</span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="fl">3.</span>commit&#x7684; &#x6211;&#x4EEC;&#x5728;&#x5B9E;&#x4F8B;&#x4E0A; &#x628A;&#x914D;&#x7F6E;&#x9879;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x53C2;&#x6570; &#x7ED9;&#x4E86;&#x6211;&#x4EEC;Store&#x5B9E;&#x4F8B;&#x7684;mutations &#x7136;&#x540E; commit&#x7684;&#x65F6;&#x5019; &#x5C31;&#x8C03;&#x6211;&#x4EEC;mutations&#x91CC;&#x7684;&#x51FD;&#x6570;</span>
+<span id="cb10-4"><a href="#cb10-4"></a><span class="fl">4.</span>&#x4EE3;&#x7801;&#x5730;&#x5740;  https<span class="op">:</span><span class="co">//github.com/wazer1987/mini_VueRouter</span></span></code></pre></div>
 <script>
         document.querySelectorAll('.github-emoji')
           .forEach(el => {
@@ -737,7 +795,7 @@
                     </i>
                 </span>
                 <span class="reprint-info">
-                    <a href="https://wazer1987.github.io/zh-CN/2b3ae5e7.html">https://wazer1987.github.io/zh-CN/2b3ae5e7.html</a>
+                    <a href="https://wazer1987.github.io/zh-CN/c7e9773c.html">https://wazer1987.github.io/zh-CN/c7e9773c.html</a>
                 </span>
             </div>
             <div class="reprint__notice">
@@ -775,12 +833,12 @@
                     
                         <div class="article-tag">
                             
-                                <a href="/tags/HTML/">
-                                    <span class="chip bg-color">HTML</span>
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
                                 </a>
                             
-                                <a href="/tags/CSS/">
-                                    <span class="chip bg-color">CSS</span>
+                                <a href="/tags/Vuex/">
+                                    <span class="chip bg-color">Vuex</span>
                                 </a>
                             
                         </div>
@@ -946,37 +1004,54 @@
 <article id="prenext-posts" class="prev-next articles">
     <div class="row article-row">
         
-        <div class="article col s12 m6" data-aos="fade-up">
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
             <div class="article-badge left-badge text-color">
-                <i class="fas fa-chevron-left"></i>&nbsp;上一篇</div>
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
             <div class="card">
-                <a href="/zh-CN/79a6148d.html">
+                <a href="/zh-CN/c7e9773c.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/1.jpg" class="responsive-img" alt="测试图片上传">
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="手写一个mini版的Vuex">
                         
-                        <span class="card-title">测试图片上传</span>
+                        <span class="card-title">手写一个mini版的Vuex</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            &#x6D4B;&#x8BD5;&#x4E0A;&#x4F20;&#x56FE;&#x7247;
-&#x4E0A;&#x4F20;&#x56FE;&#x7247;&#x4F7F;&#x7528;&#x5982;&#x4E0B;&#x683C
+                            手写一个mini版的Vuex
                         
                     </div>
                     <div class="publish-info">
-                        <span class="publish-date">
-                            <i class="far fa-clock fa-fw icon-date"></i>2019-12-10
-                        </span>
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-22
+                            </span>
                         <span class="publish-author">
                             
-                            <i class="fas fa-user fa-fw"></i>
-                            王正
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%AD%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    中级教程
+                                </a>
+                            
                             
                         </span>
                     </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/Vuex/">
+                        <span class="chip bg-color">Vuex</span>
+                    </a>
+                    
                 </div>
                 
             </div>
@@ -988,31 +1063,31 @@
                 下一篇&nbsp;<i class="fas fa-chevron-right"></i>
             </div>
             <div class="card">
-                <a href="/zh-CN/29703360.html">
+                <a href="/zh-CN/383rll78.html">
                     <div class="card-image">
                         
                         
-                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/9.jpg" class="responsive-img" alt="字符串常用API">
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/10.jpg" class="responsive-img" alt="封装一个自己的表单组件">
                         
-                        <span class="card-title">字符串常用API</span>
+                        <span class="card-title">封装一个自己的表单组件</span>
                     </div>
                 </a>
                 <div class="card-content article-content">
                     <div class="summary block-with-text">
                         
-                            字符串常用API。
+                            封装一个自己的表单组件
                         
                     </div>
                     <div class="publish-info">
                             <span class="publish-date">
-                                <i class="far fa-clock fa-fw icon-date"></i>2019-10-18
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-18
                             </span>
                         <span class="publish-author">
                             
                             <i class="fas fa-bookmark fa-fw icon-category"></i>
                             
-                            <a href="/categories/%E5%B8%B8%E7%94%A8API/" class="post-category">
-                                    常用API
+                            <a href="/categories/%E9%AB%98%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    高级教程
                                 </a>
                             
                             
@@ -1022,8 +1097,8 @@
                 
                 <div class="card-action article-tags">
                     
-                    <a href="/tags/JavaScript/">
-                        <span class="chip bg-color">JavaScript</span>
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
                     </a>
                     
                 </div>
