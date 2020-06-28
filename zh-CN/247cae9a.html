@@ -1,0 +1,1859 @@
+<!DOCTYPE HTML>
+<html lang="zh-CN">
+
+
+<head>
+    <meta charset="utf-8">
+    <meta name="keywords" content="手写一个low碧版Vue, js css html vue webpack 王正 前端">
+    <meta name="description" content="手写一个low碧版Vue">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="renderer" content="webkit|ie-stand|ie-comp">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>手写一个low碧版Vue | 北城韩雨</title>
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/awesome/css/all.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/animate/animate.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/css/lightgallery.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/matery.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/css/my.css">
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/jquery/jquery.min.js"></script>
+    
+<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
+<link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
+<link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
+
+
+<body>
+    <header class="navbar-fixed">
+    <nav id="headNav" class="bg-color nav-transparent">
+        <div id="navContainer" class="nav-wrapper head-container">
+            <div class="brand-logo">
+                <a href="/" class="waves-effect waves-light">
+                    
+                    <img src="/medias/logo.png" class="logo-img" alt="LOGO">
+                    
+                    <span class="logo-span">北城韩雨</span>
+                </a>
+            </div>
+            
+
+<a href="#" data-target="mobile-nav" class="sidenav-trigger button-collapse"><i class="fas fa-bars"></i></a>
+<ul class="right nav-menu">
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/" class="waves-effect waves-light">
+      
+      <i class="fas fa-home" style="zoom: 0.6;"></i>
+      
+      <span>首页</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/archives" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-archive" style="zoom: 0.6;"></i>
+      
+      <span>归档</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/tags">
+          
+          <i class="fas fa-tags" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Tags</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/categories">
+          
+          <i class="fas fa-bookmark" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Categories</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/about" class="waves-effect waves-light">
+      
+      <i class="fas fa-user-circle" style="zoom: 0.6;"></i>
+      
+      <span>关于</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/lab" class="waves-effect waves-light">
+      
+      <i class="fas fa-eye" style="zoom: 0.6;"></i>
+      
+      <span>视界</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/medias" class="waves-effect waves-light">
+
+      
+      <i class="fas fa-list" style="zoom: 0.6;"></i>
+      
+      <span>Medias</span>
+      <i class="fas fa-chevron-down" aria-hidden="true" style="zoom: 0.6;"></i>
+    </a>
+    <ul class="sub-nav menus_item_child ">
+      
+      <li>
+        <a href="/medias/books">
+          
+          <i class="fas fa-book" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Books</span>
+        </a>
+      </li>
+      
+      <li>
+        <a href="/medias/schedule">
+          
+          <i class="fas fa-th-large" style="margin-top: -20px; zoom: 0.6;"></i>
+          
+          <span>Schedule</span>
+        </a>
+      </li>
+      
+    </ul>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/contact" class="waves-effect waves-light">
+      
+      <i class="fas fa-comments" style="zoom: 0.6;"></i>
+      
+      <span>留言板</span>
+    </a>
+    
+  </li>
+  
+  <li class="hide-on-med-and-down nav-item">
+    
+    <a href="/friends" class="waves-effect waves-light">
+      
+      <i class="fas fa-address-book" style="zoom: 0.6;"></i>
+      
+      <span>友情链接</span>
+    </a>
+    
+  </li>
+  
+  <li>
+    <a href="#searchModal" class="modal-trigger waves-effect waves-light">
+      <i id="searchIcon" class="fas fa-search" title="搜索" style="zoom: 0.85;"></i>
+    </a>
+  </li>
+</ul>
+
+<div id="mobile-nav" class="side-nav sidenav">
+
+    <div class="mobile-head bg-color">
+        
+        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/logo.png" class="logo-img circle responsive-img">
+        
+        <div class="logo-name">北城韩雨</div>
+        <div class="logo-desc">
+            
+            一个前端界的小学生
+            
+        </div>
+    </div>
+
+    
+
+    <ul class="menu-list mobile-menu-list">
+        
+        <li class="m-nav-item">
+	  
+		<a href="/" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-home"></i>
+			
+			首页
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-archive"></i>
+			
+			归档
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/tags " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-tags" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Tags</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/categories " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-bookmark" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Categories</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/about" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-user-circle"></i>
+			
+			关于
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/lab" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-eye"></i>
+			
+			视界
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="javascript:;">
+			
+				<i class="fa-fw fas fa-list"></i>
+			
+			Medias
+			<span class="m-icon"><i class="fas fa-chevron-right"></i></span>
+		</a>
+            <ul  style="background:  ;" >
+              
+                <li>   
+				
+                  <a href="/medias/books " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-book" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Books</span>
+                  </a>
+                </li>
+              
+                <li>   
+				
+                  <a href="/medias/schedule " style="margin-left:75px";>
+				  
+				   <i class="fa fas fa-th-large" style="position: absolute;left:50px" ></i>
+			      
+		          <span>Schedule</span>
+                  </a>
+                </li>
+               
+            </ul>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/contact" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-comments"></i>
+			
+			留言板
+		</a>
+          
+        </li>
+        
+        <li class="m-nav-item">
+	  
+		<a href="/friends" class="waves-effect waves-light">
+			
+			    <i class="fa-fw fas fa-address-book"></i>
+			
+			友情链接
+		</a>
+          
+        </li>
+        
+        
+        <li><div class="divider"></div></li>
+        <li>
+            <a href="https://github.com/wazer1987" class="waves-effect waves-light" target="_blank">
+                <i class="fab fa-github-square fa-fw"></i>Fork Me
+            </a>
+        </li>
+        
+    </ul>
+</div>
+
+        </div>
+
+        
+            <style>
+    .nav-transparent .github-corner {
+        display: none !important;
+    }
+
+    .github-corner {
+        position: absolute;
+        z-index: 10;
+        top: 0;
+        right: 0;
+        border: 0;
+        transform: scale(1.1);
+    }
+
+    .github-corner svg {
+        color: #0f9d58;
+        fill: #fff;
+        height: 64px;
+        width: 64px;
+    }
+
+    .github-corner:hover .octo-arm {
+        animation: a 0.56s ease-in-out;
+    }
+
+    .github-corner .octo-arm {
+        animation: none;
+    }
+
+    @keyframes a {
+        0%,
+        to {
+            transform: rotate(0);
+        }
+        20%,
+        60% {
+            transform: rotate(-25deg);
+        }
+        40%,
+        80% {
+            transform: rotate(10deg);
+        }
+    }
+</style>
+
+<a href="https://github.com/wazer1987" class="github-corner tooltipped hide-on-med-and-down" target="_blank"
+   data-tooltip="Fork Me" data-position="left" data-delay="50">
+    <svg viewBox="0 0 250 250" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2"
+              fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z"
+              fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+        
+    </nav>
+
+</header>
+
+    
+
+
+
+<div class="bg-cover pd-header post-cover" style="background-image: url('https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/23.jpg')">
+    <div class="container" style="right: 0px;left: 0px;">
+        <div class="row">
+            <div class="col s12 m12 l12">
+                <div class="brand">
+                    <h1 class="description center-align post-title">手写一个low碧版Vue</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<main class="post-container content">
+
+    
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/tocbot/tocbot.css">
+<style>
+    #articleContent h1::before,
+    #articleContent h2::before,
+    #articleContent h3::before,
+    #articleContent h4::before,
+    #articleContent h5::before,
+    #articleContent h6::before {
+        display: block;
+        content: " ";
+        height: 100px;
+        margin-top: -100px;
+        visibility: hidden;
+    }
+
+    #articleContent :focus {
+        outline: none;
+    }
+
+    .toc-fixed {
+        position: fixed;
+        top: 64px;
+    }
+
+    .toc-widget {
+        width: 345px;
+        padding-left: 20px;
+    }
+
+    .toc-widget .toc-title {
+        margin: 35px 0 15px 0;
+        padding-left: 17px;
+        font-size: 1.5rem;
+        font-weight: bold;
+        line-height: 1.5rem;
+    }
+
+    .toc-widget ol {
+        padding: 0;
+        list-style: none;
+    }
+
+    #toc-content {
+        height: calc(100vh - 250px);
+        overflow: auto;
+    }
+
+    #toc-content ol {
+        padding-left: 10px;
+    }
+
+    #toc-content ol li {
+        padding-left: 10px;
+    }
+
+    #toc-content .toc-link:hover {
+        color: #42b983;
+        font-weight: 700;
+        text-decoration: underline;
+    }
+
+    #toc-content .toc-link::before {
+        background-color: transparent;
+        max-height: 25px;
+    }
+
+    #toc-content .is-active-link {
+        color: #42b983;
+    }
+
+    #toc-content .is-active-link::before {
+        background-color: #42b983;
+    }
+
+    #floating-toc-btn {
+        position: fixed;
+        right: 15px;
+        bottom: 76px;
+        padding-top: 15px;
+        margin-bottom: 0;
+        z-index: 998;
+    }
+
+    #floating-toc-btn .btn-floating {
+        width: 48px;
+        height: 48px;
+    }
+
+    #floating-toc-btn .btn-floating i {
+        line-height: 48px;
+        font-size: 1.4rem;
+    }
+</style>
+<div class="row">
+    <div id="main-content" class="col s12 m12 l9">
+        <!-- 文章内容详情 -->
+<div id="artDetail">
+    <div class="card">
+        <div class="card-content article-info">
+            <div class="row tag-cate">
+                <div class="col s7">
+                    
+                    <div class="article-tag">
+                        
+                            <a href="/tags/Vue/">
+                                <span class="chip bg-color">Vue</span>
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+                <div class="col s5 right-align">
+                    
+                    <div class="post-cate">
+                        <i class="fas fa-bookmark fa-fw icon-category"></i>
+                        
+                            <a href="/categories/%E4%B8%AD%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                中级教程
+                            </a>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+
+            <div class="post-info">
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-minus fa-fw"></i>发布日期:&nbsp;&nbsp;
+                    2020-06-28
+                </div>
+                
+
+                
+                <div class="post-date info-break-policy">
+                    <i class="far fa-calendar-check fa-fw"></i>更新日期:&nbsp;&nbsp;
+                    2020-06-28
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-file-word fa-fw"></i>文章字数:&nbsp;&nbsp;
+                    5.4k
+                </div>
+                
+
+                
+                <div class="info-break-policy">
+                    <i class="far fa-clock fa-fw"></i>阅读时长:&nbsp;&nbsp;
+                    33 分
+                </div>
+                
+
+                
+                    <div id="busuanzi_container_page_pv" class="info-break-policy">
+                        <i class="far fa-eye fa-fw"></i>阅读次数:&nbsp;&nbsp;
+                        <span id="busuanzi_value_page_pv"></span>
+                    </div>
+				
+            </div>
+
+        </div>
+        <hr class="clearfix">
+        <div class="card-content article-card-content">
+            <div id="articleContent">
+                <h1 id="&#x624B;&#x5199;&#x4E00;&#x4E2A;low&#x78A7;&#x7248;vue">&#x624B;&#x5199;&#x4E00;&#x4E2A;low&#x78A7;&#x7248;Vue</h1>
+<h2 id="vue&#x5DE5;&#x4F5C;&#x673A;&#x5236;">Vue&#x5DE5;&#x4F5C;&#x673A;&#x5236;</h2>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="fl">1.</span><span class="kw">new</span> Vue()&#x4E4B;&#x540E; Vue&#x4F1A;&#x8C03;&#x7528;&#x521D;&#x59CB;&#x5316;&#x4E5F;&#x5C31;&#x662F;_init()&#x51FD;&#x6570; &#x521D;&#x59CB;&#x5316;&#x4E86;&#x751F;&#x547D;&#x5468;&#x671F;&#x3001;&#x65F6;&#x95F4;&#x3001;props&#x3001;data&#x3001;computed&#x3001;&#x4E0E;watch&#x7B49;</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="fl">2.</span>&#x5176;&#x4E2D;&#x6700;&#x91CD;&#x8981;&#x7684;&#x662F;&#x901A;&#x8FC7; <span class="bu">Object</span><span class="op">.</span><span class="at">definProperty&#x8BBE;&#x7F6E;setter</span> &#x4E8E; getter &#x7528;&#x6765;&#x5B9E;&#x73B0; &#x54CD;&#x5E94;&#x5F0F; &#x4EE5;&#x53CA; &#x4F9D;&#x8D56;&#x6536;&#x96C6;</span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="fl">3.</span>&#x521D;&#x59CB;&#x5316;&#x4E4B;&#x540E; &#x8C03;&#x7528;$mount &#x6302;&#x8F7D;&#x7EC4;&#x4EF6; &#x5230;&#x89C6;&#x56FE;</span></code></pre></div>
+<p><img src="/zh-CN/247cae9a/1.png"></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="fl">1.</span>&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x7684;&#x56FE;&#x793A; &#x662F;&#x4EE5;&#x6D4F;&#x89C8;&#x5668;&#x4E3A;&#x4F8B; &#x662F;&#x4F60;script src&#x65B9;&#x5F0F;&#x5F15;&#x5165; Vue<span class="op">.</span><span class="at">js</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="fl">2.</span>compile&#x7684;&#x4F5C;&#x7528; &#x4E3B;&#x8981;&#x662F; &#x628A;&#x4F60;&#x7684;html &#x7F16;&#x8BD1;&#x6210;&#x4E00;&#x4E2A;render&#x51FD;&#x6570; </span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="fl">3.</span>compile&#x7684;&#x4E09;&#x4E2A;&#x9636;&#x6BB5; parse &#x628A;&#x6211;&#x4EEC;&#x7684;&#x5199;&#x7684;html&#x6A21;&#x677F;&#x7F16;&#x8BD1;&#x6210;&#x4E00;&#x4E2A;ast&#x62BD;&#x8C61;&#x8BED;&#x6CD5;&#x6811; &#x6BD4;&#x5982;&#x89E3;&#x6790;&#x7684;&#x4F60;&#x7684;&#x6307;&#x4EE4; V<span class="op">-</span>xxx&#x7B49;</span>
+<span id="cb2-4"><a href="#cb2-4"></a>  optimize &#x6807;&#x8BB0;&#x4E00;&#x4E9B;&#x9759;&#x6001;&#x7684;&#x8282;&#x70B9; &#x6BD4;&#x5982; &#x67D0;&#x4E2A;&#x5143;&#x7D20;&#x91CC;&#x7684;&#x6587;&#x672C;&#x5C31;&#x662F;&#x8FD9;&#x6837;&#x6CA1;&#x6709;&#x53D8;&#x8FC7; &#x7528;&#x4F5C;&#x540E;&#x9762;&#x7684;&#x6027;&#x80FD;&#x4F18;&#x5316; </span>
+<span id="cb2-5"><a href="#cb2-5"></a>  generate &#x628A;parse &#x89E3;&#x6790;&#x7684;ast &#x8F6C;&#x6362;&#x4E3A;&#x5B57;&#x7B26;&#x4E32;&#x6E32;&#x67D3;&#x51FD;&#x6570;  &#x5728;&#x7528; render <span class="kw">function</span> &#x628A;&#x4ED6;&#x53D8;&#x6210;&#x4E00;&#x4E2A;&#x771F;&#x6B63;&#x7684;&#x51FD;&#x6570;</span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="fl">4.</span>&#x7136;&#x540E;&#x4FBF;&#x5229;&#x6211;&#x4EEC;&#x7684;&#x6570;&#x636E;data &#x505A;&#x6570;&#x636E;&#x52AB;&#x6301; getter &#x548C; setter </span>
+<span id="cb2-7"><a href="#cb2-7"></a><span class="fl">5.</span>&#x5DE6;&#x53F3;&#x7684;&#x6570;&#x636E;&#x90FD;&#x4F1A;&#x901A;&#x8FC7;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x8005;watcher &#x53BB;&#x66F4;&#x65B0; &#x4E5F;&#x5C31;&#x662F;&#x8BF4; &#x5F53;&#x6211;&#x4EEC;&#x8BBF;&#x95EE;&#x67D0;&#x4E2A;data&#x91CC;&#x7684;&#x67D0;&#x4E2A;&#x6570;&#x503C;&#x7684;&#x65F6;&#x5019; &#x4F1A;&#x89E6;&#x53D1;&#x6211;&#x4EEC;&#x7684;getter &#x7136;&#x540E;&#x4F1A;&#x8BBE;&#x7F6E;&#x4E00;&#x4E2A;wather&#x89C2;&#x5BDF;&#x8005;(<span class="kw">new</span> watcher())&#x53BB;&#x76EF;&#x7740;&#x8FD9;&#x4E2A;&#x4F60;&#x8BBF;&#x95EE;&#x7684;&#x8FD9;&#x4E2A;&#x6570;&#x503C; &#x5F53;&#x6211;&#x4EEC;&#x66F4;&#x6539;&#x4E86;&#x4F60;&#x8FD9;&#x4E2A;&#x8BBF;&#x95EE;&#x7684;&#x6570;&#x503C;&#x7684;&#x65F6;&#x5019; &#x4E5F;&#x5C31;&#x662F;&#x89E6;&#x53D1;&#x4E86;setter &#x7136;&#x540E;&#x6211;&#x4EEC;&#x4F1A;&#x901A;&#x77E5;&#x6211;&#x4EEC;&#x5728;getter&#x7684;&#x662F;&#x65F6;&#x5019;&#x8BBE;&#x7F6E;&#x7684;watcher &#x544A;&#x8BC9;&#x4ED6;&#x6211;&#x6539;&#x53D8;&#x4E86; &#x7136;&#x540E;watcher &#x5C31;&#x53BB;update&#x66F4;&#x65B0;</span>
+<span id="cb2-8"><a href="#cb2-8"></a><span class="fl">6.</span>&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019; &#x6211;&#x4EEC;&#x6700;&#x7EC8;&#x4F1A;&#x6BD4;&#x5BF9;&#x65B0;&#x65E7;&#x4E24;&#x4E2A;&#x503C; &#x7136;&#x540E;&#x53BB;&#x6253;&#x8865;&#x4E01; &#x4E5F;&#x662F;&#x5C31;patch()</span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="fl">7.</span>&#x7136;&#x540E;&#x5C31;&#x66F4;&#x6539;DOM</span></code></pre></div>
+<h2 id="&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x7684;&#x7B80;&#x5316;&#x7248;vue&#x6D41;&#x7A0B;">&#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x7684;&#x7B80;&#x5316;&#x7248;Vue&#x6D41;&#x7A0B;</h2>
+<p><img src="/zh-CN/247cae9a/2.png"></p>
+<h2 id="vue&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x539F;&#x7406;">Vue&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x539F;&#x7406;</h2>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="fl">1.</span>Vue&#x7684;&#x54CD;&#x5E94;&#x5F0F;&#x539F;&#x7406; <span class="bu">Object</span><span class="op">.</span><span class="at">definProperty</span></span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1"></a><span class="dt">&lt;!DOCTYPE </span>html<span class="dt">&gt;</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="kw">&lt;html</span><span class="ot"> lang=</span><span class="st">&quot;en&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="kw">&lt;head&gt;</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="kw">&lt;meta</span><span class="ot"> charset=</span><span class="st">&quot;UTF-8&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="kw">&lt;meta</span><span class="ot"> name=</span><span class="st">&quot;viewport&quot;</span><span class="ot"> content=</span><span class="st">&quot;width=device-width, initial-scale=1.0&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="kw">&lt;title&gt;</span>Document<span class="kw">&lt;/title&gt;</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="kw">&lt;/head&gt;</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="kw">&lt;body&gt;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>    <span class="kw">&lt;div</span><span class="ot"> id=</span><span class="st">&quot;app&quot;</span><span class="kw">&gt;</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a>        <span class="kw">&lt;p&gt;</span>&#x4F60;&#x597D;,<span class="kw">&lt;span</span><span class="ot"> id=</span><span class="st">&quot;name&quot;</span><span class="kw">&gt;&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>    <span class="kw">&lt;/div&gt;</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>   <span class="kw">&lt;script&gt;</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>       <span class="kw">var</span> obj <span class="op">=</span> {}</span>
+<span id="cb4-14"><a href="#cb4-14"></a>       <span class="co">//&#x5F53;&#x6211;&#x8BBF;&#x95EE; &#x6216;&#x8005;&#x8BBE;&#x7F6E; obj&#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x5C5E;&#x6027;&#x65F6; &#x4F1A;&#x5148;&#x8D70;&#x6211;&#x8FD9;&#x4E2A;&#x52AB;&#x6301; &#x7136;&#x540E; &#x6839;&#x636E;&#x4F60;&#x662F;&#x8BBF;&#x95EE; &#x8FD8;&#x662F;&#x8BBE;&#x7F6E; &#x53BB;&#x505A;&#x4E0D;&#x540C;&#x7684;&#x903B;&#x8F91;</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>       <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(obj<span class="op">,</span><span class="st">&apos;name&apos;</span><span class="op">,</span>{</span>
+<span id="cb4-16"><a href="#cb4-16"></a>           get(){</span>
+<span id="cb4-17"><a href="#cb4-17"></a>            <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&apos;&#x6211;&#x83B7;&#x53D6;&#x4E86;obj.name&apos;</span>)</span>
+<span id="cb4-18"><a href="#cb4-18"></a>            <span class="cf">return</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&apos;#name&apos;</span>)<span class="op">.</span><span class="at">innerHTML</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>           }<span class="op">,</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>           set(nick){</span>
+<span id="cb4-21"><a href="#cb4-21"></a>            <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="st">&apos;&#x6211;&#x8BBE;&#x7F6E;&#x4E86;obj.name&apos;</span>)</span>
+<span id="cb4-22"><a href="#cb4-22"></a>            <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(<span class="st">&apos;#name&apos;</span>)<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> nick</span>
+<span id="cb4-23"><a href="#cb4-23"></a>           }</span>
+<span id="cb4-24"><a href="#cb4-24"></a>       })</span>
+<span id="cb4-25"><a href="#cb4-25"></a>    <span class="co">//&#x5F53;&#x6211;&#x8BBE;&#x7F6E;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x65F6;&#x5019;  &#x4F1A;&#x89E6;&#x53D1; set&#x51FD;&#x6570; &#x53C2;&#x6570; &#x5C31;&#x662F;&#x4F60;&#x8BBE;&#x7F6E;&#x7684;&#x503C;</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>    obj<span class="op">.</span><span class="at">name</span> <span class="op">=</span> <span class="st">&apos;lilei&apos;</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a>    <span class="co">//&#x5F53;&#x6211;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x5C5E;&#x6027;&#x7684;&#x65F6;&#x5019;  &#x4F1A;&#x89E6;&#x53D1;get &#x51FD;&#x6570; &#x8FD9;&#x91CC;&#x5C31;&#x80FD;&#x52AB;&#x6301;&#x5230; &#x53BB;&#x505A;&#x989D;&#x5916;&#x7684;&#x903B;&#x8F91; &#x6BD4;&#x5982;&#x4E0A;&#x9762; &#x6211;&#x4EEC;&#x5C31;&#x628A;#name&#x5143;&#x7D20;&#x7684;&#x91CC;&#x7684;&#x5185;&#x5BB9;&#x8FD4;&#x56DE;&#x4E86; </span></span>
+<span id="cb4-28"><a href="#cb4-28"></a>    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(obj<span class="op">.</span><span class="at">name</span>)</span>
+<span id="cb4-29"><a href="#cb4-29"></a>   <span class="kw">&lt;/script&gt;</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="kw">&lt;/body&gt;</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a><span class="kw">&lt;/html&gt;</span></span></code></pre></div>
+<h2 id="&#x5B9E;&#x73B0;&#x54CD;&#x5E94;&#x5F0F;">&#x5B9E;&#x73B0;&#x54CD;&#x5E94;&#x5F0F;</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1"></a><span class="fl">1.</span>observe &#x9012;&#x5F52;&#x4F60;&#x4F20;&#x8FDB;&#x6765;&#x7684;options&#x7684;data &#x6570;&#x636E;  </span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="fl">2.</span>defineReactive &#x5206;&#x522B;&#x7ED9;&#x4F60;&#x7684;data &#x505A;&#x6570;&#x636E;&#x52AB;&#x6301;</span></code></pre></div>
+<div class="sourceCode" id="cb6"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb6-1"><a href="#cb6-1"></a><span class="co">//&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="co">// const vm = new Wvue({</span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="co">//     data:{</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="co">//         msg:&apos;&#x4F60;&#x597D;&apos;</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="co">//     }</span></span>
+<span id="cb6-6"><a href="#cb6-6"></a><span class="co">// })</span></span>
+<span id="cb6-7"><a href="#cb6-7"></a><span class="kw">class</span> Wvue {</span>
+<span id="cb6-8"><a href="#cb6-8"></a>    constructor(options){</span>
+<span id="cb6-9"><a href="#cb6-9"></a>        <span class="co">//&#x628A;&#x4F60;&#x4F20;&#x8FDB;&#x6765;&#x7684;&#x914D;&#x7F6E;&#x9879; </span></span>
+<span id="cb6-10"><a href="#cb6-10"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$options</span> <span class="op">=</span> options</span>
+<span id="cb6-11"><a href="#cb6-11"></a>        <span class="co">//&#x628A;&#x8981;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x6570;&#x636E;&#x4E5F;&#x4FDD;&#x5B58;&#x4E00;&#x4E0B;</span></span>
+<span id="cb6-12"><a href="#cb6-12"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$data</span> <span class="op">=</span> options<span class="op">.</span><span class="at">data</span></span>
+<span id="cb6-13"><a href="#cb6-13"></a>        <span class="co">//&#x5F00;&#x59CB;&#x628A;&#x6570;&#x636E;&#x53D8;&#x6210;&#x54CD;&#x5E94;&#x5F0F;</span></span>
+<span id="cb6-14"><a href="#cb6-14"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">observe</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$data</span>)</span>
+<span id="cb6-15"><a href="#cb6-15"></a>    }</span>
+<span id="cb6-16"><a href="#cb6-16"></a>    <span class="co">//&#x89C2;&#x5BDF;data &#x9012;&#x5F52;&#x4FBF;&#x5229;data &#x662F;&#x4F20;&#x9012;&#x8FDB;&#x6765;&#x7684;&#x5BF9;&#x8C61; &#x54CD;&#x5E94;&#x5F0F;</span></span>
+<span id="cb6-17"><a href="#cb6-17"></a>    observe(value){</span>
+<span id="cb6-18"><a href="#cb6-18"></a>        <span class="cf">if</span>( <span class="op">!</span>value <span class="op">||</span> <span class="kw">typeof</span> value <span class="op">!==</span> <span class="st">&apos;object&apos;</span>){</span>
+<span id="cb6-19"><a href="#cb6-19"></a>            <span class="cf">return</span></span>
+<span id="cb6-20"><a href="#cb6-20"></a>        }</span>
+<span id="cb6-21"><a href="#cb6-21"></a>        <span class="co">//&#x4FBF;&#x5229;&#x4E86;&#x4F60;data&#x91CC;&#x7684;&#x6240;&#x6709;key &#x53D8;&#x6210;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x7EC4; &#x7136;&#x540E;&#x5BF9;key&#x505A;&#x54CD;&#x5E94;&#x5F0F;&#x5904;&#x7406;</span></span>
+<span id="cb6-22"><a href="#cb6-22"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(value)<span class="op">.</span><span class="fu">forEach</span>( key <span class="kw">=&gt;</span> {</span>
+<span id="cb6-23"><a href="#cb6-23"></a>            <span class="co">//&#x7ED9;&#x6BCF;&#x4E2A;key&#x505A;&#x54CD;&#x5E94;&#x5F0F;&#x7684;&#x5904;&#x7406; &#x8FD9;&#x91CC;&#x9762;&#x7684;value &#x5C31;&#x662F;&#x4F60;&#x7684;data&#x5BF9;&#x8C61; key &#x662F;&#x4F60;&#x7684;data&#x5BF9;&#x8C61;&#x91CC;&#x7684;&#x952E; value[key] &#x662F;&#x4F60;data&#x5BF9;&#x8C61;&#x91CC;&#x7684; &#x952E;&#x503C;</span></span>
+<span id="cb6-24"><a href="#cb6-24"></a>            <span class="kw">this</span><span class="op">.</span><span class="fu">defineReactive</span>(value<span class="op">,</span>key<span class="op">,</span>value[key])</span>
+<span id="cb6-25"><a href="#cb6-25"></a>        })</span>
+<span id="cb6-26"><a href="#cb6-26"></a>    }</span>
+<span id="cb6-27"><a href="#cb6-27"></a>    defineReactive(obj<span class="op">,</span>key<span class="op">,</span>value){</span>
+<span id="cb6-28"><a href="#cb6-28"></a>        <span class="co">//&#x5F53;&#x4F60;&#x5F53;&#x95EE; vm.$data.msg&#x7684;&#x65F6;&#x5019; &#x5C31;&#x89E6;&#x53D1;&#x4E86;get &#x628A;&#x4F60;&#x7684;&#x503C;&#x7ED9;&#x4F60;&#x8FD4;&#x56DE;&#x4E86;</span></span>
+<span id="cb6-29"><a href="#cb6-29"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(obj<span class="op">,</span>key<span class="op">,</span>{</span>
+<span id="cb6-30"><a href="#cb6-30"></a>            get(){</span>
+<span id="cb6-31"><a href="#cb6-31"></a>                <span class="cf">return</span> value</span>
+<span id="cb6-32"><a href="#cb6-32"></a>            }<span class="op">,</span></span>
+<span id="cb6-33"><a href="#cb6-33"></a>            <span class="co">//&#x5F53;&#x4F60;&#x8BBE;&#x7F6E; vm.$data.msg&#x7684;&#x65F6;&#x5019; &#x5C31;&#x89E6;&#x53D1;&#x4E86;set &#x4F1A;&#x5148;&#x6BD4;&#x8F83; &#x4F60;&#x7684;&#x503C;&#x8DDF;&#x4F60;&#x539F;&#x6765;&#x7684;&#x503C;&#x4E00;&#x6837;&#x4E0D;&#x4E00;&#x6837; &#x5982;&#x679C;&#x4E0D;&#x4E00;&#x6837;&#x6211;&#x5C31;&#x8D4B;&#x503C; &#x8FD9;&#x91CC;&#x5F62;&#x6210;&#x4E86;&#x95ED;&#x5305;</span></span>
+<span id="cb6-34"><a href="#cb6-34"></a>            set(newval){</span>
+<span id="cb6-35"><a href="#cb6-35"></a>                <span class="cf">if</span>(newval <span class="op">!==</span> value){</span>
+<span id="cb6-36"><a href="#cb6-36"></a>                    value <span class="op">=</span> newval</span>
+<span id="cb6-37"><a href="#cb6-37"></a>                    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span>key<span class="sc">}</span><span class="vs">&#x5C5E;&#x6027;&#x66F4;&#x65B0;&#x4E86;`</span>)</span>
+<span id="cb6-38"><a href="#cb6-38"></a>                }</span>
+<span id="cb6-39"><a href="#cb6-39"></a>            }</span>
+<span id="cb6-40"><a href="#cb6-40"></a>        })</span>
+<span id="cb6-41"><a href="#cb6-41"></a>    }</span>
+<span id="cb6-42"><a href="#cb6-42"></a>}</span></code></pre></div>
+<h2 id="&#x9012;&#x5F52;&#x53BB;&#x54CD;&#x5E94;&#x5F0F;">&#x9012;&#x5F52;&#x53BB;&#x54CD;&#x5E94;&#x5F0F;</h2>
+<div class="sourceCode" id="cb7"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb7-1"><a href="#cb7-1"></a><span class="fl">1.</span>&#x521A;&#x521A;&#x6211;&#x4EEC;&#x5DF2;&#x7ECF;&#x5199;&#x597D;&#x4E86;&#x4E00;&#x4E2A;&#x57FA;&#x672C;&#x7684;&#x54CD;&#x5E94;&#x5F0F;</span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="fl">2.</span>&#x4F46;&#x662F; &#x662F;&#x65E0;&#x6CD5;&#x7ED9;&#x6211;&#x4EEC;&#x7684;&#x5BF9;&#x8C61;&#x5957;&#x5BF9;&#x8C61;&#x7684;&#x6570;&#x636E;&#x505A;&#x54CD;&#x5E94;&#x5F0F;&#x7684;</span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="fl">3.</span>&#x6BD4;&#x5982; <span class="kw">new</span> Wvue({</span>
+<span id="cb7-4"><a href="#cb7-4"></a>    <span class="dt">data</span><span class="op">:</span>{</span>
+<span id="cb7-5"><a href="#cb7-5"></a>        <span class="dt">msg</span><span class="op">:</span><span class="st">&apos;&#x4F60;&#x597D;&apos;</span><span class="op">,</span></span>
+<span id="cb7-6"><a href="#cb7-6"></a>        <span class="dt">err</span><span class="op">:</span>{</span>
+<span id="cb7-7"><a href="#cb7-7"></a>            <span class="dt">one</span><span class="op">:</span><span class="st">&apos;&#x9519;&#x8BEF;&#x4EE5;&apos;</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a>        }</span>
+<span id="cb7-9"><a href="#cb7-9"></a>    }</span>
+<span id="cb7-10"><a href="#cb7-10"></a>})</span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="fl">4.</span>&#x6240;&#x4EE5;&#x8FD9;&#x6211;&#x4EEC;&#x8FD8;&#x9700;&#x8981;&#x53BB;&#x9012;&#x5F52;</span></code></pre></div>
+<div class="sourceCode" id="cb8"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">class</span> Wvue {</span>
+<span id="cb8-2"><a href="#cb8-2"></a>    constructor(options){</span>
+<span id="cb8-3"><a href="#cb8-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$options</span> <span class="op">=</span> options</span>
+<span id="cb8-4"><a href="#cb8-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$data</span> <span class="op">=</span> options<span class="op">.</span><span class="at">data</span></span>
+<span id="cb8-5"><a href="#cb8-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">observe</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$data</span>)</span>
+<span id="cb8-6"><a href="#cb8-6"></a>    }</span>
+<span id="cb8-7"><a href="#cb8-7"></a>    observe(value){</span>
+<span id="cb8-8"><a href="#cb8-8"></a>        <span class="cf">if</span>( <span class="op">!</span>value <span class="op">||</span> <span class="kw">typeof</span> value <span class="op">!==</span> <span class="st">&apos;object&apos;</span>){</span>
+<span id="cb8-9"><a href="#cb8-9"></a>            <span class="cf">return</span></span>
+<span id="cb8-10"><a href="#cb8-10"></a>        }</span>
+<span id="cb8-11"><a href="#cb8-11"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(value)<span class="op">.</span><span class="fu">forEach</span>( key <span class="kw">=&gt;</span> {</span>
+<span id="cb8-12"><a href="#cb8-12"></a>            <span class="kw">this</span><span class="op">.</span><span class="fu">defineReactive</span>(value<span class="op">,</span>key<span class="op">,</span>value[key])</span>
+<span id="cb8-13"><a href="#cb8-13"></a>        })</span>
+<span id="cb8-14"><a href="#cb8-14"></a>    }</span>
+<span id="cb8-15"><a href="#cb8-15"></a>    defineReactive(obj<span class="op">,</span>key<span class="op">,</span>value){</span>
+<span id="cb8-16"><a href="#cb8-16"></a>        <span class="co">//&#x5982;&#x679C;&#x4F60;&#x7684;&#x5BF9;&#x8C61;&#x8FD8;&#x6709;&#x5BF9;&#x8C61; &#x6211;&#x5C31;&#x53BB;&#x9012;&#x5F52; &#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x8FD8;&#x6709;&#x4E2A;&#x5224;&#x65AD;  if( !value &amp;&amp; typeof value !== &apos;object&apos;)</span></span>
+<span id="cb8-17"><a href="#cb8-17"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">observe</span>(value)</span>
+<span id="cb8-18"><a href="#cb8-18"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(obj<span class="op">,</span>key<span class="op">,</span>{</span>
+<span id="cb8-19"><a href="#cb8-19"></a>            get(){</span>
+<span id="cb8-20"><a href="#cb8-20"></a>                <span class="cf">return</span> value</span>
+<span id="cb8-21"><a href="#cb8-21"></a>            }<span class="op">,</span></span>
+<span id="cb8-22"><a href="#cb8-22"></a>            set(newval){</span>
+<span id="cb8-23"><a href="#cb8-23"></a>                <span class="cf">if</span>(newval <span class="op">!==</span> value){</span>
+<span id="cb8-24"><a href="#cb8-24"></a>                    value <span class="op">=</span> newval</span>
+<span id="cb8-25"><a href="#cb8-25"></a>                    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span>key<span class="sc">}</span><span class="vs">&#x5C5E;&#x6027;&#x66F4;&#x65B0;&#x4E86;`</span>)</span>
+<span id="cb8-26"><a href="#cb8-26"></a>                }</span>
+<span id="cb8-27"><a href="#cb8-27"></a>            }</span>
+<span id="cb8-28"><a href="#cb8-28"></a>        })</span>
+<span id="cb8-29"><a href="#cb8-29"></a>    }</span>
+<span id="cb8-30"><a href="#cb8-30"></a>}</span></code></pre></div>
+<h2 id="&#x5B9E;&#x73B0;&#x65E0;&#x4E2D;&#x95F4;&#x8BBF;&#x95EE;">&#x5B9E;&#x73B0;&#x65E0;&#x4E2D;&#x95F4;&#x8BBF;&#x95EE;</h2>
+<div class="sourceCode" id="cb9"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb9-1"><a href="#cb9-1"></a><span class="fl">1.</span>&#x6211;&#x4EEC;&#x5728;&#x4F7F;&#x7528;Vue&#x7684;&#x65F6;&#x5019; &#x5E73;&#x65F6; &#x90FD;&#x53EA;&#x76F4;&#x63A5; <span class="kw">this</span><span class="op">.</span><span class="at">msg</span>   &#x4E2D;&#x95F4;&#x662F;&#x6CA1;&#x6709;data&#x7684; </span>
+<span id="cb9-2"><a href="#cb9-2"></a><span class="fl">2.</span>&#x8FD9;&#x91CC;&#x7684;&#x5B9E;&#x73B0; &#x5176;&#x5B9E;&#x4E3B;&#x8981;&#x5C31; &#x5728;data&#x4E2D;&#x6709;&#x505A;&#x4E86;&#x6570;&#x636E;&#x52AB;&#x6301; &#x628A;&#x6211;&#x4EEC;&#x7684;this&#x4E5F;&#x5C31;&#x662F;&#x4F60;&#x7684;&#x5B9E;&#x4F8B; &#x76F4;&#x63A5; &#x6DFB;&#x52A0;&#x4E86; &#x5C5E;&#x6027; &#x503C;&#x662F;&#x4F60;data&#x91CC;&#x7684;&#x6BCF;&#x4E00;&#x4E2A;&#x952E;&#x503C;</span></code></pre></div>
+<div class="sourceCode" id="cb10"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb10-1"><a href="#cb10-1"></a><span class="co">//&#x4F7F;&#x7528;&#x7684;&#x65F6;&#x5019;</span></span>
+<span id="cb10-2"><a href="#cb10-2"></a><span class="co">//vm.msg &#x7701;&#x53BB;&#x4E86;&#x4E2D;&#x95F4;&#x7684;$data</span></span>
+<span id="cb10-3"><a href="#cb10-3"></a><span class="kw">class</span> Wvue {</span>
+<span id="cb10-4"><a href="#cb10-4"></a>    constructor(options){</span>
+<span id="cb10-5"><a href="#cb10-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$options</span> <span class="op">=</span> options</span>
+<span id="cb10-6"><a href="#cb10-6"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$data</span> <span class="op">=</span> options<span class="op">.</span><span class="at">data</span></span>
+<span id="cb10-7"><a href="#cb10-7"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">observe</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$data</span>)</span>
+<span id="cb10-8"><a href="#cb10-8"></a>    }</span>
+<span id="cb10-9"><a href="#cb10-9"></a>    observe(value){</span>
+<span id="cb10-10"><a href="#cb10-10"></a>        <span class="cf">if</span>( <span class="op">!</span>value <span class="op">||</span> <span class="kw">typeof</span> value <span class="op">!==</span> <span class="st">&apos;object&apos;</span>){</span>
+<span id="cb10-11"><a href="#cb10-11"></a>            <span class="cf">return</span></span>
+<span id="cb10-12"><a href="#cb10-12"></a>        }</span>
+<span id="cb10-13"><a href="#cb10-13"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(value)<span class="op">.</span><span class="fu">forEach</span>( key <span class="kw">=&gt;</span> {</span>
+<span id="cb10-14"><a href="#cb10-14"></a>            <span class="kw">this</span><span class="op">.</span><span class="fu">defineReactive</span>(value<span class="op">,</span>key<span class="op">,</span>value[key])</span>
+<span id="cb10-15"><a href="#cb10-15"></a>            <span class="co">//&#x5728;&#x8FD9;&#x91CC; &#x6211;&#x4EEC;&#x5B9E;&#x73B0;&#x5BF9;this&#x7684;&#x4E00;&#x4E2A;&#x52AB;&#x6301; &#x628A;&#x6211;&#x4EEC;data&#x91CC;&#x7684;&#x6570;&#x636E; &#x76F4;&#x63A5; &#x5728;this&#x4E2D;  &#x8FD9;&#x6837; &#x8BBF;&#x95EE;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x7701;&#x7565; &#x4E2D;&#x95F4;&#x7684;data</span></span>
+<span id="cb10-16"><a href="#cb10-16"></a>            <span class="kw">this</span><span class="op">.</span><span class="fu">proxyData</span>(key)</span>
+<span id="cb10-17"><a href="#cb10-17"></a>        })</span>
+<span id="cb10-18"><a href="#cb10-18"></a>    }</span>
+<span id="cb10-19"><a href="#cb10-19"></a>    proxyData(key){</span>
+<span id="cb10-20"><a href="#cb10-20"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(<span class="kw">this</span><span class="op">,</span>key<span class="op">,</span>{</span>
+<span id="cb10-21"><a href="#cb10-21"></a>            get(){</span>
+<span id="cb10-22"><a href="#cb10-22"></a>                <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">$data</span>[key]</span>
+<span id="cb10-23"><a href="#cb10-23"></a>            }<span class="op">,</span></span>
+<span id="cb10-24"><a href="#cb10-24"></a>            set(newval){</span>
+<span id="cb10-25"><a href="#cb10-25"></a>                <span class="kw">this</span><span class="op">.</span><span class="at">$data</span>[key] <span class="op">=</span> newval</span>
+<span id="cb10-26"><a href="#cb10-26"></a>            }</span>
+<span id="cb10-27"><a href="#cb10-27"></a>        })</span>
+<span id="cb10-28"><a href="#cb10-28"></a>    }</span>
+<span id="cb10-29"><a href="#cb10-29"></a>    defineReactive(obj<span class="op">,</span>key<span class="op">,</span>value){</span>
+<span id="cb10-30"><a href="#cb10-30"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">observe</span>(value)</span>
+<span id="cb10-31"><a href="#cb10-31"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(obj<span class="op">,</span>key<span class="op">,</span>{</span>
+<span id="cb10-32"><a href="#cb10-32"></a>            get(){</span>
+<span id="cb10-33"><a href="#cb10-33"></a>                <span class="cf">return</span> value</span>
+<span id="cb10-34"><a href="#cb10-34"></a>            }<span class="op">,</span></span>
+<span id="cb10-35"><a href="#cb10-35"></a>            set(newval){</span>
+<span id="cb10-36"><a href="#cb10-36"></a>                <span class="cf">if</span>(newval <span class="op">!==</span> value){</span>
+<span id="cb10-37"><a href="#cb10-37"></a>                    value <span class="op">=</span> newval</span>
+<span id="cb10-38"><a href="#cb10-38"></a>                    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span>key<span class="sc">}</span><span class="vs">&#x5C5E;&#x6027;&#x66F4;&#x65B0;&#x4E86;`</span>)</span>
+<span id="cb10-39"><a href="#cb10-39"></a>                }</span>
+<span id="cb10-40"><a href="#cb10-40"></a>            }</span>
+<span id="cb10-41"><a href="#cb10-41"></a>        })</span>
+<span id="cb10-42"><a href="#cb10-42"></a>    }</span>
+<span id="cb10-43"><a href="#cb10-43"></a>}</span></code></pre></div>
+<h2 id="&#x4F9D;&#x8D56;&#x6536;&#x96C6;&#x4E0E;&#x8FFD;&#x8E2A;">&#x4F9D;&#x8D56;&#x6536;&#x96C6;&#x4E0E;&#x8FFD;&#x8E2A;</h2>
+<div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">new</span> Vue({</span>
+<span id="cb11-2"><a href="#cb11-2"></a>    <span class="dt">template</span><span class="op">:</span></span>
+<span id="cb11-3"><a href="#cb11-3"></a>    <span class="vs">`&lt;div&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="vs">        &lt;span&gt;&lt;/span&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="vs">        &lt;span&gt;&lt;/span&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="vs">        &lt;span&gt;&lt;/span&gt;</span></span>
+<span id="cb11-7"><a href="#cb11-7"></a><span class="vs">     &lt;/div&gt;`</span><span class="op">,</span></span>
+<span id="cb11-8"><a href="#cb11-8"></a>    <span class="dt">data</span><span class="op">:</span>{</span>
+<span id="cb11-9"><a href="#cb11-9"></a>        <span class="dt">name1</span><span class="op">:</span><span class="st">&apos;name1&apos;</span><span class="op">,</span></span>
+<span id="cb11-10"><a href="#cb11-10"></a>        <span class="dt">name2</span><span class="op">:</span><span class="st">&apos;name2&apos;</span><span class="op">,</span></span>
+<span id="cb11-11"><a href="#cb11-11"></a>        <span class="dt">name3</span><span class="op">:</span><span class="st">&apos;name3&apos;</span></span>
+<span id="cb11-12"><a href="#cb11-12"></a>    }<span class="op">,</span></span>
+<span id="cb11-13"><a href="#cb11-13"></a>    created(){</span>
+<span id="cb11-14"><a href="#cb11-14"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">name1</span> <span class="op">=</span> <span class="st">&apos;&#x6211;&#x6539;&#x53D8;&#x4E86;name1&apos;</span><span class="op">,</span></span>
+<span id="cb11-15"><a href="#cb11-15"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">name2</span> <span class="op">=</span> <span class="st">&apos;&#x6211;&#x6539;&#x53D8;&#x4E86;name2&apos;</span></span>
+<span id="cb11-16"><a href="#cb11-16"></a>    }</span>
+<span id="cb11-17"><a href="#cb11-17"></a>})</span></code></pre></div>
+<div class="sourceCode" id="cb12"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb12-1"><a href="#cb12-1"></a><span class="fl">1.</span>&#x4E0A;&#x9762;&#x53EF;&#x4EE5;&#x770B;&#x5230; &#x6211;&#x4EEC;&#x7684;template&#x91CC;&#x7684; &#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;name1 &#x662F;&#x4F9D;&#x8D56;&#x6211;&#x4EEC;data &#x91CC;&#x7684;name1 &#x8FD9;&#x4E2A;&#x65F6;&#x5019; &#x5C31;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x73B0;&#x5728;&#x6709;&#x4F9D;&#x8D56;&#x5173;&#x7CFB;</span>
+<span id="cb12-2"><a href="#cb12-2"></a><span class="fl">2.</span>name1 &#x88AB;&#x4FEE;&#x6539; &#x89C6;&#x56FE;&#x66F4;&#x65B0; &#x4E14;&#x8981;&#x66F4;&#x65B0;&#x4E24;&#x5904;</span>
+<span id="cb12-3"><a href="#cb12-3"></a><span class="fl">3.</span>name2 &#x88AB;&#x4FEE;&#x6539; &#x89C6;&#x56FE;&#x66F4;&#x65B0;</span>
+<span id="cb12-4"><a href="#cb12-4"></a><span class="fl">4.</span>name3 &#x6CA1;&#x7528;&#x5230; &#x4E0D;&#x9700;&#x8981;&#x66F4;&#x65B0;</span>
+<span id="cb12-5"><a href="#cb12-5"></a><span class="fl">5.</span>&#x6240;&#x4EE5;&#x8FD9;&#x4E2A;&#x65F6;&#x5019; &#x6211;&#x4EEC;&#x5C31;&#x8981;&#x626B;&#x63CF;&#x89C6;&#x56FE; &#x6536;&#x96C6;&#x4F9D;&#x8D56; &#x77E5;&#x9053;&#x89C6;&#x56FE;&#x4E2D;&#x5230;&#x5E95;&#x90A3;&#x4E9B;&#x5730;&#x65B9;&#x5BF9;&#x6570;&#x636E;&#x6709;&#x4F9D;&#x8D56; &#x8FD9;&#x6837;&#x6570;&#x636E;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x53EF;&#x4EE5;&#x505A;&#x5F88;&#x591A;&#x64CD;&#x4F5C;</span></code></pre></div>
+<h2 id="&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x4E0E;&#x8FFD;&#x8E2A;">&#x5B9E;&#x73B0;&#x6570;&#x636E;&#x4F9D;&#x8D56;&#x4E0E;&#x8FFD;&#x8E2A;</h2>
+<div class="sourceCode" id="cb13"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb13-1"><a href="#cb13-1"></a><span class="fl">1.</span> &#x6211;&#x4EEC;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56; &#x90FD;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;watcher(&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x6240;&#x8BF4;&#x7684;&#x89C2;&#x5BDF;&#x8005;)</span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="fl">2.</span> &#x6BD4;&#x5982;&#x6211;&#x4EEC;&#x4E0A;&#x9762;&#x7684;name1 &#x51FA;&#x73B0;&#x4E86;&#x4E24;&#x6B21; &#x6240;&#x4EE5;&#x5C31;&#x4F1A;&#x5BF9;&#x5E94;&#x4E24;&#x4E2A;watcher</span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="fl">3.</span> &#x8FD9;&#x4E2A;&#x65F6;&#x5019; &#x6211;&#x4EEC;&#x9700;&#x8981;&#x4E00;&#x4E2A;dep &#x53BB;&#x6536;&#x96C6;&#x5B58;&#x50A8;&#x6211;&#x4EEC;&#x7684;&#x4F9D;&#x8D56;&#x548C;watcher  &#x7136;&#x540E;&#x53BB;&#x7BA1;&#x7406;&#x6211;&#x4EEC;&#x7684;&#x8FD9;&#x4E9B;watcher &#x5F53;&#x4F9D;&#x8D56;&#x53D1;&#x751F;&#x53D8;&#x5316;&#x7684;&#x65F6;&#x5019; &#x5C31;&#x901A;&#x77E5;&#x6211;&#x4EEC;&#x7684;watcher&#x53BB;&#x5BF9;&#x6570;&#x636E;&#x66F4;&#x65B0; &#x66F4;&#x65B0;&#x89C6;&#x56FE;</span></code></pre></div>
+<h2 id="dep&#x7C7B;&#x7684;&#x4F5C;&#x7528;">Dep&#x7C7B;&#x7684;&#x4F5C;&#x7528;</h2>
+<div class="sourceCode" id="cb14"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb14-1"><a href="#cb14-1"></a><span class="fl">1.</span>&#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x4E2A;Dep&#x7684;&#x7C7B; &#x7528;&#x6765;&#x6536;&#x96C6;Watcher&#x5BF9;&#x8C61; &#x8BFB;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019; &#x4F1A;&#x89E6;&#x53D1;getter&#x51FD;&#x6570; &#x628A;&#x5F53;&#x524D;&#x7684;watcher&#x5BF9;&#x8C61;&#x5B58;&#x653E;&#x5728;Dep&#x7C7B;&#x4E2D;&#x53BB;</span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="fl">2.</span>&#x5199;&#x6570;&#x636E;&#x7684;&#x65F6;&#x5019; &#x4F1A;&#x89E6;&#x53D1;setter&#x65B9;&#x6CD5; &#x901A;&#x77E5;Dep&#x7C7B;&#x8C03;&#x7528; notify &#x6765;&#x89E6;&#x53D1; &#x6240;&#x6709;&#x7684;watcher &#x5BF9;&#x5E94;&#x7684;update&#x65B9;&#x6CD5;&#x66F4;&#x65B0;&#x89C6;&#x56FE;</span></code></pre></div>
+<div class="sourceCode" id="cb15"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb15-1"><a href="#cb15-1"></a><span class="co">//Dep:&#x7BA1;&#x7406;&#x82E5;&#x5E72;&#x4E2A;watcher&#x5B9E;&#x4F8B; &#x5B83;&#x548C;key &#x662F;&#x4E00;&#x5BF9;&#x4E00;&#x7684;&#x5173;&#x7CFB;</span></span>
+<span id="cb15-2"><a href="#cb15-2"></a><span class="kw">class</span> Dep {</span>
+<span id="cb15-3"><a href="#cb15-3"></a>    constructor(){ </span>
+<span id="cb15-4"><a href="#cb15-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">deps</span> <span class="op">=</span> []</span>
+<span id="cb15-5"><a href="#cb15-5"></a>    }</span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="co">//&#x6BCF;&#x6536;&#x96C6;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56; &#x6211;&#x4EEC;&#x5C31;&#x5728;&#x8FD9;&#x91CC;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;watcher</span></span>
+<span id="cb15-7"><a href="#cb15-7"></a>    addDep(watcher){</span>
+<span id="cb15-8"><a href="#cb15-8"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">deps</span><span class="op">.</span><span class="fu">push</span>(watcher)</span>
+<span id="cb15-9"><a href="#cb15-9"></a>    }</span>
+<span id="cb15-10"><a href="#cb15-10"></a>    <span class="co">//&#x5F53;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65F6;&#x5019; &#x901A;&#x77E5;&#x6211;&#x4EEC;&#x5BF9;&#x5E94;&#x7684;watcher&#x53BB;&#x505A;&#x66F4;&#x65B0;</span></span>
+<span id="cb15-11"><a href="#cb15-11"></a>    notify(){</span>
+<span id="cb15-12"><a href="#cb15-12"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">deps</span><span class="op">.</span><span class="fu">forEach</span>(dep <span class="kw">=&gt;</span> dep<span class="op">.</span><span class="fu">update</span>())</span>
+<span id="cb15-13"><a href="#cb15-13"></a>    }</span>
+<span id="cb15-14"><a href="#cb15-14"></a>}</span></code></pre></div>
+<h2 id="watcher&#x7C7B;&#x7684;&#x4F5C;&#x7528;">Watcher&#x7C7B;&#x7684;&#x4F5C;&#x7528;</h2>
+<div class="sourceCode" id="cb16"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb16-1"><a href="#cb16-1"></a><span class="fl">1.</span>&#x7528;&#x4E8E;&#x89C2;&#x5BDF;&#x4F9D;&#x8D56; &#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x4F1A;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;watcher</span>
+<span id="cb16-2"><a href="#cb16-2"></a><span class="fl">2.</span>&#x4EC0;&#x4E48;&#x65F6;&#x5019;&#x521B;&#x5EFA;watcher &#x6211;&#x4EEC;&#x4F1A;&#x5728;&#x7F16;&#x8BD1;&#x5668;&#x91CC;&#x7684;&#x65F6;&#x5019; &#x53BB;&#x626B;&#x63CF; &#x6807;&#x7B7E; &#x53D1;&#x73B0;&#x53CC;&#x82B1;&#x62EC;&#x53F7; &#x6216; &#x8FD9;&#x8D77;&#x6765;&#x4F9D;&#x8D56;&#x7684; &#x8BED;&#x6CD5;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x521B;&#x5EFA;watcher &#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x65B9;&#x4FBF;&#x6D4B;&#x8BD5; &#x6211;&#x4EEC;&#x53EA;&#x6709;&#x624B;&#x52A8;&#x53BB;&#x5199;&#x4E00;&#x4E0B;</span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb17-1"><a href="#cb17-1"></a><span class="co">//&#x4FDD;&#x5B58;UI&#x4E2D;&#x7684;&#x4F9D;&#x8D56; &#x548C;&#x81EA;&#x5DF1;&#x4E00;&#x4E00;&#x5BF9;&#x5E94; &#x5F53;dep&#x901A;&#x77E5;&#x6211;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019; &#x6211;&#x53BB;&#x66F4;&#x65B0;</span></span>
+<span id="cb17-2"><a href="#cb17-2"></a><span class="kw">class</span> Watche {</span>
+<span id="cb17-3"><a href="#cb17-3"></a>    constructor(vm<span class="op">,</span>key){</span>
+<span id="cb17-4"><a href="#cb17-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">vm</span> <span class="op">=</span> vm</span>
+<span id="cb17-5"><a href="#cb17-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">key</span> <span class="op">=</span> key</span>
+<span id="cb17-6"><a href="#cb17-6"></a>        <span class="co">//&#x5C06;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x6307;&#x5411;Dep.target</span></span>
+<span id="cb17-7"><a href="#cb17-7"></a>        Dep<span class="op">.</span><span class="at">target</span> <span class="op">=</span> <span class="kw">this</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>    }</span>
+<span id="cb17-9"><a href="#cb17-9"></a></span>
+<span id="cb17-10"><a href="#cb17-10"></a>    <span class="co">//dep&#x901A;&#x77E5;&#x6211;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019; &#x6211;&#x53BB;&#x66F4;&#x65B0;</span></span>
+<span id="cb17-11"><a href="#cb17-11"></a>    update(){</span>
+<span id="cb17-12"><a href="#cb17-12"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">key</span><span class="sc">}</span><span class="vs">&#x5C5E;&#x6027;&#x66F4;&#x65B0;`</span>)</span>
+<span id="cb17-13"><a href="#cb17-13"></a>    }</span>
+<span id="cb17-14"><a href="#cb17-14"></a>}</span></code></pre></div>
+<p><img src="/zh-CN/247cae9a/3.png"></p>
+<h2 id="&#x5B9E;&#x73B0;">&#x5B9E;&#x73B0;</h2>
+<div class="sourceCode" id="cb18"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">class</span> Wvue {</span>
+<span id="cb18-2"><a href="#cb18-2"></a>    constructor(options){</span>
+<span id="cb18-3"><a href="#cb18-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$options</span> <span class="op">=</span> options</span>
+<span id="cb18-4"><a href="#cb18-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$data</span> <span class="op">=</span> options<span class="op">.</span><span class="at">data</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">observe</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$data</span>)</span>
+<span id="cb18-6"><a href="#cb18-6"></a>        <span class="co">//&#x624B;&#x52A8;&#x6D4B;&#x8BD5; &#x5F53;&#x7136; &#x8FD9;&#x91CC;&#x7684;watcher&#x521B;&#x5EFA; &#x662F;&#x5728;&#x6211;&#x4EEC;&#x7684;&#x7F16;&#x8BD1;&#x5668;&#x91CC;&#x6267;&#x884C;&#x7684; &#x626B;&#x63CF;&#x89C6;&#x56FE;&#x4E0A;&#x7684;&#x8BED;&#x6CD5;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x7B49;&#x65F6;&#x5019;&#x521B;&#x5EFA;watcher</span></span>
+<span id="cb18-7"><a href="#cb18-7"></a>        <span class="kw">new</span> Watcher(<span class="kw">this</span><span class="op">,</span><span class="st">&apos;msg&apos;</span>)</span>
+<span id="cb18-8"><a href="#cb18-8"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">msg</span></span>
+<span id="cb18-9"><a href="#cb18-9"></a>    }</span>
+<span id="cb18-10"><a href="#cb18-10"></a>    observe(value){</span>
+<span id="cb18-11"><a href="#cb18-11"></a>        <span class="cf">if</span>( <span class="op">!</span>value <span class="op">||</span> <span class="kw">typeof</span> value <span class="op">!==</span> <span class="st">&apos;object&apos;</span>){</span>
+<span id="cb18-12"><a href="#cb18-12"></a>            <span class="cf">return</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a>        }</span>
+<span id="cb18-14"><a href="#cb18-14"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">keys</span>(value)<span class="op">.</span><span class="fu">forEach</span>( key <span class="kw">=&gt;</span> {</span>
+<span id="cb18-15"><a href="#cb18-15"></a>            <span class="kw">this</span><span class="op">.</span><span class="fu">defineReactive</span>(value<span class="op">,</span>key<span class="op">,</span>value[key])</span>
+<span id="cb18-16"><a href="#cb18-16"></a>            <span class="kw">this</span><span class="op">.</span><span class="fu">proxyData</span>(key)</span>
+<span id="cb18-17"><a href="#cb18-17"></a>        })</span>
+<span id="cb18-18"><a href="#cb18-18"></a>    }</span>
+<span id="cb18-19"><a href="#cb18-19"></a>    proxyData(key){</span>
+<span id="cb18-20"><a href="#cb18-20"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(<span class="kw">this</span><span class="op">,</span>key<span class="op">,</span>{</span>
+<span id="cb18-21"><a href="#cb18-21"></a>            get(){</span>
+<span id="cb18-22"><a href="#cb18-22"></a>                <span class="cf">return</span> <span class="kw">this</span><span class="op">.</span><span class="at">$data</span>[key]</span>
+<span id="cb18-23"><a href="#cb18-23"></a>            }<span class="op">,</span></span>
+<span id="cb18-24"><a href="#cb18-24"></a>            set(newval){</span>
+<span id="cb18-25"><a href="#cb18-25"></a>                <span class="kw">this</span><span class="op">.</span><span class="at">$data</span>[key] <span class="op">=</span> newval</span>
+<span id="cb18-26"><a href="#cb18-26"></a>            }</span>
+<span id="cb18-27"><a href="#cb18-27"></a>        })</span>
+<span id="cb18-28"><a href="#cb18-28"></a>    }</span>
+<span id="cb18-29"><a href="#cb18-29"></a>    defineReactive(obj<span class="op">,</span>key<span class="op">,</span>value){</span>
+<span id="cb18-30"><a href="#cb18-30"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">observe</span>(value)</span>
+<span id="cb18-31"><a href="#cb18-31"></a>        <span class="co">//&#x521B;&#x5EFA;Dep&#x5B9E;&#x4F8B; &#x8BA9;&#x6211;&#x4EEC;&#x7684;&#x4F9D;&#x8D56;&#x548C;&#x6211;&#x4EEC;&#x7684;Dep &#x4E5F;&#x5C31;&#x662F;&#x4F60;key &#x4E00;&#x5BF9;&#x4E00; &#x5BF9;&#x5E94;</span></span>
+<span id="cb18-32"><a href="#cb18-32"></a>        <span class="kw">const</span> dep <span class="op">=</span> <span class="kw">new</span> Dep()</span>
+<span id="cb18-33"><a href="#cb18-33"></a>        <span class="bu">Object</span><span class="op">.</span><span class="fu">defineProperty</span>(obj<span class="op">,</span>key<span class="op">,</span>{</span>
+<span id="cb18-34"><a href="#cb18-34"></a>            get(){</span>
+<span id="cb18-35"><a href="#cb18-35"></a>                <span class="co">//&#x5C06;Dep.target &#x6307;&#x5411;&#x7684;Wacher &#x5B9E;&#x4F8B;&#x52A0;&#x5165;&#x5230;Dep&#x4E2D; &#x8FD9;&#x6837;&#x5C31;&#x662F;&#x4E3A;&#x4EC0;&#x4E48; key&#x4F1A;&#x548C;&#x6211;&#x4EEC;&#x7684;watcher&#x6709;&#x5173;&#x8054; &#x5BF9;&#x5E94;&#x4E0A;</span></span>
+<span id="cb18-36"><a href="#cb18-36"></a>                Dep<span class="op">.</span><span class="at">target</span> <span class="op">&amp;&amp;</span> dep<span class="op">.</span><span class="fu">addDep</span>(Dep<span class="op">.</span><span class="at">target</span>) <span class="co">//&#x5F53;&#x6211;&#x4EEC;&#x7684;&#x6BCF;&#x4E2A;&#x4F9D;&#x8D56;&#x90FD;&#x4F1A;&#x4EA7;&#x751F;&#x4E00;&#x4E2A;watcher</span></span>
+<span id="cb18-37"><a href="#cb18-37"></a>                <span class="cf">return</span> value</span>
+<span id="cb18-38"><a href="#cb18-38"></a>            }<span class="op">,</span></span>
+<span id="cb18-39"><a href="#cb18-39"></a>            set(newval){</span>
+<span id="cb18-40"><a href="#cb18-40"></a>                <span class="cf">if</span>(newval <span class="op">!==</span> value){</span>
+<span id="cb18-41"><a href="#cb18-41"></a>                    value <span class="op">=</span> newval</span>
+<span id="cb18-42"><a href="#cb18-42"></a>                    <span class="co">//&#x901A;&#x77E5; watcher &#x53BB;&#x66F4;&#x65B0;</span></span>
+<span id="cb18-43"><a href="#cb18-43"></a>                    dep<span class="op">.</span><span class="fu">notify</span>()</span>
+<span id="cb18-44"><a href="#cb18-44"></a>                    <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span>key<span class="sc">}</span><span class="vs">&#x5C5E;&#x6027;&#x66F4;&#x65B0;&#x4E86;`</span>)</span>
+<span id="cb18-45"><a href="#cb18-45"></a>                }</span>
+<span id="cb18-46"><a href="#cb18-46"></a>            }</span>
+<span id="cb18-47"><a href="#cb18-47"></a>        })</span>
+<span id="cb18-48"><a href="#cb18-48"></a>    }</span>
+<span id="cb18-49"><a href="#cb18-49"></a>}</span>
+<span id="cb18-50"><a href="#cb18-50"></a></span>
+<span id="cb18-51"><a href="#cb18-51"></a><span class="co">//Dep:&#x7BA1;&#x7406;&#x82E5;&#x5E72;&#x4E2A;watcher&#x5B9E;&#x4F8B; &#x5B83;&#x548C;key &#x662F;&#x4E00;&#x5BF9;&#x4E00;&#x7684;&#x5173;&#x7CFB;</span></span>
+<span id="cb18-52"><a href="#cb18-52"></a><span class="kw">class</span> Dep {</span>
+<span id="cb18-53"><a href="#cb18-53"></a>    constructor(){ </span>
+<span id="cb18-54"><a href="#cb18-54"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">deps</span> <span class="op">=</span> []</span>
+<span id="cb18-55"><a href="#cb18-55"></a>    }</span>
+<span id="cb18-56"><a href="#cb18-56"></a>    <span class="co">//&#x6BCF;&#x6536;&#x96C6;&#x4E00;&#x4E2A;&#x4F9D;&#x8D56; &#x6211;&#x4EEC;&#x5C31;&#x5728;&#x8FD9;&#x91CC;&#x6DFB;&#x52A0;&#x4E00;&#x4E2A;watcher</span></span>
+<span id="cb18-57"><a href="#cb18-57"></a>    addDep(watcher){</span>
+<span id="cb18-58"><a href="#cb18-58"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">deps</span><span class="op">.</span><span class="fu">push</span>(watcher)</span>
+<span id="cb18-59"><a href="#cb18-59"></a>    }</span>
+<span id="cb18-60"><a href="#cb18-60"></a></span>
+<span id="cb18-61"><a href="#cb18-61"></a>    <span class="co">//&#x5F53;&#x6570;&#x636E;&#x66F4;&#x65B0;&#x65F6;&#x5019; &#x901A;&#x77E5;&#x6211;&#x4EEC;&#x5BF9;&#x5E94;&#x7684;watcher&#x53BB;&#x505A;&#x66F4;&#x65B0; </span></span>
+<span id="cb18-62"><a href="#cb18-62"></a>    notify(){</span>
+<span id="cb18-63"><a href="#cb18-63"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">deps</span><span class="op">.</span><span class="fu">forEach</span>(watcher <span class="kw">=&gt;</span> watcher<span class="op">.</span><span class="fu">update</span>())</span>
+<span id="cb18-64"><a href="#cb18-64"></a>    }</span>
+<span id="cb18-65"><a href="#cb18-65"></a>}</span>
+<span id="cb18-66"><a href="#cb18-66"></a></span>
+<span id="cb18-67"><a href="#cb18-67"></a></span>
+<span id="cb18-68"><a href="#cb18-68"></a><span class="co">//&#x4FDD;&#x5B58;UI&#x4E2D;&#x7684;&#x4F9D;&#x8D56; &#x548C;&#x81EA;&#x5DF1;&#x4E00;&#x4E00;&#x5BF9;&#x5E94; &#x5F53;dep&#x901A;&#x77E5;&#x6211;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019; &#x6211;&#x53BB;&#x66F4;&#x65B0;</span></span>
+<span id="cb18-69"><a href="#cb18-69"></a><span class="kw">class</span> Watcher {</span>
+<span id="cb18-70"><a href="#cb18-70"></a>    constructor(vm<span class="op">,</span>key){</span>
+<span id="cb18-71"><a href="#cb18-71"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">vm</span> <span class="op">=</span> vm</span>
+<span id="cb18-72"><a href="#cb18-72"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">key</span> <span class="op">=</span> key</span>
+<span id="cb18-73"><a href="#cb18-73"></a>        <span class="co">//&#x5C06;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x6307;&#x5411;Dep.target &#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;dep&#x91CC;&#x7684;watcher&#x548C;&#x4F9D;&#x8D56;&#x4E00;&#x4E00;&#x5BF9;&#x5E94;</span></span>
+<span id="cb18-74"><a href="#cb18-74"></a>        Dep<span class="op">.</span><span class="at">target</span> <span class="op">=</span> <span class="kw">this</span></span>
+<span id="cb18-75"><a href="#cb18-75"></a>    }</span>
+<span id="cb18-76"><a href="#cb18-76"></a></span>
+<span id="cb18-77"><a href="#cb18-77"></a>    <span class="co">//dep&#x901A;&#x77E5;&#x6211;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019; &#x6211;&#x53BB;&#x66F4;&#x65B0; &#x8FD9;&#x91CC;&#x5982;&#x679C;&#x662F;DOM&#x64CD;&#x4F5C;&#x7684;&#x5316; &#x89C6;&#x56FE;&#x5C31;&#x66F4;&#x65B0;&#x4E86;</span></span>
+<span id="cb18-78"><a href="#cb18-78"></a>    update(){</span>
+<span id="cb18-79"><a href="#cb18-79"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="vs">`</span><span class="sc">${</span><span class="kw">this</span><span class="op">.</span><span class="at">key</span><span class="sc">}</span><span class="vs">&#x5C5E;&#x6027;&#x66F4;&#x65B0;`</span>)</span>
+<span id="cb18-80"><a href="#cb18-80"></a>    }</span>
+<span id="cb18-81"><a href="#cb18-81"></a>}</span></code></pre></div>
+<h2 id="&#x7F16;&#x8BD1;-compile">&#x7F16;&#x8BD1; compile</h2>
+<div class="sourceCode" id="cb19"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb19-1"><a href="#cb19-1"></a><span class="fl">1.</span>&#x4EE5;&#x4E0A; &#x662F;&#x6211;&#x4EEC; &#x624B;&#x52A8;&#x5B9E;&#x73B0;&#x7684; &#x6536;&#x96C6;&#x4F9D;&#x8D56; &#x6DFB;&#x52A0;watcher </span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="fl">2.</span>&#x771F;&#x6B63;&#x7684; watcher&#x521B;&#x5EFA; &#x662F;&#x5728;&#x7F16;&#x8BD1;&#x7684;&#x65F6;&#x5019;&#x53BB;&#x521B;&#x5EFA;&#x7684;</span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="fl">3.</span>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EA;&#x5199;&#x4E00;&#x4E2A;&#x7B80;&#x6613;&#x7248;&#x7684;compile &#x53EA;&#x64CD;&#x4F5C;DOM Vue&#x771F;&#x6B63;&#x7684;compile &#x662F;&#x8981;&#x505A;&#x865A;&#x62DF;DOM&#x7684; </span></code></pre></div>
+<h2 id="compile-&#x7684;&#x6838;&#x5FC3;&#x4EFB;&#x52A1;&#x7B80;&#x6613;&#x7248;">compile &#x7684;&#x6838;&#x5FC3;&#x4EFB;&#x52A1;(&#x7B80;&#x6613;&#x7248;)</h2>
+<div class="sourceCode" id="cb20"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb20-1"><a href="#cb20-1"></a><span class="fl">1.</span>&#x83B7;&#x53D6;&#x5E76;&#x4E14;&#x904D;&#x5386;DOM&#x6811;</span>
+<span id="cb20-2"><a href="#cb20-2"></a><span class="fl">2.</span>&#x6587;&#x672C;&#x8282;&#x70B9;<span class="op">:</span>&#x83B7;&#x53D6;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x683C;&#x5F0F;&#x7684;&#x5185;&#x5BB9;&#x5E76;&#x89E3;&#x6790;</span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="fl">3.</span>&#x5143;&#x7D20;&#x8282;&#x70B9;<span class="op">:</span>&#x8BBF;&#x95EE;&#x8282;&#x70B9;&#x7684;&#x7279;&#x6027; &#x89E3;&#x6790; w<span class="op">-</span>&#x5F00;&#x5934; &#x548C; @ &#x5F00;&#x5934;&#x7684;&#x5185;&#x5BB9;</span></code></pre></div>
+<p><img src="/zh-CN/247cae9a/4.png"></p>
+<h2 id="&#x524D;&#x7F6E;&#x77E5;&#x8BC6;-fragment">&#x524D;&#x7F6E;&#x77E5;&#x8BC6; fragment</h2>
+<div class="sourceCode" id="cb21"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb21-1"><a href="#cb21-1"></a><span class="fl">1.</span>DOM &#x7684;&#x6587;&#x6863;&#x7BC7; &#x53EF;&#x4EE5;&#x5305;&#x542B;&#x548C;&#x63A7;&#x5236;&#x8282;&#x70B9; &#x4F46;&#x4E0D;&#x4F1A;&#x50CF;&#x5B8C;&#x6574;&#x7684;&#x6587;&#x6863;&#x90A3;&#x6837;&#x5360;&#x7528;&#x989D;&#x5916;&#x7684;&#x8D44;&#x6E90; &#x662F;&#x4E00;&#x79CD;&#x8F7B;&#x91CF;&#x7EA7;&#x7684;&#x6587;&#x6863;</span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="fl">2.</span>&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; &#x89E3;&#x91CA;&#x4E3A;&#x4F60;&#x6240;&#x6709;DOM&#x5143;&#x7D20;&#x548C;&#x8282;&#x70B9; &#x6253;&#x4E86;&#x4E00;&#x4E2A;&#x538B;&#x7F29;&#x5305; &#x53EF;&#x4EE5;&#x6765;&#x5F53;&#x4E00;&#x4E2A;&#x4ED3;&#x5E93;&#x4F7F;&#x7528; &#x53EF;&#x4EE5;&#x5728;&#x91CC;&#x9762;&#x4FDD;&#x5B58;&#x5C06;&#x6765;&#x53EF;&#x80FD;&#x4F1A;&#x6DFB;&#x52A0;&#x5230;&#x6587;&#x6863;&#x4E2D;&#x7684;&#x8282;&#x70B9;</span></code></pre></div>
+<div class="sourceCode" id="cb22"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb22-1"><a href="#cb22-1"></a>HTML &#x4E2D; &#x6709;&#x5982;&#x4E0B;&#x4EE3;&#x7801;</span>
+<span id="cb22-2"><a href="#cb22-2"></a><span class="op">&lt;</span>ol id<span class="op">=</span><span class="st">&quot;ol1&quot;</span><span class="op">&gt;&lt;/</span>ol<span class="op">&gt;</span></span>
+<span id="cb22-3"><a href="#cb22-3"></a>&#x73B0;&#x5728;&#x6211;&#x4EEC;&#x60F3;&#x4E3A;ol&#x8FD9;&#x4E2A;&#x5143;&#x7D20; &#x6DFB;&#x52A0;3&#x4E2A;&#x5217;&#x8868;&#x9879; &#x5982;&#x679C;&#x9010;&#x4E2A;&#x8FFD;&#x52A0;&#x5217;&#x8868; &#x5C06;&#x4F1A;&#x5BFC;&#x81F4;&#x6D4F;&#x89C8;&#x5668;&#x53CD;&#x590D;&#x6E32;&#x67D3; &#x4E3A;&#x4E86;&#x907F;&#x514D; &#x8FD9;&#x4E2A;&#x95EE;&#x9898;&#x6211;&#x4EEC;&#x6BCF;&#x521B;&#x5EFA;&#x7684;&#x4E00;&#x4E2A;&#x91CC;&#x8868;&#x8C61; &#x53EF;&#x4EE5;&#x4FDD;&#x5B58;&#x5230;&#x6211;&#x4EEC;&#x7684; fragment &#x91CC; &#x7136;&#x540E;&#x4E00;&#x6B21;&#x6027;&#x6DFB;&#x52A0;&#x5230;ol&#x4E2D;(&#x5C06;&#x5F53;&#x4E8E;&#x6253;&#x5305;)</span></code></pre></div>
+<div class="sourceCode" id="cb23"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb23-1"><a href="#cb23-1"></a></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="co">//&#x6587;&#x6863;&#x7247;&#x6BB5;</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="kw">var</span> ol1 <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;ol1&quot;</span>)<span class="op">,</span> li <span class="op">=</span> <span class="kw">null</span><span class="op">;</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="kw">var</span> fragment <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createDocumentFragment</span>()<span class="op">;</span>    <span class="co">//&#x521B;&#x5EFA;&#x6587;&#x6863;&#x7247;&#x6BB5;</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="cf">for</span>(<span class="kw">var</span> i<span class="op">=</span><span class="dv">0</span><span class="op">;</span> i <span class="op">&lt;</span> <span class="dv">5</span><span class="op">;</span> i<span class="op">++</span>){    <span class="co">//&#x5FAA;&#x73AF;&#x521B;&#x5EFA;&#x5217;&#x8868;&#x9879;</span></span>
+<span id="cb23-6"><a href="#cb23-6"></a>    li <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createElement</span>(<span class="st">&quot;li&quot;</span>)<span class="op">;</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a>    li<span class="op">.</span><span class="fu">appendChild</span>(<span class="bu">document</span><span class="op">.</span><span class="fu">createTextNode</span>(<span class="st">&quot;Item&quot;</span> <span class="op">+</span> i))<span class="op">;</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a>    <span class="co">//&#x4EE5;&#x524D;&#x8FD9;&#x91CC;&#x7684;&#x5199;&#x6CD5;&#x662F; &#x6211;&#x4EEC;&#x6BCF;&#x521B;&#x5EFA;&#x597D;&#x4E86;&#x4E00;&#x4E2A;Li &#x5C31;&#x63D2;&#x5165;&#x5230;ol&#x4E2D; &#x8FD9;&#x6837;&#x4F1A;&#x5BFC;&#x81F4;&#x6D4F;&#x89C8;&#x5668;&#x53CD;&#x590D;&#x6E32;&#x67D3; &#x73B0;&#x5728;&#x6211;&#x4EEC;&#x4F7F;&#x7528;fragment</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a>    fragment<span class="op">.</span><span class="fu">appendChild</span>(li)<span class="op">;</span>    <span class="co">//&#x5217;&#x8868;&#x9879;&#x6DFB;&#x52A0;&#x5230;&#x6587;&#x6863;&#x7247;&#x6BB5;&#x4E2D;</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a>}</span>
+<span id="cb23-11"><a href="#cb23-11"></a>ol1<span class="op">.</span><span class="fu">appendChild</span>(fragment)<span class="op">;</span>    <span class="co">//&#x5C06;&#x6587;&#x6863;&#x7247;&#x6BB5;&#x6DFB;&#x52A0;&#x5230;&#x6587;&#x6863;&#x4E2D;</span></span></code></pre></div>
+<h2 id="&#x903B;&#x8F91;">&#x903B;&#x8F91;</h2>
+<div class="sourceCode" id="cb24"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb24-1"><a href="#cb24-1"></a><span class="co">//&#x904D;&#x5386;&#x6A21;&#x677F; &#x5C06;&#x91CC;&#x9762;&#x7684;&#x63D2;&#x503C;&#x8868;&#x8FBE;&#x5F0F;&#x89E3;&#x6790; (&#x53CC;&#x53CC;&#x82B1;&#x62EC;&#x53F7;)</span></span>
+<span id="cb24-2"><a href="#cb24-2"></a><span class="co">//&#x5982;&#x679C;&#x6709;w-&#x5F00;&#x5934; @&#x5F00;&#x5934; &#x505A;&#x7279;&#x522B;&#x7684;&#x5904;&#x7406;</span></span>
+<span id="cb24-3"><a href="#cb24-3"></a><span class="kw">class</span> Compile {</span>
+<span id="cb24-4"><a href="#cb24-4"></a>    constructor(el<span class="op">,</span>vm){</span>
+<span id="cb24-5"><a href="#cb24-5"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$vm</span> <span class="op">=</span> vm</span>
+<span id="cb24-6"><a href="#cb24-6"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">$el</span> <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">querySelector</span>(el)</span>
+<span id="cb24-7"><a href="#cb24-7"></a>        <span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$el</span>){</span>
+<span id="cb24-8"><a href="#cb24-8"></a>            <span class="co">// &#x5C06;$el&#x4E2D;&#x7684;&#x5185;&#x5BB9;&#x642C;&#x5230;&#x4E00;&#x4E2A;fragment() </span></span>
+<span id="cb24-9"><a href="#cb24-9"></a>            <span class="kw">this</span><span class="op">.</span><span class="at">$fragment</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="fu">node2Fragment</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$el</span>)</span>
+<span id="cb24-10"><a href="#cb24-10"></a>            </span>
+<span id="cb24-11"><a href="#cb24-11"></a>            <span class="co">//&#x7F16;&#x8BD1;fragment &#x4E5F;&#x5C31;&#x662F;&#x5F00;&#x59CB;&#x9012;&#x5F52;&#x904D;&#x5386; &#x89E3;&#x6790;&#x6211;&#x4EEC;&#x7684;&#x6307;&#x4EE4;&#x548C;&#x63D2;&#x503C;&#x8868;&#x8FBE;&#x5F0F;</span></span>
+<span id="cb24-12"><a href="#cb24-12"></a>            <span class="kw">this</span><span class="op">.</span><span class="fu">compile</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$fragment</span>)</span>
+<span id="cb24-13"><a href="#cb24-13"></a></span>
+<span id="cb24-14"><a href="#cb24-14"></a>            <span class="co">//&#x5C06;&#x7F16;&#x8BD1;&#x7684;&#x7ED3;&#x679C;(&#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x5904;&#x7406;&#x5B8C;&#x7684;&#x90A3;&#x4E9B;DOM&#x8282;&#x70B9;&#x548C;&#x5143;&#x7D20; &#x63D2;&#x5165;&#x5230;&#x5BBF;&#x4E3B;&#x4E2D; &#x4E5F;&#x5C31;&#x662F;$el)</span></span>
+<span id="cb24-15"><a href="#cb24-15"></a>            <span class="kw">this</span><span class="op">.</span><span class="at">$el</span><span class="op">.</span><span class="fu">appendChild</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$fragment</span>)</span>
+<span id="cb24-16"><a href="#cb24-16"></a>        }</span>
+<span id="cb24-17"><a href="#cb24-17"></a>    }</span>
+<span id="cb24-18"><a href="#cb24-18"></a>}</span></code></pre></div>
+<h2 id="this.node2fragment&#x65B9;&#x6CD5;">this.node2Fragment&#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="fl">1.</span>&#x5C06;&#x6211;&#x4EEC;&#x6240;&#x6709;&#x7684;el&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20; &#x642C;&#x5BB6;&#x5230; &#x6211;&#x4EEC;&#x521B;&#x5EFA;&#x7684; fragment</span>
+<span id="cb25-2"><a href="#cb25-2"></a><span class="fl">2.</span>&#x8FD9;&#x91CC;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; &#x62BD;&#x51FA;&#x6765; &#x7136;&#x540E;&#x653E;&#x8FDB;&#x53BB;&#x7684;&#x64CD;&#x4F5C; &#x539F;&#x6709;&#x7684;el&#x4E2D;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x5143;&#x7D20; &#x88AB;&#x62BD;&#x51FA;&#x6765;&#x653E;&#x5728;&#x4E86; fragment&#x4E2D; &#x539F;&#x6709;&#x7684;el&#x4E2D;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20; &#x7ECF;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x64CD;&#x4F5C; &#x603B;&#x4F1A;&#x662F;&#x7B2C;&#x4E00;&#x4E2A;</span></code></pre></div>
+<div class="sourceCode" id="cb26"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb26-1"><a href="#cb26-1"></a>ode2Fragment(el){</span>
+<span id="cb26-2"><a href="#cb26-2"></a>        <span class="kw">const</span> fragment <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">createDocumentFragment</span>()</span>
+<span id="cb26-3"><a href="#cb26-3"></a>        <span class="kw">let</span> child </span>
+<span id="cb26-4"><a href="#cb26-4"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x642C;&#x5BB6;</span></span>
+<span id="cb26-5"><a href="#cb26-5"></a>        <span class="cf">while</span> (child <span class="op">=</span> el<span class="op">.</span><span class="at">firstChild</span>) {</span>
+<span id="cb26-6"><a href="#cb26-6"></a>            <span class="co">//&#x8FD9;&#x4E2A;while&#x5FAA;&#x73AF; &#x4E00;&#x76F4;&#x80FD;&#x591F;&#x8FDB;&#x884C; &#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x6211; &#x6211;&#x4EEC;&#x8FD9;&#x662F;&#x642C;&#x5BB6;&#x7684;&#x64CD;&#x4F5C; &#x6BCF;&#x6B21;&#x628A;el&#x4E2D;&#x7B2C;&#x4E00;&#x4E2A;</span></span>
+<span id="cb26-7"><a href="#cb26-7"></a>            <span class="co">//&#x5143;&#x7D20;&#x62BD;&#x51FA;&#x6765; &#x653E;&#x5230; fragment &#x7136;&#x540E;el&#x4E2D;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x5143;&#x7D20; &#x53C8;&#x53D8;&#x6210;&#x4E86;&#x7B2C;&#x4E00;&#x4E2A;</span></span>
+<span id="cb26-8"><a href="#cb26-8"></a>            fragment<span class="op">.</span><span class="fu">appendChild</span>(child)   </span>
+<span id="cb26-9"><a href="#cb26-9"></a>        }</span>
+<span id="cb26-10"><a href="#cb26-10"></a>        <span class="cf">return</span> fragment</span>
+<span id="cb26-11"><a href="#cb26-11"></a>    }</span></code></pre></div>
+<h2 id="this.compile&#x65B9;&#x6CD5;">this.compile&#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb27"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb27-1"><a href="#cb27-1"></a><span class="fl">1.</span>&#x904D;&#x5386;&#x6211;&#x4EEC;&#x7684;&#x79FB;&#x52A8;&#x597D;&#x7684;fragment&#x6587;&#x6863;&#x788E;&#x7247;</span>
+<span id="cb27-2"><a href="#cb27-2"></a><span class="fl">2.</span>&#x5224;&#x65AD;&#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9; &#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7; &#x5982;&#x679C;&#x6709;w<span class="op">-</span>&#x5F00;&#x5934; &#x6216;&#x8005; @&#x7684; &#x5C31;&#x89E3;&#x6790; &#x6307;&#x4EE4;&#x6216;&#x8005;&#x4E8B;&#x4EF6;</span></code></pre></div>
+<div class="sourceCode" id="cb28"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb28-1"><a href="#cb28-1"></a>compile(el){</span>
+<span id="cb28-2"><a href="#cb28-2"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x62FF;&#x5230;&#x4E86; el&#x4E0B;&#x9762;&#x7684;&#x6240;&#x6709;&#x8282;&#x70B9; &#x53C8;&#x7684;&#x662F; &#x6587;&#x672C;&#x8282;&#x70B9; &#x6709;&#x7684;&#x662F;&#x5143;&#x7D20;&#x8282;&#x70B9;  &#x8FD9;&#x91CC;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x4F2A;&#x6570;&#x7EC4;</span></span>
+<span id="cb28-3"><a href="#cb28-3"></a>        <span class="kw">const</span> childNodes <span class="op">=</span> el<span class="op">.</span><span class="at">childNodes</span></span>
+<span id="cb28-4"><a href="#cb28-4"></a>        <span class="co">//&#x628A;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x8282;&#x70B9;&#x4F2A;&#x6570;&#x7EC4; &#x8FDB;&#x884C;&#x904D;&#x5386; &#x6839;&#x636E;&#x4ED6;&#x7684;&#x7C7B;&#x578B;&#x5206;&#x522B;&#x53BB;&#x5224;&#x65AD;</span></span>
+<span id="cb28-5"><a href="#cb28-5"></a>        <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(childNodes)<span class="op">.</span><span class="fu">forEach</span>( node <span class="kw">=&gt;</span> {</span>
+<span id="cb28-6"><a href="#cb28-6"></a>            <span class="cf">if</span>(<span class="kw">this</span><span class="op">.</span><span class="fu">isElement</span>(node)){</span>
+<span id="cb28-7"><a href="#cb28-7"></a>                <span class="co">//&#x5982;&#x679C;&#x662F;&#x5143;&#x7D20;&#x8282;&#x70B9; &#x5C31;&#x89E3;&#x6790; &#x4ED6;&#x8EAB;&#x4E0A;&#x7684;&#x4EE5;w-&#x5F00;&#x5934; &#x6216;&#x8005; @&#x5F00;&#x5934;&#x7684;&#x6307;&#x4EE4;</span></span>
+<span id="cb28-8"><a href="#cb28-8"></a>                <span class="kw">this</span><span class="op">.</span><span class="fu">compileElement</span>(node)</span>
+<span id="cb28-9"><a href="#cb28-9"></a>            }<span class="cf">else</span> <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="fu">isInterpolation</span>(node)){</span>
+<span id="cb28-10"><a href="#cb28-10"></a>                <span class="co">//&#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9;&#x5C31;&#x89E3;&#x6790; &#x770B;&#x770B;&#x6709;&#x6BCF;&#x6709;&#x7684;&#x7136;&#x540E; &#x628A;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x91CC;&#x7684;&#x53D8;&#x91CF; &#x521B;&#x5EFA;watcher</span></span>
+<span id="cb28-11"><a href="#cb28-11"></a>                <span class="co">//&#x628A;&#x63D2;&#x503C;&#x8868;&#x8FBE;&#x5F0F; &#x66FF;&#x6362;&#x4E3A;&#x5B9E;&#x9645;&#x7684;&#x5185;&#x5BB9;</span></span>
+<span id="cb28-12"><a href="#cb28-12"></a>                <span class="kw">this</span><span class="op">.</span><span class="fu">compileText</span>(node)</span>
+<span id="cb28-13"><a href="#cb28-13"></a>            }</span>
+<span id="cb28-14"><a href="#cb28-14"></a></span>
+<span id="cb28-15"><a href="#cb28-15"></a>            <span class="co">//&#x5982;&#x679C;&#x6BCF;&#x4E2A;&#x5143;&#x7D20;&#x8EAB;&#x4E0A;&#x8FD8;&#x6709;&#x8282;&#x70B9; &#x5C31;&#x9012;&#x5F52;&#x904D;&#x5386;</span></span>
+<span id="cb28-16"><a href="#cb28-16"></a>            <span class="cf">if</span>(node<span class="op">.</span><span class="at">childNodes</span> <span class="op">&amp;&amp;</span> node<span class="op">.</span><span class="at">childNodes</span><span class="op">.</span><span class="at">length</span> <span class="op">&gt;</span> <span class="dv">0</span>){</span>
+<span id="cb28-17"><a href="#cb28-17"></a>                <span class="kw">this</span><span class="op">.</span><span class="fu">compile</span>(node)</span>
+<span id="cb28-18"><a href="#cb28-18"></a>            }</span>
+<span id="cb28-19"><a href="#cb28-19"></a>        })</span>
+<span id="cb28-20"><a href="#cb28-20"></a>    }</span></code></pre></div>
+<h2 id="this.compile-&#x4E0B;&#x7684;-this.iselement&#x65B9;&#x6CD5;">this.compile &#x4E0B;&#x7684; this.isElement&#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb29"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb29-1"><a href="#cb29-1"></a><span class="fl">1.</span>&#x5224;&#x65AD;&#x4F60;&#x662F;&#x4E0D;&#x662F;&#x5143;&#x7D20; </span>
+<span id="cb29-2"><a href="#cb29-2"></a><span class="fl">2.</span>&#x89E3;&#x6790; &#x6307;&#x4EE4; &#x6BD4;&#x5982;w<span class="op">-</span>&#x5F00;&#x5934; &#x548C; @&#x5F00;&#x5934;</span></code></pre></div>
+<div class="sourceCode" id="cb30"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb30-1"><a href="#cb30-1"></a><span class="co">//&#x5982;&#x679C;&#x662F;&#x5143;&#x7D20;&#x8282;&#x70B9; &#x5C31;&#x89E3;&#x6790; &#x4ED6;&#x8EAB;&#x4E0A;&#x7684;&#x4EE5;w-&#x5F00;&#x5934; &#x6216;&#x8005; @&#x5F00;&#x5934;&#x7684;&#x6307;&#x4EE4;</span></span>
+<span id="cb30-2"><a href="#cb30-2"></a>    isElement(node){</span>
+<span id="cb30-3"><a href="#cb30-3"></a>        <span class="cf">return</span> node<span class="op">.</span><span class="at">nodeType</span> <span class="op">===</span> <span class="dv">1</span></span>
+<span id="cb30-4"><a href="#cb30-4"></a>    }</span></code></pre></div>
+<h2 id="this.compileelement&#x65B9;&#x6CD5;">this.compileElement&#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb31"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb31-1"><a href="#cb31-1"></a><span class="fl">1.</span>&#x7528;&#x6765;&#x83B7;&#x53D6;&#x5143;&#x7D20;&#x4E0A;&#x7684;&#x5C5E;&#x6027;</span>
+<span id="cb31-2"><a href="#cb31-2"></a><span class="fl">2.</span>&#x5224;&#x65AD; &#x5982;&#x679C;&#x4F60;&#x6709;w<span class="op">-</span>&#x5F00;&#x5934; &#x6211;&#x5C31;&#x622A;&#x53D6;&#x51FA;&#x6765; &#x901A;&#x8FC7;&#x52A8;&#x6001;&#x7684;&#x5F62;&#x5F0F; &#x53BB;&#x8C03;&#x4E0D;&#x540C;&#x7684;&#x6267;&#x884C;&#x51FD;&#x6570;</span>
+<span id="cb31-3"><a href="#cb31-3"></a><span class="fl">3.</span>&#x6BD4;&#x5982; &#x4F60;&#x662F;w<span class="op">-</span>text&#x5F00;&#x5934; &#x6211;&#x5C31; &#x622A;&#x53D6;&#x6765;text &#x53BB;&#x8C03; text&#x5BF9;&#x5E94;&#x7684;&#x51FD;&#x6570; &#x66FF;&#x6362;&#x754C;&#x9762;</span></code></pre></div>
+<div class="sourceCode" id="cb32"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb32-1"><a href="#cb32-1"></a>compileElement(node){</span>
+<span id="cb32-2"><a href="#cb32-2"></a>        <span class="co">//&#x67E5;&#x770B;node&#x7684;&#x5C5E;&#x6027; &#x662F;&#x5426;&#x6709;w-&#x5F00;&#x5934; &#x6216;&#x8005;@</span></span>
+<span id="cb32-3"><a href="#cb32-3"></a>        <span class="kw">const</span> nodeAttrs <span class="op">=</span> node<span class="op">.</span><span class="at">attributes</span> <span class="co">// &#x8FD9;&#x91CC;nodeAttrs&#x83B7;&#x53D6;&#x5230;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;</span></span>
+<span id="cb32-4"><a href="#cb32-4"></a>        <span class="bu">Array</span><span class="op">.</span><span class="fu">from</span>(nodeAttrs)<span class="op">.</span><span class="fu">forEach</span>(attr <span class="kw">=&gt;</span> {</span>
+<span id="cb32-5"><a href="#cb32-5"></a>            <span class="co">//&#x8FD9;&#x91CC;&#x7684;attr &#x5C31;&#x662F;w-text=&quot;xxx&quot; &#x6216;&#x8005;w-html @&#x4E4B;&#x7C7B;&#x7684;</span></span>
+<span id="cb32-6"><a href="#cb32-6"></a>            <span class="kw">const</span> attrName <span class="op">=</span> attr<span class="op">.</span><span class="at">name</span> <span class="co">//&#x8FD9;&#x91CC;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x662F;&#x4F60;&#x7684;&#x6267;&#x884C; &#x6BD4;&#x5982;w-text w-html</span></span>
+<span id="cb32-7"><a href="#cb32-7"></a>            <span class="kw">const</span> exp <span class="op">=</span> attr<span class="op">.</span><span class="at">value</span> <span class="co">//&#x8FD9;&#x91CC;&#x662F;&#x4F60;&#x83B7;&#x53D6;&#x5230;&#x7684;&#x90A3;&#x4E2A;w-text=&quot;xxx&quot; &#x91CC;&#x7684;xxx&#x4E5F;&#x5C31;&#x662F;&#x4F60;data&#x4E2D;&#x7684;&#x53D8;&#x91CF;</span></span>
+<span id="cb32-8"><a href="#cb32-8"></a>            <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(attrName<span class="op">,</span><span class="st">&apos;----attrName&apos;</span><span class="op">,</span>exp<span class="op">,</span><span class="st">&apos;-----exp&apos;</span>)</span>
+<span id="cb32-9"><a href="#cb32-9"></a>            <span class="co">//&#x5F00;&#x59CB;&#x622A;&#x53D6;&#x6307;&#x4EE4;</span></span>
+<span id="cb32-10"><a href="#cb32-10"></a>            <span class="cf">if</span>(attrName<span class="op">.</span><span class="fu">indexOf</span>(<span class="st">&apos;w-&apos;</span>) <span class="op">===</span> <span class="dv">0</span>){</span>
+<span id="cb32-11"><a href="#cb32-11"></a>                <span class="kw">const</span> dir <span class="op">=</span> attrName<span class="op">.</span><span class="fu">substring</span>(<span class="dv">2</span>) <span class="co">//&#x628A;w-text &#x7684; text&#x622A;&#x53D6;&#x51FA;&#x6765; &#x505A;&#x52A8;&#x6001;&#x53C2;&#x6570; &#x597D;&#x52A8;&#x6001;&#x8C03;&#x53D6;&#x6211;&#x4EEC;&#x7684;&#x65B9;&#x6CD5;</span></span>
+<span id="cb32-12"><a href="#cb32-12"></a>                <span class="co">//&#x8C03;&#x53D6;&#x901A;&#x7528;&#x51FD;&#x6570; &#x6267;&#x884C;&#x6211;&#x4EEC;&#x7684;&#x628A;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x66FF;&#x6362; &#x8FD9;&#x8C03;&#x7528;&#x4E86; text&#x65B9;&#x6CD5; &#x7136;&#x540E;text&#x65B9;&#x6CD5;&#x6709;&#x6267;&#x884C;&#x4E86;updated &#x5728;updated&#x91CC;</span></span>
+<span id="cb32-13"><a href="#cb32-13"></a>                <span class="co">//&#x6267;&#x884C;&#x4E86; textUpdator &#x65B9;&#x6CD5;  &#x628A; &#x5185;&#x5BB9;&#x66FF;&#x6362;&#x8C03;&#x4E86;</span></span>
+<span id="cb32-14"><a href="#cb32-14"></a>                <span class="kw">this</span>[dir] <span class="op">&amp;&amp;</span> <span class="kw">this</span>[dir](node<span class="op">,</span><span class="kw">this</span><span class="op">.</span><span class="at">$vm</span><span class="op">,</span>exp)</span>
+<span id="cb32-15"><a href="#cb32-15"></a>            }<span class="cf">else</span> <span class="cf">if</span>(attrName<span class="op">.</span><span class="fu">indexOf</span>(<span class="st">&apos;@&apos;</span>) <span class="op">===</span> <span class="dv">0</span>){</span>
+<span id="cb32-16"><a href="#cb32-16"></a>                <span class="co">//&#x5F00;&#x59CB;&#x622A;&#x53D6;&#x4E8B;&#x4EF6;&#x540D; &#x7136;&#x540E;&#x7F16;&#x5199;&#x6267;&#x884C;&#x7684;&#x51FD;&#x6570;</span></span>
+<span id="cb32-17"><a href="#cb32-17"></a>                 <span class="kw">const</span> eventName <span class="op">=</span> attrName<span class="op">.</span><span class="fu">substring</span>(<span class="dv">1</span>)</span>
+<span id="cb32-18"><a href="#cb32-18"></a>                 <span class="kw">this</span><span class="op">.</span><span class="fu">eventHandler</span>(node<span class="op">,</span><span class="kw">this</span><span class="op">.</span><span class="at">$vm</span><span class="op">,</span>exp<span class="op">,</span>eventName)</span>
+<span id="cb32-19"><a href="#cb32-19"></a>            }</span>
+<span id="cb32-20"><a href="#cb32-20"></a>        })      </span>
+<span id="cb32-21"><a href="#cb32-21"></a>    }</span></code></pre></div>
+<h2 id="model&#x65B9;&#x6CD5;w-model-&#x53CC;&#x5411;&#x7ED1;&#x5B9A;">model&#x65B9;&#x6CD5;(w-model &#x53CC;&#x5411;&#x7ED1;&#x5B9A;)</h2>
+<div class="sourceCode" id="cb33"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb33-1"><a href="#cb33-1"></a><span class="fl">1.</span>&#x9996;&#x5148; &#x6211;&#x4EEC;&#x7684;Vue&#x4E0A;&#x7684;&#x503C;&#x53D8;&#x4E86; &#x9700;&#x8981;&#x66F4;&#x6539;&#x754C;&#x9762;</span>
+<span id="cb33-2"><a href="#cb33-2"></a><span class="fl">2.</span>&#x5982;&#x679C; &#x754C;&#x9762;&#x4E0A;&#x7684;&#x503C;&#x53D8;&#x4E86; &#x9700;&#x8981;&#x66F4;&#x6539; vue&#x5B9E;&#x4F8B;&#x4E0A;&#x7684;&#x503C;</span></code></pre></div>
+<div class="sourceCode" id="cb34"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb34-1"><a href="#cb34-1"></a><span class="co">//v-model&#x6307;&#x4EE4;&#x6267;&#x884C;&#x7684;&#x65B9;&#x6CD5;</span></span>
+<span id="cb34-2"><a href="#cb34-2"></a>    model(node<span class="op">,</span>vm<span class="op">,</span>exp){</span>
+<span id="cb34-3"><a href="#cb34-3"></a>        <span class="co">//&#x503C;&#x53D8;&#x4E86;&#x6539;&#x754C;&#x9762; node&#x662F;&#x5F53;&#x524D;&#x7684;&#x8282;&#x70B9; vm&#x662F;Vue&#x7684;&#x5B9E;&#x4F8B; exp&#x662F;data&#x91CC;&#x7684;&#x952E;</span></span>
+<span id="cb34-4"><a href="#cb34-4"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">updated</span>(node<span class="op">,</span>vm<span class="op">,</span>exp<span class="op">,</span><span class="st">&apos;model&apos;</span>)</span>
+<span id="cb34-5"><a href="#cb34-5"></a>        <span class="co">//&#x9875;&#x9762;&#x53D8;&#x4E86; &#x6539;&#x503C; &#x8FD9;&#x91CC;&#x53EF;&#x80FD;&#x8FD8;&#x6709;chage&#x4E4B;&#x7C7B; </span></span>
+<span id="cb34-6"><a href="#cb34-6"></a>        node<span class="op">.</span><span class="fu">addEventListener</span>(<span class="st">&apos;input&apos;</span><span class="op">,</span>e <span class="kw">=&gt;</span> {</span>
+<span id="cb34-7"><a href="#cb34-7"></a>            vm[exp] <span class="op">=</span> e<span class="op">.</span><span class="at">target</span><span class="op">.</span><span class="at">value</span></span>
+<span id="cb34-8"><a href="#cb34-8"></a>        })</span>
+<span id="cb34-9"><a href="#cb34-9"></a>    }</span>
+<span id="cb34-10"><a href="#cb34-10"></a>    <span class="co">//&#x503C;&#x53D8;&#x4E86;&#x6539;&#x9875;&#x9762; &#x8FD9;&#x7684;node&#x591A;&#x534A;&#x7684;input&#x6846;</span></span>
+<span id="cb34-11"><a href="#cb34-11"></a>    modelUpdator(node<span class="op">,</span>value){</span>
+<span id="cb34-12"><a href="#cb34-12"></a>        node<span class="op">.</span><span class="at">value</span> <span class="op">=</span> value</span>
+<span id="cb34-13"><a href="#cb34-13"></a>    }</span></code></pre></div>
+<h2 id="html&#x65B9;&#x6CD5;">html&#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb35"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb35-1"><a href="#cb35-1"></a><span class="co">//html&#x65B9;&#x6CD5;</span></span>
+<span id="cb35-2"><a href="#cb35-2"></a>    html(node<span class="op">,</span>vm<span class="op">,</span>exp){</span>
+<span id="cb35-3"><a href="#cb35-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">updated</span>(node<span class="op">,</span>vm<span class="op">,</span>exp<span class="op">,</span><span class="st">&apos;html&apos;</span>)</span>
+<span id="cb35-4"><a href="#cb35-4"></a>    }</span>
+<span id="cb35-5"><a href="#cb35-5"></a>    htmlUpdator(node<span class="op">,</span>value){</span>
+<span id="cb35-6"><a href="#cb35-6"></a>        node<span class="op">.</span><span class="at">innerHTML</span> <span class="op">=</span> value</span>
+<span id="cb35-7"><a href="#cb35-7"></a>    }</span></code></pre></div>
+<h2 id="&#x5F00;&#x5934;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;-this.eventhandler-&#x65B9;&#x6CD5;"><span class="citation" data-cites="&#x5F00;&#x5934;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;">@&#x5F00;&#x5934;&#x7684;&#x4E8B;&#x4EF6;&#x5904;&#x7406;</span> this.eventHandler &#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb36"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb36-1"><a href="#cb36-1"></a><span class="fl">1.</span>&#x9996;&#x5148;&#x8981;&#x4E0D;&#x6309;&#x4F60;&#x7684;@&#x540E;&#x9762;&#x7684;&#x4E8B;&#x4EF6;&#x540D;&#x79F0;&#x62FF;&#x51FA;&#x6765;</span>
+<span id="cb36-2"><a href="#cb36-2"></a><span class="fl">2.</span>&#x7136;&#x540E;&#x62FF;&#x51FA;&#x62FF;&#x51FA;click&#x540E;&#x9762;&#x5BF9;&#x5E94;&#x7684;&#x4E8B;&#x4EF6;</span>
+<span id="cb36-3"><a href="#cb36-3"></a><span class="fl">3.</span>&#x4E3A;&#x6211;&#x4EEC;&#x7684;&#x5F53;&#x524D;&#x5143;&#x7D20;&#x6DFB;&#x52A0; &#x4E8B;&#x4EF6; &#x7136;&#x4E4E;&#x6267;&#x884C;methods&#x91CC;&#x7684;&#x56DE;&#x8C03;</span></code></pre></div>
+<div class="sourceCode" id="cb37"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1"></a> <span class="co">//&#x5904;&#x7406;@&#x5F00;&#x5934;&#x7684;&#x6307;&#x4EE4;&#x76F8;&#x5173;</span></span>
+<span id="cb37-2"><a href="#cb37-2"></a>eventHandler(node<span class="op">,</span>vm<span class="op">,</span>exp<span class="op">,</span>eventName){</span>
+<span id="cb37-3"><a href="#cb37-3"></a>    <span class="co">//&#x5982;&#x679C;&#x4F60;methods&#x91CC;&#x6709;&#x4E8B;&#x4EF6; &#x6211;&#x5C31;&#x53BB;&#x76D1;&#x542C;&#x4E00;&#x4E0B; &#x7136;&#x540E;&#x6267;&#x884C;&#x4F60;&#x7684;&#x4E8B;&#x4EF6;&#x56DE;&#x8C03;</span></span>
+<span id="cb37-4"><a href="#cb37-4"></a>    <span class="kw">const</span> fn <span class="op">=</span> vm<span class="op">.</span><span class="at">$options</span><span class="op">.</span><span class="at">methods</span> <span class="op">&amp;&amp;</span> vm<span class="op">.</span><span class="at">$options</span><span class="op">.</span><span class="at">methods</span>[exp]</span>
+<span id="cb37-5"><a href="#cb37-5"></a>    <span class="cf">if</span>(eventName <span class="op">&amp;&amp;</span> fn){</span>
+<span id="cb37-6"><a href="#cb37-6"></a>        <span class="co">//&#x4E3A;&#x4F60;&#x7ED1;&#x5B9A;&#x7684;&#x5143;&#x7D20;&#x6DFB;&#x52A0;&#x4E8B;&#x4EF6; &#x5E76;&#x4E14;&#x6267;&#x884C;methods&#x7684;&#x65B9;&#x6CD5; &#x4E3A;&#x4E86;&#x9632;&#x6B62;this&#x51FA;&#x95EE;&#x9898; &#x8FD9;&#x91CC;&#x8981;bind&#x4E00;&#x4E0B;</span></span>
+<span id="cb37-7"><a href="#cb37-7"></a>        node<span class="op">.</span><span class="fu">addEventListener</span>(eventName<span class="op">,</span>fn<span class="op">.</span><span class="fu">bind</span>(vm))</span>
+<span id="cb37-8"><a href="#cb37-8"></a>    }</span>
+<span id="cb37-9"><a href="#cb37-9"></a>}</span></code></pre></div>
+<h2 id="this.compile-&#x4E0B;&#x7684;-this.isinterpolation&#x65B9;&#x6CD5;">this.compile &#x4E0B;&#x7684; this.isInterpolation&#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a><span class="fl">1.</span>&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x6587;&#x672C;</span>
+<span id="cb38-2"><a href="#cb38-2"></a><span class="fl">2.</span>&#x628A;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;&#x503C; &#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;this<span class="op">.</span><span class="at">$data&#x91CC;&#x8D4B;&#x503C;</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a><span class="fl">3.</span>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7528;&#x4E86;&#x6B63;&#x5219;&#x5339;&#x914D; &#x5E76;&#x4E14; &#x4F7F;&#x7528; <span class="bu">RegExp</span><span class="op">.</span><span class="at">$1&#x6765;&#x53D6;&#x51FA;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;&#x503C;</span></span></code></pre></div>
+<div class="sourceCode" id="cb39"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1"></a><span class="co">//&#x89E3;&#x6790;&#x6587;&#x672C;&#x8282;&#x70B9; &#x770B;&#x770B;&#x6709;&#x6BCF;&#x6709;&#x7684;&#x7136;&#x540E; &#x628A;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x91CC;&#x7684;&#x53D8;&#x91CF; &#x521B;&#x5EFA;watcher</span></span>
+<span id="cb39-2"><a href="#cb39-2"></a>isInterpolation(node){</span>
+<span id="cb39-3"><a href="#cb39-3"></a>    <span class="co">//&#x5982;&#x679C;&#x4F60;&#x7684;&#x6587;&#x672C;&#x7C7B;&#x578B; &#x662F;3 &#x5C31;&#x8BF4;&#x660E;&#x4F60;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9; &#x5E76;&#x4E14;&#x8981;&#x6EE1;&#x8DB3;&#x6B63;&#x5219;&#x5339;&#x914D; &#x4F60;&#x91CC;&#x9762;&#x6709;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x7684;&#x8BED;&#x6CD5; </span></span>
+<span id="cb39-4"><a href="#cb39-4"></a>    <span class="cf">return</span> node<span class="op">.</span><span class="at">nodeType</span> <span class="op">===</span> <span class="dv">3</span> <span class="op">&amp;&amp;</span> <span class="ss">/</span><span class="sc">\{\{(</span><span class="ss">.</span><span class="sc">*)\}\}</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(node<span class="op">.</span><span class="at">textContent</span>)</span>
+<span id="cb39-5"><a href="#cb39-5"></a>}</span></code></pre></div>
+<h2 id="compiletext&#x65B9;&#x6CD5;">compileText&#x65B9;&#x6CD5;</h2>
+<div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1"></a><span class="fl">1.</span>&#x7528;&#x6765;&#x53D6;&#x51FA;<span class="op">&lt;!--</span>&#xFFFC;5<span class="op">--&gt;</span> &#x91CC;&#x9762;&#x7684;xxxx &#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x5B9E;&#x4F8B;&#x91CC;&#x9762;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;</span>
+<span id="cb40-2"><a href="#cb40-2"></a><span class="fl">2.</span>&#x6B64;&#x65F6;&#x8FD9;&#x91CC;&#x8FD8;&#x4E0D;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684; &#x9700;&#x8981;&#x6211;&#x4EEC;&#x521B;&#x5EFA;watcher   </span></code></pre></div>
+<div class="sourceCode" id="cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1"></a>compileText(node){</span>
+<span id="cb41-2"><a href="#cb41-2"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$vm</span>[<span class="bu">RegExp</span><span class="op">.</span><span class="at">$1</span>])</span>
+<span id="cb41-3"><a href="#cb41-3"></a>        <span class="co">//RegExp.$1 &#x5C31;&#x662F;&#x4F60;  &#x91CC;&#x5339;&#x914D;&#x7684;xxx&#x7684;&#x90E8;&#x5206;</span></span>
+<span id="cb41-4"><a href="#cb41-4"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x7684;this.vm&#x5C31;&#x662F;&#x4F60;&#x7684;Vue&#x5B9E;&#x4F8B; &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x505A;&#x4E86;&#x65E0;&#x4E2D;&#x95F4;&#x7684;data&#x7684;this&#x8BBF;&#x95EE; &#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5F62;&#x5F0F; &#x53BB;&#x62FF;&#x5230; &#x4F60;data&#x91CC;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;</span></span>
+<span id="cb41-5"><a href="#cb41-5"></a>        <span class="co">//&#x7136;&#x540E;&#x628A;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Vue&#x5B9E;&#x4F8B;data&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;</span></span>
+<span id="cb41-6"><a href="#cb41-6"></a>        node<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">$vm</span>[<span class="bu">RegExp</span><span class="op">.</span><span class="at">$1</span>]</span>
+<span id="cb41-7"><a href="#cb41-7"></a>    }</span></code></pre></div>
+<h2 id="&#x901A;&#x7528;&#x51FD;&#x6570;">&#x901A;&#x7528;&#x51FD;&#x6570;</h2>
+<div class="sourceCode" id="cb42"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1"></a><span class="fl">1.</span>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x90A3;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86; &#x628A;<span class="op">&lt;!--</span>&#xFFFC;7<span class="op">--&gt;</span>&#x89E3;&#x6790;&#x51FA;&#x6765; &#x628A;xxx&#x91CC;&#x9762;&#x7684;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;&#x7684;Wvue&#x91CC;&#x9762;&#x7684;data&#x91CC;&#x9762;&#x503C;</span>
+<span id="cb42-2"><a href="#cb42-2"></a><span class="fl">2.</span>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x6765;&#x53EF;&#x80FD;&#x8FD8;&#x6709;v<span class="op">-</span>text v<span class="op">-</span>html &#x548C; @&#x7684;&#x6307;&#x4EE4;&#x89E3;&#x6790; &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x51FD;&#x6570; </span></code></pre></div>
+<div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1"></a>compileText(node){</span>
+<span id="cb43-2"><a href="#cb43-2"></a>        <span class="kw">const</span> exp <span class="op">=</span> <span class="bu">RegExp</span><span class="op">.</span><span class="at">$1</span> <span class="co">//&#x628A;&#x53D8;&#x91CF;&#x90FD;&#x53D6;&#x51FA;&#x6765;</span></span>
+<span id="cb43-3"><a href="#cb43-3"></a>        <span class="kw">this</span><span class="op">.</span><span class="fu">updated</span>(node<span class="op">,</span><span class="kw">this</span><span class="op">.</span><span class="at">$vm</span><span class="op">,</span>exp<span class="op">,</span><span class="st">&apos;text&apos;</span>) <span class="co">//&#x8FD9;&#x91CC;&#x6211;&#x4E48;&#x5DF2;&#x7ECF;&#x77E5;&#x9053;&#x4E86; &#x4F60;&#x662F;&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x7684;&#x65B9;&#x6CD5; &#x6240;&#x4EE5;&#x6211;&#x4F20;&#x8FDB;&#x53BB;text</span></span>
+<span id="cb43-4"><a href="#cb43-4"></a>    }</span>
+<span id="cb43-5"><a href="#cb43-5"></a>    <span class="co">//&#x8FD9;&#x4E2A;&#x901A;&#x7528;&#x51FD;&#x6570; &#x901A;&#x8FC7;&#x52A8;&#x6001;&#x5339;&#x914D; &#x5C31;&#x77E5;&#x9053;&#x8C03;&#x53D6;&#x6211;&#x4EEC;&#x7684;textUpdator&#x65B9;&#x6CD5; &#x53BB;&#x6539;&#x53D8;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;&#x503C;</span></span>
+<span id="cb43-6"><a href="#cb43-6"></a>    updated (node<span class="op">,</span>vm<span class="op">,</span>exp<span class="op">,</span>dir) {</span>
+<span id="cb43-7"><a href="#cb43-7"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x662F;&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7; &#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x89E3;&#x6790; w-text &#x6216;&#x8005; w-html &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x51FD;&#x6570; &#x901A;&#x8FC7;&#x4F20;&#x53C2;&#x53BB;&#x5339;&#x914D;&#x8C03;&#x7528;</span></span>
+<span id="cb43-8"><a href="#cb43-8"></a>        <span class="kw">const</span> fn <span class="op">=</span> <span class="kw">this</span>[dir <span class="op">+</span> <span class="st">&apos;Updator&apos;</span>]</span>
+<span id="cb43-9"><a href="#cb43-9"></a>        <span class="co">//&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x7684;textUpdator &#x51FD;&#x6570; &#x628A;&#x754C;&#x9762;&#x4E0A;&#x7684;&#x66FF;&#x6362;&#x4E3A;&#x6211;&#x4EEC;&#x7684;Vue&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;data&#x91CC;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x952E;&#x503C;</span></span>
+<span id="cb43-10"><a href="#cb43-10"></a>        fn <span class="op">&amp;&amp;</span> fn(node<span class="op">,</span>vm[exp])</span>
+<span id="cb43-11"><a href="#cb43-11"></a>        <span class="kw">new</span> Watcher(vm<span class="op">,</span>exp<span class="op">,</span><span class="kw">function</span>(){</span>
+<span id="cb43-12"><a href="#cb43-12"></a>            fn <span class="op">&amp;&amp;</span> fn(node<span class="op">,</span>vm[exp])</span>
+<span id="cb43-13"><a href="#cb43-13"></a>        })</span>
+<span id="cb43-14"><a href="#cb43-14"></a>    }</span>
+<span id="cb43-15"><a href="#cb43-15"></a>    textUpdator(node<span class="op">,</span>value){</span>
+<span id="cb43-16"><a href="#cb43-16"></a>        <span class="co">//&#x66FF;&#x6362;&#x754C;&#x9762;&#x4E2D;&#x7684;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9; &#x4E3A;&#x6211;&#x4EEC;Vue&#x91CC;&#x9762;data&#x91CC;&#x9762;&#x7684;&#x952E;&#x503C;</span></span>
+<span id="cb43-17"><a href="#cb43-17"></a>        node<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> value</span>
+<span id="cb43-18"><a href="#cb43-18"></a>    }</span></code></pre></div>
+<h2 id="&#x521B;&#x5EFA;watcher">&#x521B;&#x5EFA;watcher</h2>
+<div class="sourceCode" id="cb44"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb44-1"><a href="#cb44-1"></a><span class="fl">1.</span>&#x6211;&#x4EEC;&#x521B;&#x5EFA;watcher&#x7684;&#x65F6;&#x673A;&#x662F;&#x5728; &#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x62EC;&#x53F7;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x7684; &#x4E5F;&#x5C31;&#x662F;&#x6211;&#x4EEC;&#x7684;</span>
+<span id="cb44-2"><a href="#cb44-2"></a><span class="fl">2.</span>&#x521B;&#x5EFA;&#x7684;watcher &#x6211;&#x4EEC;&#x9700;&#x8981;&#x624B;&#x52A8;&#x8BBF;&#x95EE;&#x4E00;&#x4E0B;Vue&#x91CC;data&#x91CC;&#x7684;&#x952E; &#x624B;&#x52A8;&#x89E6;&#x53D1;&#x4E00;&#x4E0B; get&#x51FD;&#x6570;</span>
+<span id="cb44-3"><a href="#cb44-3"></a><span class="fl">3.</span>&#x5F53;&#x6211;&#x4EEC;&#x5728;&#x7ED9;&#x6211;&#x4EEC;&#x7684;Vue&#x4E2D;data&#x91CC;&#x7684;&#x952E;&#x6539;&#x53D8;&#x952E;&#x503C;&#x7684;&#x65F6;&#x5019; &#x89E6;&#x53D1;set&#x51FD;&#x6570; &#x7136;&#x540E;dep&#x901A;&#x77E5;&#x66F4;&#x65B0; &#x8C03;&#x7528;&#x4E86;watcher&#x5B9E;&#x4F8B;&#x91CC;&#x7684;update&#x51FD;&#x6570;</span>
+<span id="cb44-4"><a href="#cb44-4"></a><span class="fl">4.</span>updata&#x51FD;&#x6570;&#x91CC;&#x9762; &#x662F;&#x6211;&#x4EEC;&#x5728;&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x7684;&#x65F6;&#x5019; &#x4F20;&#x8FDB;&#x53BB;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570; &#x8FD9;&#x4E2A;&#x51FD;&#x6570; &#x662F;&#x6211;&#x4EEC;&#x521A;&#x521A;&#x4E0A;&#x9762;&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x62EC;&#x53F7;&#x7684;&#x65F6;&#x5019;&#x628A;&#x91CC;&#x9762;&#x7684;&#x503C;&#x66FF;&#x6362;&#x4E3A;&#x6211;&#x4EEC;vue&#x91CC;data&#x952E;&#x503C;&#x7684;textUpdator()&#x51FD;&#x6570;</span></code></pre></div>
+<div class="sourceCode" id="cb45"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb45-1"><a href="#cb45-1"></a><span class="co">//&#x4FDD;&#x5B58;UI&#x4E2D;&#x7684;&#x4F9D;&#x8D56; &#x548C;&#x81EA;&#x5DF1;&#x4E00;&#x4E00;&#x5BF9;&#x5E94; &#x5F53;dep&#x901A;&#x77E5;&#x6211;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019; &#x6211;&#x53BB;&#x66F4;&#x65B0;</span></span>
+<span id="cb45-2"><a href="#cb45-2"></a><span class="kw">class</span> Watcher {</span>
+<span id="cb45-3"><a href="#cb45-3"></a>    constructor(vm<span class="op">,</span>key<span class="op">,</span>cb){</span>
+<span id="cb45-4"><a href="#cb45-4"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x7684;watcher&#x521B;&#x5EFA;&#x662F;&#x5728;&#x4F60;compile&#x89E3;&#x6790;&#x53CC;&#x5316;&#x62EC;&#x53F7;&#x7684;&#x65F6;&#x5019;&#x521B;&#x5EFA;&#x7684; &#x6240;&#x4EE5;&#x8FD9;&#x4E2A;</span></span>
+<span id="cb45-5"><a href="#cb45-5"></a>        <span class="co">//vm&#x662F;Wvue&#x7684;&#x5B9E;&#x4F8B; key &#x662F;&#x4F60;&#x901A;&#x8FC7;RegExp.$1 &#x89E3;&#x6790;&#x51FA;&#x6765;data&#x91CC;&#x7684;&#x53D8;&#x91CF;&#x952E;&#x503C; </span></span>
+<span id="cb45-6"><a href="#cb45-6"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">vm</span> <span class="op">=</span> vm</span>
+<span id="cb45-7"><a href="#cb45-7"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">key</span> <span class="op">=</span> key</span>
+<span id="cb45-8"><a href="#cb45-8"></a>        <span class="co">//&#x8D4B;&#x503C;&#x6211;&#x4EEC;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span></span>
+<span id="cb45-9"><a href="#cb45-9"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">cb</span> <span class="op">=</span> cb</span>
+<span id="cb45-10"><a href="#cb45-10"></a>        <span class="co">//&#x5C06;&#x5F53;&#x524D;&#x5B9E;&#x4F8B;&#x6307;&#x5411;Dep.target &#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;dep&#x91CC;&#x7684;watcher</span></span>
+<span id="cb45-11"><a href="#cb45-11"></a>        Dep<span class="op">.</span><span class="at">target</span> <span class="op">=</span> <span class="kw">this</span></span>
+<span id="cb45-12"><a href="#cb45-12"></a>        <span class="co">//&#x8BBF;&#x95EE;&#x4E00;&#x4E0B;Wvue&#x91CC;&#x7684;data &#x89E6;&#x53D1;get&#x51FD;&#x6570; &#x8BA9;Dep&#x7C7B; &#x628A;watcher&#x6DFB;&#x52A0;&#x8FDB;&#x53BB;</span></span>
+<span id="cb45-13"><a href="#cb45-13"></a>        <span class="kw">this</span><span class="op">.</span><span class="at">vm</span>[<span class="kw">this</span><span class="op">.</span><span class="at">key</span>]</span>
+<span id="cb45-14"><a href="#cb45-14"></a>        <span class="co">//&#x4EE5;&#x9632;&#x4E07;&#x4E00; &#x5728;&#x6062;&#x590D;&#x6210;null</span></span>
+<span id="cb45-15"><a href="#cb45-15"></a>        Dep<span class="op">.</span><span class="at">target</span> <span class="op">=</span> <span class="kw">null</span></span>
+<span id="cb45-16"><a href="#cb45-16"></a>    }</span>
+<span id="cb45-17"><a href="#cb45-17"></a>    <span class="co">//dep&#x901A;&#x77E5;&#x6211;&#x66F4;&#x65B0;&#x7684;&#x65F6;&#x5019; &#x6211;&#x53BB;&#x66F4;&#x65B0;</span></span>
+<span id="cb45-18"><a href="#cb45-18"></a>    update(){</span>
+<span id="cb45-19"><a href="#cb45-19"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x4E3A;&#x4E86;&#x9632;&#x6B62;this&#x6307;&#x5411;&#x6709;&#x95EE;&#x9898; &#x6240;&#x4EE5;&#x7528;&#x4E86;call</span></span>
+<span id="cb45-20"><a href="#cb45-20"></a>        <span class="co">//&#x8C03;&#x53D6;&#x4E86;&#x6211;&#x4EEC;&#x7684;&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x62EC;&#x53F7;&#x7684;&#x65F6;&#x5019; &#x66F4;&#x65B0;&#x89C6;&#x56FE;&#x4E2D;&#x7684;&#x90A3;&#x4E2A;&#x51FD;&#x6570;</span></span>
+<span id="cb45-21"><a href="#cb45-21"></a>       <span class="kw">this</span><span class="op">.</span><span class="at">cb</span><span class="op">.</span><span class="fu">call</span>(<span class="kw">this</span><span class="op">.</span><span class="at">vm</span><span class="op">,</span><span class="kw">this</span><span class="op">.</span><span class="at">vm</span>[<span class="kw">this</span><span class="op">.</span><span class="at">key</span>])</span>
+<span id="cb45-22"><a href="#cb45-22"></a>    }</span>
+<span id="cb45-23"><a href="#cb45-23"></a>}</span></code></pre></div>
+<p><img src="/zh-CN/247cae9a/Vue%20&#x5DE5;&#x4F5C;&#x673A;&#x5236;.jpg"></p>
+<h2 id="&#x603B;&#x7ED3;">&#x603B;&#x7ED3;</h2>
+<div class="sourceCode" id="cb46"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb46-1"><a href="#cb46-1"></a><span class="fl">1.</span>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7684;compile &#x505A;&#x4E86;DOM&#x64CD;&#x4F5C;  &#x5176;&#x5B9E;&#x771F;&#x6B63;&#x7684;Vue compile&#x5C31;&#x662F;&#x7F16;&#x8F91;&#x6210;render&#x51FD;&#x6570; &#x6CA1;&#x6709;DOM&#x7684;&#x8349;&#x8D70;</span>
+<span id="cb46-2"><a href="#cb46-2"></a><span class="fl">2.</span>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x6BCF;&#x4E2A;&#x53D8;&#x91CF;&#x90FD;&#x6DFB;&#x52A0;&#x4E86;&#x4E00;&#x4E2A;watcher &#x5C5E;&#x4E8E;Vue1<span class="op">.</span>0&#x7684;&#x5199;&#x6CD5; &#x8FD9;&#x6837;&#x6027;&#x80FD;&#x5F00;&#x9500;&#x5F88;&#x5927; &#x6240;&#x4EE5;&#x5230;&#x4E86;2<span class="op">.</span><span class="dv">0</span> &#x90FD;&#x662F;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;watcher</span>
+<span id="cb46-3"><a href="#cb46-3"></a><span class="fl">3.</span>&#x4EE3;&#x7801; https<span class="op">:</span><span class="co">//github.com/wazer1987/VueCode</span></span></code></pre></div>
+<script>
+        document.querySelectorAll('.github-emoji')
+          .forEach(el => {
+            if (!el.dataset.src) { return; }
+            const img = document.createElement('img');
+            img.style = 'display:none !important;';
+            img.src = el.dataset.src;
+            img.addEventListener('error', () => {
+              img.remove();
+              el.style.color = 'inherit';
+              el.style.backgroundImage = 'none';
+              el.style.background = 'none';
+            });
+            img.addEventListener('load', () => {
+              img.remove();
+            });
+            document.body.appendChild(img);
+          });
+      </script>
+            </div>
+            <hr/>
+
+            
+
+    <div class="reprint" id="reprint-statement">
+        
+            <div class="reprint__author">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-user">
+                        文章作者:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://wazer1987.github.io" rel="external nofollow noreferrer">王正</a>
+                </span>
+            </div>
+            <div class="reprint__type">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-link">
+                        文章链接:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    <a href="https://wazer1987.github.io/zh-CN/247cae9a.html">https://wazer1987.github.io/zh-CN/247cae9a.html</a>
+                </span>
+            </div>
+            <div class="reprint__notice">
+                <span class="reprint-meta" style="font-weight: bold;">
+                    <i class="fas fa-copyright">
+                        版权声明:
+                    </i>
+                </span>
+                <span class="reprint-info">
+                    本博客所有文章除特別声明外，均采用
+                    <a href="https://creativecommons.org/licenses/by/4.0/deed.zh" rel="external nofollow noreferrer" target="_blank">CC BY 4.0</a>
+                    许可协议。转载请注明来源
+                    <a href="https://wazer1987.github.io" target="_blank">王正</a>
+                    !
+                </span>
+            </div>
+        
+    </div>
+
+    <script async defer>
+      document.addEventListener("copy", function (e) {
+        let toastHTML = '<span>复制成功，请遵循本文的转载规则</span><button class="btn-flat toast-action" onclick="navToReprintStatement()" style="font-size: smaller">查看</a>';
+        M.toast({html: toastHTML})
+      });
+
+      function navToReprintStatement() {
+        $("html, body").animate({scrollTop: $("#reprint-statement").offset().top - 80}, 800);
+      }
+    </script>
+
+
+
+            <div class="tag_share" style="display: block;">
+                <div class="post-meta__tag-list" style="display: inline-block;">
+                    
+                        <div class="article-tag">
+                            
+                                <a href="/tags/Vue/">
+                                    <span class="chip bg-color">Vue</span>
+                                </a>
+                            
+                        </div>
+                    
+                </div>
+                <div class="post_share" style="zoom: 80%; width: fit-content; display: inline-block; float: right; margin: -0.15rem 0;">
+                    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/share/css/share.min.css">
+
+<div id="article-share">
+    
+    
+    <div class="social-share" data-sites="twitter,facebook,google,qq,qzone,wechat,weibo,douban,linkedin" data-wechat-qrcode-helper="<p>微信扫一扫即可分享！</p>"></div>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/share/js/social-share.min.js"></script>
+    
+
+    
+
+</div>
+
+                </div>
+            </div>
+            
+                <style>
+    #reward {
+        margin: 40px 0;
+        text-align: center;
+    }
+
+    #reward .reward-link {
+        font-size: 1.4rem;
+        line-height: 38px;
+    }
+
+    #reward .btn-floating:hover {
+        box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2), 0 5px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    #rewardModal {
+        width: 320px;
+        height: 350px;
+    }
+
+    #rewardModal .reward-title {
+        margin: 15px auto;
+        padding-bottom: 5px;
+    }
+
+    #rewardModal .modal-content {
+        padding: 10px;
+    }
+
+    #rewardModal .close {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        color: rgba(0, 0, 0, 0.5);
+        font-size: 1.3rem;
+        line-height: 20px;
+        cursor: pointer;
+    }
+
+    #rewardModal .close:hover {
+        color: #ef5350;
+        transform: scale(1.3);
+        -moz-transform:scale(1.3);
+        -webkit-transform:scale(1.3);
+        -o-transform:scale(1.3);
+    }
+
+    #rewardModal .reward-tabs {
+        margin: 0 auto;
+        width: 210px;
+    }
+
+    .reward-tabs .tabs {
+        height: 38px;
+        margin: 10px auto;
+        padding-left: 0;
+    }
+
+    .reward-content ul {
+        padding-left: 0 !important;
+    }
+
+    .reward-tabs .tabs .tab {
+        height: 38px;
+        line-height: 38px;
+    }
+
+    .reward-tabs .tab a {
+        color: #fff;
+        background-color: #ccc;
+    }
+
+    .reward-tabs .tab a:hover {
+        background-color: #ccc;
+        color: #fff;
+    }
+
+    .reward-tabs .wechat-tab .active {
+        color: #fff !important;
+        background-color: #22AB38 !important;
+    }
+
+    .reward-tabs .alipay-tab .active {
+        color: #fff !important;
+        background-color: #019FE8 !important;
+    }
+
+    .reward-tabs .reward-img {
+        width: 210px;
+        height: 210px;
+    }
+</style>
+
+<div id="reward">
+    <a href="#rewardModal" class="reward-link modal-trigger btn-floating btn-medium waves-effect waves-light red">赏</a>
+
+    <!-- Modal Structure -->
+    <div id="rewardModal" class="modal">
+        <div class="modal-content">
+            <a class="close modal-close"><i class="fas fa-times"></i></a>
+            <h4 class="reward-title">你的赏识是我前进的动力</h4>
+            <div class="reward-content">
+                <div class="reward-tabs">
+                    <ul class="tabs row">
+                        <li class="tab col s6 alipay-tab waves-effect waves-light"><a href="#alipay">支付宝</a></li>
+                        <li class="tab col s6 wechat-tab waves-effect waves-light"><a href="#wechat">微 信</a></li>
+                    </ul>
+                    <div id="alipay">
+                        <img src="/medias/reward/alipay.jpg" class="reward-img" alt="支付宝打赏二维码">
+                    </div>
+                    <div id="wechat">
+                        <img src="/medias/reward/wechat.png" class="reward-img" alt="微信打赏二维码">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('.tabs').tabs();
+    });
+</script>
+            
+        </div>
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+
+<article id="prenext-posts" class="prev-next articles">
+    <div class="row article-row">
+        
+        <div class="article col s12 m6" data-aos="fade-up" data-aos="fade-up">
+            <div class="article-badge left-badge text-color">
+                <i class="far fa-dot-circle"></i>&nbsp;本篇
+            </div>
+            <div class="card">
+                <a href="/zh-CN/247cae9a.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/23.jpg" class="responsive-img" alt="手写一个low碧版Vue">
+                        
+                        <span class="card-title">手写一个low碧版Vue</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            手写一个low碧版Vue
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-28
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%AD%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    中级教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+        
+        <div class="article col s12 m6" data-aos="fade-up">
+            <div class="article-badge right-badge text-color">
+                下一篇&nbsp;<i class="fas fa-chevron-right"></i>
+            </div>
+            <div class="card">
+                <a href="/zh-CN/c7e9773c.html">
+                    <div class="card-image">
+                        
+                        
+                        <img src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/medias/featureimages/21.jpg" class="responsive-img" alt="手写一个mini版的Vuex">
+                        
+                        <span class="card-title">手写一个mini版的Vuex</span>
+                    </div>
+                </a>
+                <div class="card-content article-content">
+                    <div class="summary block-with-text">
+                        
+                            手写一个mini版的Vuex
+                        
+                    </div>
+                    <div class="publish-info">
+                            <span class="publish-date">
+                                <i class="far fa-clock fa-fw icon-date"></i>2020-06-22
+                            </span>
+                        <span class="publish-author">
+                            
+                            <i class="fas fa-bookmark fa-fw icon-category"></i>
+                            
+                            <a href="/categories/%E4%B8%AD%E7%BA%A7%E6%95%99%E7%A8%8B/" class="post-category">
+                                    中级教程
+                                </a>
+                            
+                            
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="card-action article-tags">
+                    
+                    <a href="/tags/Vue/">
+                        <span class="chip bg-color">Vue</span>
+                    </a>
+                    
+                    <a href="/tags/Vuex/">
+                        <span class="chip bg-color">Vuex</span>
+                    </a>
+                    
+                </div>
+                
+            </div>
+        </div>
+        
+    </div>
+</article>
+
+</div>
+
+
+<script>
+    $('#articleContent').on('copy', function (e) {
+        // IE8 or earlier browser is 'undefined'
+        if (typeof window.getSelection === 'undefined') return;
+
+        var selection = window.getSelection();
+        // if the selection is short let's not annoy our users.
+        if (('' + selection).length < Number.parseInt('120')) {
+            return;
+        }
+
+        // create a div outside of the visible area and fill it with the selected text.
+        var bodyElement = document.getElementsByTagName('body')[0];
+        var newdiv = document.createElement('div');
+        newdiv.style.position = 'absolute';
+        newdiv.style.left = '-99999px';
+        bodyElement.appendChild(newdiv);
+        newdiv.appendChild(selection.getRangeAt(0).cloneContents());
+
+        // we need a <pre> tag workaround.
+        // otherwise the text inside "pre" loses all the line breaks!
+        if (selection.getRangeAt(0).commonAncestorContainer.nodeName === 'PRE') {
+            newdiv.innerHTML = "<pre>" + newdiv.innerHTML + "</pre>";
+        }
+
+        var url = document.location.href;
+        newdiv.innerHTML += '<br />'
+            + '来源: 北城韩雨<br />'
+            + '文章作者: 王正<br />'
+            + '文章链接: <a href="' + url + '">' + url + '</a><br />'
+            + '本文章著作权归作者所有，任何形式的转载都请注明出处。';
+
+        selection.selectAllChildren(newdiv);
+        window.setTimeout(function () {bodyElement.removeChild(newdiv);}, 200);
+    });
+</script>
+
+
+<!-- 代码块功能依赖 -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeBlockFuction.js"></script>
+
+<!-- 代码语言 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeLang.js"></script>
+
+
+<!-- 代码块复制 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeCopy.js"></script>
+
+
+<!-- 代码块收缩 -->
+
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/codeBlock/codeShrink.js"></script>
+
+
+<!-- 代码块折行 -->
+
+<style type="text/css">
+code[class*="language-"], pre[class*="language-"] { white-space: pre !important; }
+</style>
+
+
+    </div>
+    <div id="toc-aside" class="expanded col l3 hide-on-med-and-down">
+        <div class="toc-widget">
+            <div class="toc-title"><i class="far fa-list-alt"></i>&nbsp;&nbsp;目录</div>
+            <div id="toc-content"></div>
+        </div>
+    </div>
+</div>
+
+<!-- TOC 悬浮按钮. -->
+
+<div id="floating-toc-btn" class="hide-on-med-and-down">
+    <a class="btn-floating btn-large bg-color">
+        <i class="fas fa-list-ul"></i>
+    </a>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/tocbot/tocbot.min.js"></script>
+<script>
+    $(function () {
+        tocbot.init({
+            tocSelector: '#toc-content',
+            contentSelector: '#articleContent',
+            headingsOffset: -($(window).height() * 0.4 - 45),
+            collapseDepth: Number('0'),
+            headingSelector: 'h2, h3, h4'
+        });
+
+        // modify the toc link href to support Chinese.
+        let i = 0;
+        let tocHeading = 'toc-heading-';
+        $('#toc-content a').each(function () {
+            $(this).attr('href', '#' + tocHeading + (++i));
+        });
+
+        // modify the heading title id to support Chinese.
+        i = 0;
+        $('#articleContent').children('h2, h3, h4').each(function () {
+            $(this).attr('id', tocHeading + (++i));
+        });
+
+        // Set scroll toc fixed.
+        let tocHeight = parseInt($(window).height() * 0.4 - 64);
+        let $tocWidget = $('.toc-widget');
+        $(window).scroll(function () {
+            let scroll = $(window).scrollTop();
+            /* add post toc fixed. */
+            if (scroll > tocHeight) {
+                $tocWidget.addClass('toc-fixed');
+            } else {
+                $tocWidget.removeClass('toc-fixed');
+            }
+        });
+
+        
+        /* 修复文章卡片 div 的宽度. */
+        let fixPostCardWidth = function (srcId, targetId) {
+            let srcDiv = $('#' + srcId);
+            if (srcDiv.length === 0) {
+                return;
+            }
+
+            let w = srcDiv.width();
+            if (w >= 450) {
+                w = w + 21;
+            } else if (w >= 350 && w < 450) {
+                w = w + 18;
+            } else if (w >= 300 && w < 350) {
+                w = w + 16;
+            } else {
+                w = w + 14;
+            }
+            $('#' + targetId).width(w);
+        };
+
+        // 切换TOC目录展开收缩的相关操作.
+        const expandedClass = 'expanded';
+        let $tocAside = $('#toc-aside');
+        let $mainContent = $('#main-content');
+        $('#floating-toc-btn .btn-floating').click(function () {
+            if ($tocAside.hasClass(expandedClass)) {
+                $tocAside.removeClass(expandedClass).hide();
+                $mainContent.removeClass('l9');
+            } else {
+                $tocAside.addClass(expandedClass).show();
+                $mainContent.addClass('l9');
+            }
+            fixPostCardWidth('artDetail', 'prenext-posts');
+        });
+        
+    });
+</script>
+
+    
+
+</main>
+
+
+    <footer class="page-footer bg-color">
+    <div class="container row center-align" style="margin-bottom: 15px !important;">
+        <div class="col s12 m8 l8 copy-right">
+            Copyright&nbsp;&copy;
+            <span id="year">2019</span>
+            <a href="https://wazer1987.github.io" target="_blank">王正</a>
+            |&nbsp;Powered by&nbsp;<a href="https://github.com/blinkfox/hexo-theme-matery" target="_blank">hexo-theme-matery</a>
+            |&nbsp;Theme&nbsp;<a href="https://github.com/xinetzone/xinetzone.github.io" target="_blank">Matery</a>
+            <br>
+            
+            &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
+                class="white-color">84.7k</span>&nbsp;字
+            
+            
+            
+            
+            
+            
+            <span id="busuanzi_container_site_pv">
+                |&nbsp;<i class="far fa-eye"></i>&nbsp;总访问量:&nbsp;<span id="busuanzi_value_site_pv"
+                    class="white-color"></span>&nbsp;次
+            </span>
+            
+            
+            <span id="busuanzi_container_site_uv">
+                |&nbsp;<i class="fas fa-users"></i>&nbsp;总访问人数:&nbsp;<span id="busuanzi_value_site_uv"
+                    class="white-color"></span>&nbsp;人
+            </span>
+            
+            <br>
+            
+            <span id="sitetime">载入运行时间...</span>
+            <script>
+                function siteTime() {
+                    var seconds = 1000;
+                    var minutes = seconds * 60;
+                    var hours = minutes * 60;
+                    var days = hours * 24;
+                    var years = days * 365;
+                    var today = new Date();
+                    var startYear = "2019";
+                    var startMonth = "09";
+                    var startDate = "1";
+                    var startHour = "0";
+                    var startMinute = "0";
+                    var startSecond = "0";
+                    var todayYear = today.getFullYear();
+                    var todayMonth = today.getMonth() + 1;
+                    var todayDate = today.getDate();
+                    var todayHour = today.getHours();
+                    var todayMinute = today.getMinutes();
+                    var todaySecond = today.getSeconds();
+                    var t1 = Date.UTC(startYear, startMonth, startDate, startHour, startMinute, startSecond);
+                    var t2 = Date.UTC(todayYear, todayMonth, todayDate, todayHour, todayMinute, todaySecond);
+                    var diff = t2 - t1;
+                    var diffYears = Math.floor(diff / years);
+                    var diffDays = Math.floor((diff / days) - diffYears * 365);
+                    var diffHours = Math.floor((diff - (diffYears * 365 + diffDays) * days) / hours);
+                    var diffMinutes = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours) /
+                        minutes);
+                    var diffSeconds = Math.floor((diff - (diffYears * 365 + diffDays) * days - diffHours * hours -
+                        diffMinutes * minutes) / seconds);
+                    if (startYear == todayYear) {
+                        document.getElementById("year").innerHTML = todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffDays + " 天 " + diffHours +
+                            " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    } else {
+                        document.getElementById("year").innerHTML = startYear + " - " + todayYear;
+                        document.getElementById("sitetime").innerHTML = "本站已安全运行 " + diffYears + " 年 " + diffDays +
+                            " 天 " + diffHours + " 小时 " + diffMinutes + " 分钟 " + diffSeconds + " 秒";
+                    }
+                }
+                setInterval(siteTime, 1000);
+            </script>
+            
+            <br>
+            
+        </div>
+        <div class="col s12 m4 l4 social-link social-statis">
+    <a href="https://github.com/wazer1987" class="tooltipped" target="_blank" data-tooltip="访问我的GitHub" data-position="top" data-delay="50">
+        <i class="fab fa-github"></i>
+    </a>
+
+
+
+    <a href="mailto:1052101962@qq.com" class="tooltipped" target="_blank" data-tooltip="邮件联系我" data-position="top" data-delay="50">
+        <i class="fas fa-envelope-open"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="tencent://AddContact/?fromId=50&fromSubId=1&subcmd=all&uin=1052101962" class="tooltipped" target="_blank" data-tooltip="QQ联系我: 1052101962" data-position="top" data-delay="50">
+        <i class="fab fa-qq"></i>
+    </a>
+
+
+
+
+
+
+
+    <a href="/rss2.xml" class="tooltipped" target="_blank" data-tooltip="RSS2 订阅" data-position="top" data-delay="50">
+        <i class="fas fa-rss"></i>
+    </a>
+
+
+</div>
+    </div>
+</footer>
+
+<div class="progress-bar"></div>
+
+
+    <!-- 搜索遮罩框 -->
+<div id="searchModal" class="modal">
+    <div class="modal-content">
+        <div class="search-header">
+            <span class="title"><i class="fas fa-search"></i>&nbsp;&nbsp;搜索</span>
+            <input type="search" id="searchInput" name="s" placeholder="请输入搜索的关键字"
+                   class="search-input">
+        </div>
+        <div id="searchResult"></div>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/search.js"></script>
+<script type="text/javascript">
+$(function () {
+    searchFunc("https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/" + "search.xml", 'searchInput', 'searchResult');
+});
+</script>
+    <!-- 回到顶部按钮 -->
+<div id="backTop" class="top-scroll">
+    <a class="btn-floating btn-large waves-effect waves-light" href="#!">
+        <i class="fas fa-arrow-up"></i>
+    </a>
+</div>
+
+
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/materialize/materialize.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/masonry/masonry.pkgd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/aos/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/scrollprogress/scrollProgress.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/lightGallery/js/lightgallery-all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/js/matery.js"></script>
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+
+
+    <!-- Baidu Analytics -->
+
+    <!-- Baidu Push -->
+
+<script>
+    (function () {
+        var bp = document.createElement('script');
+        var curProtocol = window.location.protocol.split(':')[0];
+        if (curProtocol === 'https') {
+            bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+        } else {
+            bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+        }
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(bp, s);
+    })();
+</script>
+
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/clicklove.js" async="async"></script>
+    
+    
+    <script async src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/others/busuanzi.pure.mini.js"></script>
+    
+
+    
+
+    
+
+    
+    <script type="text/javascript" color="0,0,255"
+        pointColor="0,0,255" opacity='0.7'
+        zIndex="-1" count="99"
+        src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/canvas-nest.js"></script>
+    
+
+    
+    
+    <script type="text/javascript" size="150" alpha='0.6'
+        zIndex="-1" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-refresh.min.js" async="async"></script>
+    
+
+    
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/background/ribbon-dynamic.js" async="async"></script>
+    
+    
+    
+    <script src="https://cdn.jsdelivr.net/gh/xinetzone/xinetzone.github.io/libs/instantpage/instantpage.js" type="module"></script>
+    
+
+<script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"pluginRootPath":"live2dw/","pluginJsPath":"lib/","pluginModelPath":"assets/","tagMode":false,"debug":false,"model":{"jsonPath":"/live2dw/assets/shizuku.model.json"},"display":{"position":"left","width":200,"height":300},"mobile":{"show":true,"scale":0.5},"react":{"opacity":0.7},"log":false});</script></body>
+
+</html>
