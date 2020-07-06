@@ -9,8 +9,30 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个前端界的小学生</description>
-    <pubDate>Sun, 28 Jun 2020 02:59:26 GMT</pubDate>
+    <pubDate>Mon, 06 Jul 2020 02:40:11 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>Nuxt 服务端渲染</title>
+      <link>https://wazer1987.github.io/zh-CN/1809b34c.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/1809b34c.html</guid>
+      <pubDate>Sun, 05 Jul 2020 02:40:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h2 id=&quot;nuxt&amp;#x5B89;&amp;#x88C5;&quot;&gt;nuxt&amp;#x5B89;&amp;#x88C5;&lt;/h2&gt;
+&lt;div class=&quot;sourceCode&quot; id=&quot;cb1&quot;&gt;&lt;pre class=&quot;sourceCode js&quot;&gt;&lt;code class=&quot;sourceCode
+          
+        
+      
+      </description>
+      
+      
+      <comments>https://wazer1987.github.io/zh-CN/1809b34c.html#disqus_thread</comments>
+    </item>
     
     <item>
       <title>手写一个low碧版Vue</title>
@@ -270,28 +292,6 @@
       
       
       <comments>https://wazer1987.github.io/zh-CN/8cfcd0f4.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>NUXT-SSR 服务端渲染</title>
-      <link>https://wazer1987.github.io/zh-CN/241b6c32.html</link>
-      <guid>https://wazer1987.github.io/zh-CN/241b6c32.html</guid>
-      <pubDate>Sat, 22 Feb 2020 11:11:21 GMT</pubDate>
-      <description>
-      
-        
-        
-          
-          
-            &lt;h2 id=&quot;nuxt&amp;#x5B89;&amp;#x88C5;&quot;&gt;nuxt&amp;#x5B89;&amp;#x88C5;&lt;/h2&gt;
-&lt;div class=&quot;sourceCode&quot; id=&quot;cb1&quot;&gt;&lt;pre class=&quot;sourceCode js&quot;&gt;&lt;code class=&quot;sourceCode
-          
-        
-      
-      </description>
-      
-      
-      <comments>https://wazer1987.github.io/zh-CN/241b6c32.html#disqus_thread</comments>
     </item>
     
     <item>
