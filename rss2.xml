@@ -9,8 +9,54 @@
     <atom:link href="/rss2.xml" rel="self" type="application/rss+xml"/>
     
     <description>一个前端界的小学生</description>
-    <pubDate>Sat, 12 Sep 2020 05:40:21 GMT</pubDate>
+    <pubDate>Tue, 29 Sep 2020 10:40:21 GMT</pubDate>
     <generator>http://hexo.io/</generator>
+    
+    <item>
+      <title>TypeScript</title>
+      <link>https://wazer1987.github.io/zh-CN/d044eab7.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/d044eab7.html</guid>
+      <pubDate>Tue, 29 Sep 2020 08:40:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1 id=&quot;typescript&quot;&gt;TypeScript&lt;/h1&gt;
+&lt;h2 id=&quot;&amp;#x5B89;&amp;#x88C5;&quot;&gt;&amp;#x5B89;&amp;#x88C5;&lt;/h2&gt;
+&lt;div class=&quot;sourceCode&quot; id=&quot;cb1&quot;&gt;&lt;pre class=&quot;sourceCode
+          
+        
+      
+      </description>
+      
+      
+      
+    </item>
+    
+    <item>
+      <title>Vue 3.0 尝鲜</title>
+      <link>https://wazer1987.github.io/zh-CN/5a8045b8.html</link>
+      <guid>https://wazer1987.github.io/zh-CN/5a8045b8.html</guid>
+      <pubDate>Tue, 29 Sep 2020 05:40:21 GMT</pubDate>
+      <description>
+      
+        
+        
+          
+          
+            &lt;h1 id=&quot;vue3.0&quot;&gt;VUE3.0&lt;/h1&gt;
+&lt;h2 id=&quot;&amp;#x7B80;&amp;#x5355;&amp;#x63CF;&amp;#x8FF0;&quot;&gt;&amp;#x7B80;&amp;#x5355;&amp;#x63CF;&amp;#x8FF0;&lt;/h2&gt;
+&lt;div class=&quot;sourceCode&quot;
+          
+        
+      
+      </description>
+      
+      
+      
+    </item>
     
     <item>
       <title>ES6\ES7\ES8\ES9\ES10等</title>
@@ -402,48 +448,6 @@
       
       
       <comments>https://wazer1987.github.io/zh-CN/6313db75.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>hexo入门</title>
-      <link>https://wazer1987.github.io/en/3001defc.html</link>
-      <guid>https://wazer1987.github.io/en/3001defc.html</guid>
-      <pubDate>Sat, 28 Dec 2019 11:02:16 GMT</pubDate>
-      <description>
-      
-        
-        
-          
-          
-            &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a
-          
-        
-      
-      </description>
-      
-      
-      <comments>https://wazer1987.github.io/en/3001defc.html#disqus_thread</comments>
-    </item>
-    
-    <item>
-      <title>测试图片上传</title>
-      <link>https://wazer1987.github.io/zh-CN/79a6148d.html</link>
-      <guid>https://wazer1987.github.io/zh-CN/79a6148d.html</guid>
-      <pubDate>Tue, 10 Dec 2019 15:46:38 GMT</pubDate>
-      <description>
-      
-        
-        
-          
-          
-            &lt;h2
-          
-        
-      
-      </description>
-      
-      
-      <comments>https://wazer1987.github.io/zh-CN/79a6148d.html#disqus_thread</comments>
     </item>
     
   </channel>
