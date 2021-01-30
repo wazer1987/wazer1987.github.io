@@ -25,7 +25,7 @@
     
     <script src="https://cdn.jsdelivr.net/gh/wazer1987/wazer1987.github.io/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -769,9 +769,9 @@
 <div class="sourceCode" id="cb11"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">new</span> Vue({</span>
 <span id="cb11-2"><a href="#cb11-2"></a>    <span class="dt">template</span><span class="op">:</span></span>
 <span id="cb11-3"><a href="#cb11-3"></a>    <span class="vs">`&lt;div&gt;</span></span>
-<span id="cb11-4"><a href="#cb11-4"></a><span class="vs">        &lt;span&gt;&lt;/span&gt;</span></span>
-<span id="cb11-5"><a href="#cb11-5"></a><span class="vs">        &lt;span&gt;&lt;/span&gt;</span></span>
-<span id="cb11-6"><a href="#cb11-6"></a><span class="vs">        &lt;span&gt;&lt;/span&gt;</span></span>
+<span id="cb11-4"><a href="#cb11-4"></a><span class="vs">        &lt;span&gt;{{name1}}&lt;/span&gt;</span></span>
+<span id="cb11-5"><a href="#cb11-5"></a><span class="vs">        &lt;span&gt;{{name2}}&lt;/span&gt;</span></span>
+<span id="cb11-6"><a href="#cb11-6"></a><span class="vs">        &lt;span&gt;{{name1}}&lt;/span&gt;</span></span>
 <span id="cb11-7"><a href="#cb11-7"></a><span class="vs">     &lt;/div&gt;`</span><span class="op">,</span></span>
 <span id="cb11-8"><a href="#cb11-8"></a>    <span class="dt">data</span><span class="op">:</span>{</span>
 <span id="cb11-9"><a href="#cb11-9"></a>        <span class="dt">name1</span><span class="op">:</span><span class="st">&apos;name1&apos;</span><span class="op">,</span></span>
@@ -980,7 +980,7 @@
 <span id="cb28-7"><a href="#cb28-7"></a>                <span class="co">//&#x5982;&#x679C;&#x662F;&#x5143;&#x7D20;&#x8282;&#x70B9; &#x5C31;&#x89E3;&#x6790; &#x4ED6;&#x8EAB;&#x4E0A;&#x7684;&#x4EE5;w-&#x5F00;&#x5934; &#x6216;&#x8005; @&#x5F00;&#x5934;&#x7684;&#x6307;&#x4EE4;</span></span>
 <span id="cb28-8"><a href="#cb28-8"></a>                <span class="kw">this</span><span class="op">.</span><span class="fu">compileElement</span>(node)</span>
 <span id="cb28-9"><a href="#cb28-9"></a>            }<span class="cf">else</span> <span class="cf">if</span> (<span class="kw">this</span><span class="op">.</span><span class="fu">isInterpolation</span>(node)){</span>
-<span id="cb28-10"><a href="#cb28-10"></a>                <span class="co">//&#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9;&#x5C31;&#x89E3;&#x6790; &#x770B;&#x770B;&#x6709;&#x6BCF;&#x6709;&#x7684;&#x7136;&#x540E; &#x628A;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x91CC;&#x7684;&#x53D8;&#x91CF; &#x521B;&#x5EFA;watcher</span></span>
+<span id="cb28-10"><a href="#cb28-10"></a>                <span class="co">//&#x5982;&#x679C;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9;&#x5C31;&#x89E3;&#x6790; &#x770B;&#x770B;&#x6709;&#x6BCF;&#x6709;{{xxx}}&#x7684;&#x7136;&#x540E; &#x628A;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x91CC;&#x7684;&#x53D8;&#x91CF; &#x521B;&#x5EFA;watcher</span></span>
 <span id="cb28-11"><a href="#cb28-11"></a>                <span class="co">//&#x628A;&#x63D2;&#x503C;&#x8868;&#x8FBE;&#x5F0F; &#x66FF;&#x6362;&#x4E3A;&#x5B9E;&#x9645;&#x7684;&#x5185;&#x5BB9;</span></span>
 <span id="cb28-12"><a href="#cb28-12"></a>                <span class="kw">this</span><span class="op">.</span><span class="fu">compileText</span>(node)</span>
 <span id="cb28-13"><a href="#cb28-13"></a>            }</span>
@@ -1064,23 +1064,23 @@
 <div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a><span class="fl">1.</span>&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x6587;&#x672C;</span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="fl">2.</span>&#x628A;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;&#x503C; &#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;this<span class="op">.</span><span class="at">$data&#x91CC;&#x8D4B;&#x503C;</span></span>
 <span id="cb38-3"><a href="#cb38-3"></a><span class="fl">3.</span>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x7528;&#x4E86;&#x6B63;&#x5219;&#x5339;&#x914D; &#x5E76;&#x4E14; &#x4F7F;&#x7528; <span class="bu">RegExp</span><span class="op">.</span><span class="at">$1&#x6765;&#x53D6;&#x51FA;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x91CC;&#x9762;&#x7684;&#x503C;</span></span></code></pre></div>
-<div class="sourceCode" id="cb39"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1"></a><span class="co">//&#x89E3;&#x6790;&#x6587;&#x672C;&#x8282;&#x70B9; &#x770B;&#x770B;&#x6709;&#x6BCF;&#x6709;&#x7684;&#x7136;&#x540E; &#x628A;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x91CC;&#x7684;&#x53D8;&#x91CF; &#x521B;&#x5EFA;watcher</span></span>
+<div class="sourceCode" id="cb39"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb39-1"><a href="#cb39-1"></a><span class="co">//&#x89E3;&#x6790;&#x6587;&#x672C;&#x8282;&#x70B9; &#x770B;&#x770B;&#x6709;&#x6BCF;&#x6709;{{xxx}}&#x7684;&#x7136;&#x540E; &#x628A;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x91CC;&#x7684;&#x53D8;&#x91CF; &#x521B;&#x5EFA;watcher</span></span>
 <span id="cb39-2"><a href="#cb39-2"></a>isInterpolation(node){</span>
 <span id="cb39-3"><a href="#cb39-3"></a>    <span class="co">//&#x5982;&#x679C;&#x4F60;&#x7684;&#x6587;&#x672C;&#x7C7B;&#x578B; &#x662F;3 &#x5C31;&#x8BF4;&#x660E;&#x4F60;&#x662F;&#x6587;&#x672C;&#x8282;&#x70B9; &#x5E76;&#x4E14;&#x8981;&#x6EE1;&#x8DB3;&#x6B63;&#x5219;&#x5339;&#x914D; &#x4F60;&#x91CC;&#x9762;&#x6709;&#x53CC;&#x82B1;&#x62EC;&#x53F7;&#x7684;&#x8BED;&#x6CD5; </span></span>
 <span id="cb39-4"><a href="#cb39-4"></a>    <span class="cf">return</span> node<span class="op">.</span><span class="at">nodeType</span> <span class="op">===</span> <span class="dv">3</span> <span class="op">&amp;&amp;</span> <span class="ss">/</span><span class="sc">\{\{(</span><span class="ss">.</span><span class="sc">*)\}\}</span><span class="ss">/</span><span class="op">.</span><span class="fu">test</span>(node<span class="op">.</span><span class="at">textContent</span>)</span>
 <span id="cb39-5"><a href="#cb39-5"></a>}</span></code></pre></div>
 <h2 id="compiletext&#x65B9;&#x6CD5;">compileText&#x65B9;&#x6CD5;</h2>
-<div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1"></a><span class="fl">1.</span>&#x7528;&#x6765;&#x53D6;&#x51FA;<span class="op">&lt;!--</span>&#xFFFC;5<span class="op">--&gt;</span> &#x91CC;&#x9762;&#x7684;xxxx &#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x5B9E;&#x4F8B;&#x91CC;&#x9762;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;</span>
+<div class="sourceCode" id="cb40"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb40-1"><a href="#cb40-1"></a><span class="fl">1.</span>&#x7528;&#x6765;&#x53D6;&#x51FA;<span class="op">&lt;!--</span>swig&#xFFFC;5<span class="op">--&gt;</span> &#x91CC;&#x9762;&#x7684;xxxx &#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Wvue&#x5B9E;&#x4F8B;&#x91CC;&#x9762;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;</span>
 <span id="cb40-2"><a href="#cb40-2"></a><span class="fl">2.</span>&#x6B64;&#x65F6;&#x8FD9;&#x91CC;&#x8FD8;&#x4E0D;&#x662F;&#x54CD;&#x5E94;&#x5F0F;&#x7684; &#x9700;&#x8981;&#x6211;&#x4EEC;&#x521B;&#x5EFA;watcher   </span></code></pre></div>
 <div class="sourceCode" id="cb41"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb41-1"><a href="#cb41-1"></a>compileText(node){</span>
 <span id="cb41-2"><a href="#cb41-2"></a>        <span class="bu">console</span><span class="op">.</span><span class="fu">log</span>(<span class="kw">this</span><span class="op">.</span><span class="at">$vm</span>[<span class="bu">RegExp</span><span class="op">.</span><span class="at">$1</span>])</span>
-<span id="cb41-3"><a href="#cb41-3"></a>        <span class="co">//RegExp.$1 &#x5C31;&#x662F;&#x4F60;  &#x91CC;&#x5339;&#x914D;&#x7684;xxx&#x7684;&#x90E8;&#x5206;</span></span>
+<span id="cb41-3"><a href="#cb41-3"></a>        <span class="co">//RegExp.$1 &#x5C31;&#x662F;&#x4F60; {{xxx}} &#x91CC;&#x5339;&#x914D;&#x7684;xxx&#x7684;&#x90E8;&#x5206;</span></span>
 <span id="cb41-4"><a href="#cb41-4"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x7684;this.vm&#x5C31;&#x662F;&#x4F60;&#x7684;Vue&#x5B9E;&#x4F8B; &#x7531;&#x4E8E;&#x6211;&#x4EEC;&#x8FD9;&#x91CC;&#x505A;&#x4E86;&#x65E0;&#x4E2D;&#x95F4;&#x7684;data&#x7684;this&#x8BBF;&#x95EE; &#x6240;&#x4EE5;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x8FD9;&#x6837;&#x7684;&#x5F62;&#x5F0F; &#x53BB;&#x62FF;&#x5230; &#x4F60;data&#x91CC;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;</span></span>
 <span id="cb41-5"><a href="#cb41-5"></a>        <span class="co">//&#x7136;&#x540E;&#x628A;&#x91CC;&#x9762;&#x7684;&#x5185;&#x5BB9;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;Vue&#x5B9E;&#x4F8B;data&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x503C;</span></span>
 <span id="cb41-6"><a href="#cb41-6"></a>        node<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> <span class="kw">this</span><span class="op">.</span><span class="at">$vm</span>[<span class="bu">RegExp</span><span class="op">.</span><span class="at">$1</span>]</span>
 <span id="cb41-7"><a href="#cb41-7"></a>    }</span></code></pre></div>
 <h2 id="&#x901A;&#x7528;&#x51FD;&#x6570;">&#x901A;&#x7528;&#x51FD;&#x6570;</h2>
-<div class="sourceCode" id="cb42"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1"></a><span class="fl">1.</span>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x90A3;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86; &#x628A;<span class="op">&lt;!--</span>&#xFFFC;7<span class="op">--&gt;</span>&#x89E3;&#x6790;&#x51FA;&#x6765; &#x628A;xxx&#x91CC;&#x9762;&#x7684;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;&#x7684;Wvue&#x91CC;&#x9762;&#x7684;data&#x91CC;&#x9762;&#x503C;</span>
+<div class="sourceCode" id="cb42"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb42-1"><a href="#cb42-1"></a><span class="fl">1.</span>&#x4E0A;&#x9762;&#x6211;&#x4EEC;&#x90A3;&#x5DF2;&#x7ECF;&#x5B9E;&#x73B0;&#x4E86; &#x628A;<span class="op">&lt;!--</span>swig&#xFFFC;7<span class="op">--&gt;</span>&#x89E3;&#x6790;&#x51FA;&#x6765; &#x628A;xxx&#x91CC;&#x9762;&#x7684;&#x503C;&#x66FF;&#x6362;&#x6210;&#x6211;&#x4EEC;&#x7684;Wvue&#x91CC;&#x9762;&#x7684;data&#x91CC;&#x9762;&#x503C;</span>
 <span id="cb42-2"><a href="#cb42-2"></a><span class="fl">2.</span>&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5C06;&#x6765;&#x53EF;&#x80FD;&#x8FD8;&#x6709;v<span class="op">-</span>text v<span class="op">-</span>html &#x548C; @&#x7684;&#x6307;&#x4EE4;&#x89E3;&#x6790; &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x51FD;&#x6570; </span></code></pre></div>
 <div class="sourceCode" id="cb43"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb43-1"><a href="#cb43-1"></a>compileText(node){</span>
 <span id="cb43-2"><a href="#cb43-2"></a>        <span class="kw">const</span> exp <span class="op">=</span> <span class="bu">RegExp</span><span class="op">.</span><span class="at">$1</span> <span class="co">//&#x628A;&#x53D8;&#x91CF;&#x90FD;&#x53D6;&#x51FA;&#x6765;</span></span>
@@ -1090,7 +1090,7 @@
 <span id="cb43-6"><a href="#cb43-6"></a>    updated (node<span class="op">,</span>vm<span class="op">,</span>exp<span class="op">,</span>dir) {</span>
 <span id="cb43-7"><a href="#cb43-7"></a>        <span class="co">//&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x53EF;&#x80FD;&#x662F;&#x89E3;&#x6790;&#x53CC;&#x82B1;&#x62EC;&#x53F7; &#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x89E3;&#x6790; w-text &#x6216;&#x8005; w-html &#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x5199;&#x4E00;&#x4E2A;&#x901A;&#x7528;&#x7684;&#x51FD;&#x6570; &#x901A;&#x8FC7;&#x4F20;&#x53C2;&#x53BB;&#x5339;&#x914D;&#x8C03;&#x7528;</span></span>
 <span id="cb43-8"><a href="#cb43-8"></a>        <span class="kw">const</span> fn <span class="op">=</span> <span class="kw">this</span>[dir <span class="op">+</span> <span class="st">&apos;Updator&apos;</span>]</span>
-<span id="cb43-9"><a href="#cb43-9"></a>        <span class="co">//&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x7684;textUpdator &#x51FD;&#x6570; &#x628A;&#x754C;&#x9762;&#x4E0A;&#x7684;&#x66FF;&#x6362;&#x4E3A;&#x6211;&#x4EEC;&#x7684;Vue&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;data&#x91CC;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x952E;&#x503C;</span></span>
+<span id="cb43-9"><a href="#cb43-9"></a>        <span class="co">//&#x8C03;&#x7528;&#x6211;&#x4EEC;&#x7684;textUpdator &#x51FD;&#x6570; &#x628A;&#x754C;&#x9762;&#x4E0A;&#x7684;{{xxx}}&#x66FF;&#x6362;&#x4E3A;&#x6211;&#x4EEC;&#x7684;Vue&#x5B9E;&#x4F8B;&#x4E2D;&#x7684;data&#x91CC;&#x7684;&#x53D8;&#x91CF;&#x7684;&#x952E;&#x503C;</span></span>
 <span id="cb43-10"><a href="#cb43-10"></a>        fn <span class="op">&amp;&amp;</span> fn(node<span class="op">,</span>vm[exp])</span>
 <span id="cb43-11"><a href="#cb43-11"></a>        <span class="kw">new</span> Watcher(vm<span class="op">,</span>exp<span class="op">,</span><span class="kw">function</span>(){</span>
 <span id="cb43-12"><a href="#cb43-12"></a>            fn <span class="op">&amp;&amp;</span> fn(node<span class="op">,</span>vm[exp])</span>
@@ -1664,7 +1664,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">116.7k</span>&nbsp;字
+                class="white-color">116.8k</span>&nbsp;字
             
             
             

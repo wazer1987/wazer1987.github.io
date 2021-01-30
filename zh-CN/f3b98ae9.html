@@ -25,7 +25,7 @@
     
     <script src="https://cdn.jsdelivr.net/gh/wazer1987/wazer1987.github.io/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -1100,7 +1100,7 @@
 <span id="cb24-2"><a href="#cb24-2"></a><span class="co">//&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x663E;&#x793A;&#x7684;&#x53EA;&#x662F;&#x6587;&#x7AE0;&#x7684;&#x6807;&#x9898; &#x70B9;&#x51FB;&#x4E4B;&#x540E;&#x8DF3;&#x8F6C;&#x5230;&#x8BE6;&#x7EC6;&#x6587;&#x7AE0; &#x6240;&#x4EE5;&#x8FD9;&#x91CC;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x8BE6;&#x7EC6;&#x6587;&#x7AE0;&#x7684;&#x9875;&#x9762; &#x7136;&#x540E;&#x5728;&#x8DF3;&#x8F6C;&#x7684;&#x65F6;&#x5019;&#x628A;&#x6211;&#x4EEC;&#x7684;&#x6587;&#x7AE0;ID&#x4F20;&#x8FDB;&#x53BB;  &#x65B0;&#x5EFA;&#x8BE6;&#x60C5;&#x6587;&#x7AE0;&#x4FE1;&#x606F;&#x4E0B;&#x9762;&#x4F1A;&#x6709;</span></span>
 <span id="cb24-3"><a href="#cb24-3"></a><span class="op">&lt;</span>div v<span class="op">-</span><span class="cf">for</span><span class="op">=</span><span class="st">&quot;acticle in article&quot;</span> <span class="op">:</span>key<span class="op">=</span><span class="st">&quot;acticle._aid&quot;</span><span class="op">&gt;</span></span>
 <span id="cb24-4"><a href="#cb24-4"></a>  <span class="op">&lt;</span>nuxt<span class="op">-</span>link <span class="op">:</span>to<span class="op">=</span><span class="st">&quot;&apos;/article/&apos; + acticle._id&quot;</span><span class="op">&gt;</span></span>
-<span id="cb24-5"><a href="#cb24-5"></a>    <span class="op">&lt;!--</span>&#xFFFC;0<span class="op">--&gt;</span></span>
+<span id="cb24-5"><a href="#cb24-5"></a>    <span class="op">&lt;!--</span>swig&#xFFFC;0<span class="op">--&gt;</span></span>
 <span id="cb24-6"><a href="#cb24-6"></a>  <span class="op">&lt;/</span>nuxt<span class="op">-</span>link<span class="op">&gt;</span></span>
 <span id="cb24-7"><a href="#cb24-7"></a><span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
 <span id="cb24-8"><a href="#cb24-8"></a><span class="co">//script</span></span>
@@ -1116,7 +1116,7 @@
 <span id="cb24-18"><a href="#cb24-18"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb25"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb25-1"><a href="#cb25-1"></a><span class="co">//&#x8DF3;&#x8F6C;&#x5230;&#x6587;&#x7AE0;&#x8BE6;&#x60C5;&#x9875;&#x9762; </span></span>
 <span id="cb25-2"><a href="#cb25-2"></a><span class="op">&lt;</span>nuxt<span class="op">-</span>link <span class="op">:</span>to<span class="op">=</span><span class="st">&quot;&apos;/article/&apos; + acticle._id&quot;</span><span class="op">&gt;</span></span>
-<span id="cb25-3"><a href="#cb25-3"></a>    <span class="op">&lt;!--</span>&#xFFFC;1<span class="op">--&gt;</span></span>
+<span id="cb25-3"><a href="#cb25-3"></a>    <span class="op">&lt;!--</span>swig&#xFFFC;1<span class="op">--&gt;</span></span>
 <span id="cb25-4"><a href="#cb25-4"></a><span class="op">&lt;/</span>nuxt<span class="op">-</span>link<span class="op">&gt;</span></span>
 <span id="cb25-5"><a href="#cb25-5"></a><span class="co">//&#x5199;&#x6CD5;</span></span>
 <span id="cb25-6"><a href="#cb25-6"></a>&#x6211;&#x4EEC;&#x6839;&#x636E;&#x4E0A;&#x9762;&#x7684;&#x8DEF;&#x5F84; &#x5728;page&#x4E0B;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;article&#x6587;&#x4EF6;&#x5939; &#x7136;&#x540E;&#x65B0;&#x5EFA;_id<span class="op">.</span><span class="at">vue&#x6587;&#x4EF6;</span> &#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x7684;nuxt&#x5728;&#x751F;&#x6210;&#x8DEF;&#x7531;&#x7684;&#x65F6;&#x5019;&#x5C31;&#x4F1A;&#x81EA;&#x52A8;&#x5E2E;&#x6211;&#x4EEC;&#x751F;&#x6210;<span class="st">&apos;/article/:id&apos;</span>&#x8FD9;&#x79CD;&#x683C;&#x5F0F; &#x7136;&#x540E;&#x5C31;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;this<span class="op">.</span><span class="at">$route</span><span class="op">.</span><span class="at">params</span><span class="op">.</span><span class="at">_id&#x53BB;&#x62FF;&#x6211;&#x4EEC;&#x7684;&#x6587;&#x7AE0;ID&#x4E86;</span></span></code></pre></div>
@@ -1136,7 +1136,7 @@
 <span id="cb28-4"><a href="#cb28-4"></a>    <span class="co">//&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019; &#x4F1A;&#x8DF3;&#x8F6C;&#x9053;&#x4E2A;&#x4EBA;&#x8BE6;&#x60C5;&#x9875;&#x9762;  </span></span>
 <span id="cb28-5"><a href="#cb28-5"></a>    <span class="op">&lt;</span>nuxt<span class="op">-</span>link <span class="op">:</span>to<span class="op">=</span><span class="st">&quot;url&quot;</span><span class="op">&gt;</span></span>
 <span id="cb28-6"><a href="#cb28-6"></a>      <span class="co">//&#x663E;&#x793A;&#x6635;&#x79F0;</span></span>
-<span id="cb28-7"><a href="#cb28-7"></a>      <span class="op">&lt;!--</span>&#xFFFC;2<span class="op">--&gt;</span></span>
+<span id="cb28-7"><a href="#cb28-7"></a>      <span class="op">&lt;!--</span>swig&#xFFFC;2<span class="op">--&gt;</span></span>
 <span id="cb28-8"><a href="#cb28-8"></a>    <span class="op">&lt;/</span>nuxt<span class="op">-</span>link<span class="op">&gt;</span></span>
 <span id="cb28-9"><a href="#cb28-9"></a>    <span class="op">&lt;</span>slot<span class="op">&gt;</span> <span class="op">&lt;/</span>slot<span class="op">&gt;</span></span>
 <span id="cb28-10"><a href="#cb28-10"></a>  <span class="op">&lt;/</span>div<span class="op">&gt;</span></span>
@@ -1175,7 +1175,7 @@
 <span id="cb29-16"><a href="#cb29-16"></a></span>
 <span id="cb29-17"><a href="#cb29-17"></a>    <span class="op">&lt;</span>div<span class="op">&gt;</span></span>
 <span id="cb29-18"><a href="#cb29-18"></a>      <span class="op">&lt;</span>el<span class="op">-</span>button <span class="op">:</span>type<span class="op">=</span><span class="st">&quot;likeStatus ? &apos;success&apos; : &apos;info&apos;&quot;</span> @click<span class="op">=</span><span class="st">&quot;likeAction&quot;</span><span class="op">&gt;</span></span>
-<span id="cb29-19"><a href="#cb29-19"></a>        <span class="op">&lt;</span>i <span class="kw">class</span><span class="op">=</span><span class="st">&quot;el-icon-thumb&quot;</span><span class="op">&gt;&lt;!--</span>&#xFFFC;3<span class="op">--&gt;&lt;/</span>i<span class="op">&gt;</span></span>
+<span id="cb29-19"><a href="#cb29-19"></a>        <span class="op">&lt;</span>i <span class="kw">class</span><span class="op">=</span><span class="st">&quot;el-icon-thumb&quot;</span><span class="op">&gt;&lt;!--</span>swig&#xFFFC;3<span class="op">--&gt;&lt;/</span>i<span class="op">&gt;</span></span>
 <span id="cb29-20"><a href="#cb29-20"></a>      <span class="op">&lt;/</span>el<span class="op">-</span>button<span class="op">&gt;</span></span>
 <span id="cb29-21"><a href="#cb29-21"></a>      <span class="op">&lt;</span>el<span class="op">-</span>button<span class="op">&gt;</span></span>
 <span id="cb29-22"><a href="#cb29-22"></a>        <span class="op">&lt;</span>i <span class="kw">class</span><span class="op">=</span><span class="st">&quot;el-icon-thumb rotate&quot;</span><span class="op">&gt;&lt;/</span>i<span class="op">&gt;</span></span>
@@ -1361,7 +1361,7 @@
 <span id="cb36-3"><a href="#cb36-3"></a><span class="fl">3.</span>&#x9996;&#x5148;&#x6211;&#x4EEC;&#x9700;&#x8981;&#x53D1;&#x9001;&#x4E00;&#x4E2A;&#x8BF7;&#x6C42; &#x7528;&#x6765;&#x521D;&#x59CB;&#x5316; &#x6587;&#x7AE0;&#x70B9;&#x8D5E; &#x548C;&#x8E29;</span></code></pre></div>
 <div class="sourceCode" id="cb37"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb37-1"><a href="#cb37-1"></a><span class="co">//&#x6587;&#x7AE0;&#x70B9;&#x8D5E;&#x6216;&#x8005;&#x8E29;&#x7684;&#x521D;&#x59CB;&#x5316;</span></span>
 <span id="cb37-2"><a href="#cb37-2"></a><span class="op">&lt;</span>el<span class="op">-</span>button @click<span class="op">=</span><span class="st">&quot;likeAction&quot;</span> <span class="op">:</span>type<span class="op">=</span><span class="st">&quot;likeStatus?&apos;success&apos;:&apos;info&apos;&quot;</span><span class="op">&gt;</span></span>
-<span id="cb37-3"><a href="#cb37-3"></a>    <span class="op">&lt;</span>i <span class="kw">class</span><span class="op">=</span><span class="st">&quot;el-icon-thumb&quot;</span><span class="op">&gt;&lt;!--</span>&#xFFFC;4<span class="op">--&gt;&lt;/</span>i<span class="op">&gt;</span></span>
+<span id="cb37-3"><a href="#cb37-3"></a>    <span class="op">&lt;</span>i <span class="kw">class</span><span class="op">=</span><span class="st">&quot;el-icon-thumb&quot;</span><span class="op">&gt;&lt;!--</span>swig&#xFFFC;4<span class="op">--&gt;&lt;/</span>i<span class="op">&gt;</span></span>
 <span id="cb37-4"><a href="#cb37-4"></a><span class="op">&lt;/</span>el<span class="op">-</span>button<span class="op">&gt;</span></span>
 <span id="cb37-5"><a href="#cb37-5"></a><span class="co">//&#x903B;&#x8F91;</span></span>
 <span id="cb37-6"><a href="#cb37-6"></a><span class="im">export</span> <span class="im">default</span> {</span>
@@ -1392,7 +1392,7 @@
 <span id="cb37-31"><a href="#cb37-31"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb38"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb38-1"><a href="#cb38-1"></a><span class="co">//html &#x6211;&#x4EEC;&#x521D;&#x59CB;&#x4E00;&#x4E2A;&#x72B6;&#x6001;&#x7528;&#x6765;&#x63A7;&#x5236; &#x8D5E;&#x6309;&#x94AE;&#x7684;&#x6837;&#x5F0F; &#x4E5F;&#x7528;&#x6765;&#x63A7;&#x5236;&#x4ED6;&#x662F;&#x70B9;&#x8D5E; &#x8FD8;&#x662F;&#x53D6;&#x6D88;&#x70B9;&#x8D5E;&#x7684;&#x8BF7;&#x6C42;</span></span>
 <span id="cb38-2"><a href="#cb38-2"></a><span class="op">&lt;</span>el<span class="op">-</span>button @click<span class="op">=</span><span class="st">&quot;likeAction&quot;</span> <span class="op">:</span>type<span class="op">=</span><span class="st">&quot;likeStatus?&apos;success&apos;:&apos;info&apos;&quot;</span><span class="op">&gt;</span></span>
-<span id="cb38-3"><a href="#cb38-3"></a>    <span class="op">&lt;</span>i <span class="kw">class</span><span class="op">=</span><span class="st">&quot;el-icon-thumb&quot;</span><span class="op">&gt;&lt;!--</span>&#xFFFC;5<span class="op">--&gt;&lt;/</span>i<span class="op">&gt;</span></span>
+<span id="cb38-3"><a href="#cb38-3"></a>    <span class="op">&lt;</span>i <span class="kw">class</span><span class="op">=</span><span class="st">&quot;el-icon-thumb&quot;</span><span class="op">&gt;&lt;!--</span>swig&#xFFFC;5<span class="op">--&gt;&lt;/</span>i<span class="op">&gt;</span></span>
 <span id="cb38-4"><a href="#cb38-4"></a><span class="op">&lt;/</span>el<span class="op">-</span>button<span class="op">&gt;</span></span>
 <span id="cb38-5"><a href="#cb38-5"></a><span class="co">//&#x903B;&#x8F91;</span></span>
 <span id="cb38-6"><a href="#cb38-6"></a><span class="im">export</span> <span class="im">default</span> {</span>
@@ -1955,7 +1955,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">116.7k</span>&nbsp;字
+                class="white-color">116.8k</span>&nbsp;字
             
             
             

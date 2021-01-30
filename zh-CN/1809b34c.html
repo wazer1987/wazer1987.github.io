@@ -25,7 +25,7 @@
     
     <script src="https://cdn.jsdelivr.net/gh/wazer1987/wazer1987.github.io/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -569,8 +569,8 @@
       &lt;li v-for=&quot;good in goods&quot; :key=&quot;good.id&quot;&gt;
         &lt;!--&#x8FD9;&#x91CC;&#x70B9;&#x51FB;&#x7684;&#x65F6;&#x5019; &#x8DF3;&#x8F6C;&#x5230;&#x5546;&#x54C1;&#x8BE6;&#x60C5;&#x9875;&#x9762; &#x5E26;&#x7740;&#x6211; &#x4EEC;&#x7684;&#x5546;&#x54C1;&#x7684;ID&#x8FC7;&#x53BB;--&gt;  
         &lt;nuxt-link :to=&quot;`/detail/${good.id}`&quot;&gt;
-          &lt;span&gt;&lt;/span&gt;
-          &lt;span&gt;&#xFFE5;&lt;/span&gt;
+          &lt;span&gt;{{ good.text }}&lt;/span&gt;
+          &lt;span&gt;&#xFFE5;{{ good.price }}&lt;/span&gt;
           &lt;button @click.prevent=&quot;addCart(good)&quot;&gt;
             &#x52A0;&#x8D2D;&#x7269;&#x8F66;
           &lt;/button&gt;
@@ -612,8 +612,8 @@ export default {
       &lt;li v-for=&quot;good in goods&quot; :key=&quot;good.id&quot;&gt;
         &lt;!--&#x6211;&#x4EEC;&#x628A;&#x5546;&#x54C1;ID &#x548C; price&#x90FD;&#x4F20;&#x9012;&#x8FC7;&#x53BB;&#x4E86;--&gt;  
         &lt;nuxt-link :to=&quot;`/detail/${good.id}/${good.price}`&quot;&gt;
-          &lt;span&gt;&lt;/span&gt;
-          &lt;span&gt;&#xFFE5;&lt;/span&gt;
+          &lt;span&gt;{{ good.text }}&lt;/span&gt;
+          &lt;span&gt;&#xFFE5;{{ good.price }}&lt;/span&gt;
           &lt;button @click.prevent=&quot;addCart(good)&quot;&gt;
             &#x52A0;&#x8D2D;&#x7269;&#x8F66;
           &lt;/button&gt;
@@ -647,8 +647,8 @@ export default {
     &lt;h2&gt;&#x5546;&#x54C1;&#x5217;&#x8868;&lt;/h2&gt;
     &lt;ul&gt;
       &lt;li v-for=&quot;good in goods&quot; :key=&quot;good.id&quot; @click=&quot;goDetail(good)&quot;&gt;
-        &lt;span&gt;&lt;/span&gt;
-        &lt;span&gt;&#xFFE5;&lt;/span&gt;
+        &lt;span&gt;{{ good.text }}&lt;/span&gt;
+        &lt;span&gt;&#xFFE5;{{ good.price }}&lt;/span&gt;
         &lt;button @click.prevent=&quot;addCart(good)&quot;&gt;
           &#x52A0;&#x8D2D;&#x7269;&#x8F66;
         &lt;/button&gt;
@@ -681,7 +681,7 @@ export default {
 &lt;template&gt;
 &lt;!--&#x901A;&#x8FC7; $route.query &#x53D6;&#x53C2;--&gt;
   &lt;div&gt;
-    &#x6211;&#x662F;&#x5546;&#x54C1;&#x8BE6;&#x60C5; -----
+    &#x6211;&#x662F;&#x5546;&#x54C1;&#x8BE6;&#x60C5; -----{{ $route.query }}
   &lt;/div&gt;
 &lt;/template&gt;</code></pre>
 <p><img src="/zh-CN/1809b34c/7.gif"></p>
@@ -705,8 +705,8 @@ export default {
       &lt;li v-for=&quot;good in goods&quot; :key=&quot;good.id&quot;&gt;
         &lt;!--&#x8FD9;&#x91CC;&#x8BB0;&#x4F4F;&#x8DF3;&#x8F6C;&#x7684;&#x65F6;&#x5019; &#x5C31;&#x662F;&#x8981;&#x5199;&#x6211;&#x4EEC;&#x7684;&#x540D;&#x5B57;&#x4E86; &#x8FD9;&#x4E2A;&#x662F;&#x4F60;&#x65B0;&#x5EFA;&#x4E4B;&#x540E;&#x81EA;&#x52A8;&#x751F;&#x6210;&#x7684;--&gt;  
         &lt;nuxt-link :to=&quot;{name:&apos;index-id&apos;,params:{id:good.id}}&quot;&gt;
-          &lt;span&gt;&lt;/span&gt;
-          &lt;span&gt;&#xFFE5;&lt;/span&gt;
+          &lt;span&gt;{{ good.text }}&lt;/span&gt;
+          &lt;span&gt;&#xFFE5;{{ good.price }}&lt;/span&gt;
           &lt;button @click.prevent=&quot;addCart(good)&quot;&gt;
             &#x52A0;&#x8D2D;&#x7269;&#x8F66;
           &lt;/button&gt;
@@ -818,8 +818,8 @@ export default {
 <span id="cb35-4"><a href="#cb35-4"></a>    <span class="op">&lt;</span>ul<span class="op">&gt;</span></span>
 <span id="cb35-5"><a href="#cb35-5"></a>      <span class="op">&lt;</span>li v<span class="op">-</span><span class="cf">for</span><span class="op">=</span><span class="st">&quot;good in goods&quot;</span> <span class="op">:</span>key<span class="op">=</span><span class="st">&quot;good.id&quot;</span><span class="op">&gt;</span></span>
 <span id="cb35-6"><a href="#cb35-6"></a>        <span class="op">&lt;</span>nuxt<span class="op">-</span>link <span class="op">:</span>to<span class="op">=</span><span class="st">&quot;{name:&apos;index-id&apos;,params:{id:good.id}}&quot;</span><span class="op">&gt;</span></span>
-<span id="cb35-7"><a href="#cb35-7"></a>          <span class="op">&lt;</span>span<span class="op">&gt;&lt;!--</span>&#xFFFC;9<span class="op">--&gt;&lt;/</span>span<span class="op">&gt;</span></span>
-<span id="cb35-8"><a href="#cb35-8"></a>          <span class="op">&lt;</span>span<span class="op">&gt;</span>&#xFFE5;<span class="op">&lt;!--</span>&#xFFFC;10<span class="op">--&gt;&lt;/</span>span<span class="op">&gt;</span></span>
+<span id="cb35-7"><a href="#cb35-7"></a>          <span class="op">&lt;</span>span<span class="op">&gt;&lt;!--</span>swig&#xFFFC;9<span class="op">--&gt;&lt;/</span>span<span class="op">&gt;</span></span>
+<span id="cb35-8"><a href="#cb35-8"></a>          <span class="op">&lt;</span>span<span class="op">&gt;</span>&#xFFE5;<span class="op">&lt;!--</span>swig&#xFFFC;10<span class="op">--&gt;&lt;/</span>span<span class="op">&gt;</span></span>
 <span id="cb35-9"><a href="#cb35-9"></a>          <span class="op">&lt;</span>button @click<span class="op">.</span><span class="at">prevent</span><span class="op">=</span><span class="st">&quot;addCart(good)&quot;</span><span class="op">&gt;</span></span>
 <span id="cb35-10"><a href="#cb35-10"></a>            &#x52A0;&#x8D2D;&#x7269;&#x8F66;</span>
 <span id="cb35-11"><a href="#cb35-11"></a>          <span class="op">&lt;/</span>button<span class="op">&gt;</span></span>
@@ -1408,7 +1408,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">116.7k</span>&nbsp;字
+                class="white-color">116.8k</span>&nbsp;字
             
             
             

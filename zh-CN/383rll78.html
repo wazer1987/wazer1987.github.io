@@ -25,7 +25,7 @@
     
     <script src="https://cdn.jsdelivr.net/gh/wazer1987/wazer1987.github.io/libs/jquery/jquery.min.js"></script>
     
-<meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
+<meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/rss2.xml" title="北城韩雨" type="application/rss+xml">
 <link rel="stylesheet" href="/css/prism-tomorrow.css" type="text/css">
 <link rel="stylesheet" href="/css/prism-line-numbers.css" type="text/css"></head>
 
@@ -847,10 +847,10 @@
 &lt;template&gt;
   &lt;div&gt;
       &lt;!-- &#x8FD9;&#x91CC;&#x4F60;&#x53EF;&#x80FD;&#x7ED9;&#x7ED9;&#x6211;&#x4F20;&#x8FDB;&#x6765;&#x4E86;label &#x4E5F;&#x53EF;&#x80FD;&#x4F20; &#x6240;&#x4EE5;&#x6211;&#x8981;&#x5224;&#x65AD;&#x4E00;&#x4E0B; --&gt;
-      &lt;label v-if=&quot;label&quot;&gt;&lt;/label&gt;
+      &lt;label v-if=&quot;label&quot;&gt;{{label}}&lt;/label&gt;
       &lt;slot&gt;&lt;/slot&gt;
       &lt;!-- &#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#x7684;&#x5C55;&#x793A; --&gt;
-      &lt;p v-if=&quot;errorMessage&quot;&gt;&lt;/p&gt;
+      &lt;p v-if=&quot;errorMessage&quot;&gt;{{errorMessage}}&lt;/p&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 
@@ -952,12 +952,12 @@ export default {
 <pre class="vue"><code>&lt;!-- &#x5728;form-item &#x7EC4;&#x4EF6;&#x91CC; &#x6211;&#x4EEC;&#x5C31;&#x80FD;&#x62FF;&#x5230;&#x4E86;&#x6821;&#x9A8C;&#x89C4;&#x5219; &#x548C;&#x6821;&#x9A8C;&#x89C4;&#x5219;--&gt;
 &lt;template&gt;
   &lt;div&gt;
-      &lt;label v-if=&quot;label&quot;&gt;&lt;/label&gt;
+      &lt;label v-if=&quot;label&quot;&gt;{{label}}&lt;/label&gt;
       &lt;slot&gt;&lt;/slot&gt;
       &lt;!-- &#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#x7684;&#x5C55;&#x793A; --&gt;
-      &lt;p v-if=&quot;errorMessage&quot;&gt;&lt;/p&gt;
-      
-      
+      &lt;p v-if=&quot;errorMessage&quot;&gt;{{errorMessage}}&lt;/p&gt;
+      {{form.model}}
+      {{form.rules}}
   &lt;/div&gt;
 &lt;/template&gt;
 
@@ -1025,10 +1025,10 @@ export default {
 <pre class="vue"><code>&lt;!-- input&#x7EC4;&#x4EF6;&#x89E6;&#x53D1;&#x4E86;&#x6821;&#x9A8C; &#x7136;&#x540E;&#x6211;&#x4EEC;&#x7684;form-item &#x7EC4;&#x4EF6; &#x5B8C;&#x6210;&#x6821;&#x9A8C; &#x5728;mounted&#x91CC;&#x89E6;&#x53D1; --&gt;
 &lt;template&gt;
   &lt;div&gt;
-      &lt;label v-if=&quot;label&quot;&gt;&lt;/label&gt;
+      &lt;label v-if=&quot;label&quot;&gt;{{label}}&lt;/label&gt;
       &lt;slot&gt;&lt;/slot&gt;
       &lt;!-- &#x6821;&#x9A8C;&#x7684;&#x7ED3;&#x679C;&#x4FE1;&#x606F;&#x7684;&#x5C55;&#x793A; --&gt;
-      &lt;p v-if=&quot;errorMessage&quot;&gt;&lt;/p&gt;
+      &lt;p v-if=&quot;errorMessage&quot;&gt;{{errorMessage}}&lt;/p&gt;
   &lt;/div&gt;
 &lt;/template&gt;
 
@@ -1729,7 +1729,7 @@ code[class*="language-"], pre[class*="language-"] { white-space: pre !important;
             <br>
             
             &nbsp;<i class="fas fa-chart-area"></i>&nbsp;站点总字数:&nbsp;<span
-                class="white-color">116.7k</span>&nbsp;字
+                class="white-color">116.8k</span>&nbsp;字
             
             
             
